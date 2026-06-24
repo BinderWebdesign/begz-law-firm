@@ -1,0 +1,109 @@
+{
+  "members": [
+    {
+      "name": {
+        "mn": "Т. Гүрбадам",
+        "en": "T. Gurbadam",
+        "zh": "T. Gurbadam",
+        "ko": "T. Gurbadam"
+      },
+      "role": {
+        "mn": "Үүсгэн байгуулагч, өмгөөлөгч",
+        "en": "Founder, Attorney",
+        "zh": "创始人、律师",
+        "ko": "창립자, 변호사"
+      },
+      "focus": {
+        "mn": "Иргэний эрх зүй · Гэрээ · Компанийн эрх зүй · Арбитр",
+        "en": "Civil Law · Contracts · Corporate Law · Arbitration",
+        "zh": "民法 · 合同 · 公司法 · 仲裁",
+        "ko": "민법 · 계약 · 회사법 · 중재"
+      },
+      "bio": {
+        "mn": "Хуулийн фирмийн үүсгэн байгуулагч. Хууль зүйн ухааны магистр, докторант. Ажлын туршлага: 15 жил. Тендер, өмчийн эрх зүй, газрын эрх зүй, барилгын болон байгаль орчны эрх зүйн чиглэлээр мэргэшсэн.",
+        "en": "Founder of the law firm. Master of Laws and doctoral candidate. Work experience: 15 years. Specialized in tender, property, land, construction, and environmental law.",
+        "zh": "律师事务所创始人。法学硕士、博士研究生。工作经验：15年。专长于招投标、财产权、土地、建筑及环境法律领域。",
+        "ko": "법률사무소 창립자. 법학 석사, 박사과정. 경력 15년. 입찰, 재산권, 토지, 건설 및 환경법 분야 전문."
+      },
+      "image": "assets/team-gurbadam.webp",
+      "alt": {
+        "mn": "Т. Гүрбадам",
+        "en": "T. Gurbadam",
+        "zh": "T. Gurbadam",
+        "ko": "T. Gurbadam"
+      },
+      "published": true,
+      "order": 1
+    },
+    {
+      "name": {
+        "mn": "А. Ариунтуул",
+        "en": "A. Ariuntuul",
+        "zh": "A. Ariuntuul",
+        "ko": "A. Ariuntuul"
+      },
+      "role": {
+        "mn": "Үүсгэн байгуулагч, өмгөөлөгч",
+        "en": "Founder, Attorney",
+        "zh": "创始人、律师",
+        "ko": "창립자, 변호사"
+      },
+      "focus": {
+        "mn": "Эрүүгийн эрх зүй · Иргэний эрх зүй · Өр авлага барагдуулах",
+        "en": "Criminal Law · Civil Law · Debt Collection",
+        "zh": "刑法 · 民法 · 债权清收",
+        "ko": "형법 · 민법 · 채권 회수"
+      },
+      "bio": {
+        "mn": "Хуулийн фирмийн гүйцэтгэх захирал. Хууль зүйн ухааны магистр, докторант. Ажлын туршлага: 20 жил. Гэрээний эрх зүй, компанийн эрх зүй, өмчийн болон газрын эрх зүйн чиглэлээр мэргэшсэн.",
+        "en": "Executive Director of the law firm. Master of Laws and doctoral candidate. Work experience: 20 years. Specialized in contract law, corporate law, property law, and land law.",
+        "zh": "律师事务所执行董事。法学硕士、博士研究生。工作经验：20年。专长于合同法、公司法、财产及土地法律领域。",
+        "ko": "법률사무소 대표. 법학 석사, 박사과정. 경력 20년. 계약법, 회사법, 재산 및 토지법 분야 전문."
+      },
+      "image": "assets/team-ariuntuul.webp",
+      "alt": {
+        "mn": "А. Ариунтуул",
+        "en": "A. Ariuntuul",
+        "zh": "A. Ariuntuul",
+        "ko": "A. Ariuntuul"
+      },
+      "published": true,
+      "order": 2
+    },
+    {
+      "name": {
+        "mn": "Б. Тамираа",
+        "en": "B. Tamiraa",
+        "zh": "B. Tamiraa",
+        "ko": "B. Tamiraa"
+      },
+      "role": {
+        "mn": "Өмгөөлөгч",
+        "en": "Attorney",
+        "zh": "律师",
+        "ko": "변호사"
+      },
+      "focus": {
+        "mn": "Иргэний эрх зүй · Гэрээний эрх зүй · Компанийн эрх зүй · Арбитр",
+        "en": "Civil Law · Contract Law · Corporate Law · Arbitration",
+        "zh": "民法 · 合同法 · 公司法 · 仲裁",
+        "ko": "민법 · 계약법 · 회사법 · 중재"
+      },
+      "bio": {
+        "mn": "Хуулийн фирмийн хуульч, өмгөөлөгч. Ажлын туршлага: 5 жил. Иргэний болон гэрээний эрх зүй, компанийн эрх зүй, арбитрын чиглэлээр мэргэшсэн.",
+        "en": "Lawyer and attorney at the firm. Work experience: 5 years. Specialized in civil and contract law, corporate law, and arbitration.",
+        "zh": "本所律师。工作经验：5年。专长于民事及合同法、公司法和仲裁。",
+        "ko": "법률사무소 소속 변호사. 경력 5년. 민사 및 계약법, 회사법, 중재 분야 전문."
+      },
+      "image": "assets/team-tamiraa.webp",
+      "alt": {
+        "mn": "Б. Тамираа",
+        "en": "B. Tamiraa",
+        "zh": "B. Tamiraa",
+        "ko": "B. Tamiraa"
+      },
+      "published": true,
+      "order": 3
+    }
+  ]
+}

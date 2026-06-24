@@ -1,0 +1,89 @@
+{
+  "timeline": [
+    {
+      "year": "2008",
+      "title": {
+        "mn": "Хууль зүйн практик туршлагын эхлэл",
+        "en": "Beginning of Legal Practice Experience",
+        "zh": "法律实践经验的起点",
+        "ko": "법률 실무 경험의 시작"
+      },
+      "text": {
+        "mn": "Иргэн, гэр бүл, бизнесийн байгууллагын өдөр тутмын эрх зүйн асуудал, маргаан шийдвэрлэх ажиллагаанд оролцсон туршлага хуримтлагдаж эхэлсэн.",
+        "en": "Experience began to accumulate through work on everyday legal issues and dispute resolution for individuals, families, and business organizations.",
+        "zh": "通过参与个人、家庭和商业机构的日常法律事务及争议解决工作，实践经验开始逐步积累。",
+        "ko": "개인, 가족 및 기업의 일상 법률 문제와 분쟁 해결 업무에 참여하며 경험이 축적되기 시작했습니다."
+      },
+      "published": true,
+      "order": 1
+    },
+    {
+      "year": "2016",
+      "title": {
+        "mn": "\"Бэгз Ло Консалтинг\" ХХК байгуулагдсан",
+        "en": "\"Begz Lo Consulting\" LLC was established",
+        "zh": "“Begz Lo Consulting”有限责任公司成立",
+        "ko": "\"Begz Lo Consulting\" LLC 설립"
+      },
+      "text": {
+        "mn": "Зөвлөх үйлчилгээ, баримт бичгийн хяналт, төлөөлөл, өмгөөллийн чиглэлээр тогтвортой үйл ажиллагаа явуулах байгууллагын суурь тавигдсан.",
+        "en": "The foundation was laid for an organization providing stable services in advisory work, document review, representation, and advocacy.",
+        "zh": "为在顾问服务、文件审查、代理和律师服务领域持续运营的机构奠定了基础。",
+        "ko": "자문, 문서 검토, 대리 및 변호 분야에서 안정적으로 활동할 조직의 기반이 마련되었습니다."
+      },
+      "published": true,
+      "order": 2
+    },
+    {
+      "year": "2020",
+      "title": {
+        "mn": "Бизнесийн болон иргэний эрх зүйн үйлчилгээ өргөжсөн",
+        "en": "Business and civil law services expanded",
+        "zh": "商业和民事法律服务扩展",
+        "ko": "비즈니스 및 민사 법률 서비스 확대"
+      },
+      "text": {
+        "mn": "Гэрээний маргаан, үл хөдлөх хөрөнгө, өв залгамжлал, компанийн өдөр тутмын эрх зүйн зөвлөгөөг илүү системтэй хүргэх аргачлал бүрдсэн.",
+        "en": "A more systematic method was developed for contract disputes, real estate, inheritance, and daily corporate legal advice.",
+        "zh": "形成了更加系统地提供合同争议、房地产、继承以及公司日常法律咨询的方法。",
+        "ko": "계약 분쟁, 부동산, 상속 및 회사의 일상 법률 자문을 보다 체계적으로 제공하는 방식이 마련되었습니다."
+      },
+      "published": true,
+      "order": 3
+    },
+    {
+      "year": "2025",
+      "title": {
+        "mn": "Шинэ бүтэц, шинэ арга барил",
+        "en": "New structure, new approach",
+        "zh": "新结构，新方法",
+        "ko": "새로운 구조와 방식"
+      },
+      "text": {
+        "mn": "Үйлчилгээний ангилал, багийн ажиллах процесс, үйлчлүүлэгчтэй харилцах стандарт, брэндийн өнгө төрхийг шинэчилж, илүү цэгцтэй хэлбэрт шилжүүлсэн.",
+        "en": "Service categories, team workflow, client communication standards, and brand identity were updated into a more organized format.",
+        "zh": "服务分类、团队工作流程、客户沟通标准和品牌形象得到更新，并转向更加有序的形式。",
+        "ko": "서비스 분류, 팀 업무 프로세스, 의뢰인 커뮤니케이션 기준 및 브랜드 이미지를 새롭게 정비하여 더 체계적인 형태로 전환했습니다."
+      },
+      "published": true,
+      "order": 4
+    },
+    {
+      "year": "2026",
+      "title": {
+        "mn": "Дижитал танилцуулга, нээлттэй мэдээллийн суваг",
+        "en": "Digital presentation and open information channel",
+        "zh": "数字介绍与开放信息渠道",
+        "ko": "디지털 소개 및 공개 정보 채널"
+      },
+      "text": {
+        "mn": "Үйлчилгээ, баг, хууль зүйн мэдээлэл, түгээмэл асуулт, шүүхийн шийдвэрийн тоймыг цахим орчинд илүү ойлгомжтой хүргэх суваг хөгжүүлж байна.",
+        "en": "A channel is being developed to present services, team information, legal information, FAQs, and court decision reviews more clearly online.",
+        "zh": "我们正在建设一个在线渠道，以更清晰地展示服务、团队、法律信息、常见问题和法院判决案例综述。",
+        "ko": "서비스, 팀, 법률 정보, FAQ 및 법원 판결 리뷰를 온라인에서 더 명확하게 제공하는 채널을 개발하고 있습니다."
+      },
+      "published": true,
+      "order": 5
+    }
+  ]
+}

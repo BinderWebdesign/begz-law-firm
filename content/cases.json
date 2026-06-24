@@ -1,0 +1,344 @@
+{
+  "items": [
+    {
+      "id": "property-inheritance-dispute",
+      "category": {
+        "mn": "Иргэний маргаан",
+        "en": "Civil Dispute",
+        "zh": "民事争议",
+        "ko": "민사 분쟁"
+      },
+      "year": "2024",
+      "date": "2024.11.18",
+      "title": {
+        "mn": "Өмчийн маргааны амжилттай шийдэл",
+        "en": "Successful Resolution of a Property Dispute",
+        "zh": "财产争议的成功解决",
+        "ko": "재산 분쟁의 성공적 해결"
+      },
+      "text": {
+        "mn": "Үйлчлүүлэгч нь ах дүүтэйгээ хамтарч өвлөн авсан орон сууцны хуваарилалтын маргаанд орсон. Бид 6 сарын хугацаанд шүүхийн гадна эвлэрэл хийж, хоёр талд тааламжтай шийдэлд хүрлээ.",
+        "en": "The client was involved in a dispute over the division of an apartment inherited jointly with siblings. Within 6 months, we reached an out-of-court settlement acceptable to both sides.",
+        "zh": "客户与兄弟姐妹共同继承的住宅分割发生争议。我们在6个月内促成庭外和解，使双方达成满意解决方案。",
+        "ko": "의뢰인은 형제자매와 공동 상속한 아파트 분할 문제로 분쟁에 처했습니다. 저희는 6개월 내 법원 밖 합의를 통해 양측이 수용할 수 있는 해결에 도달했습니다."
+      },
+      "context": {
+        "mn": "Өв залгамжлалын дараа хамтран өмчлөх эрх, хөрөнгийн бодит ашиглалт, талуудын хоорондын харилцаа зэрэг олон хүчин зүйл давхар нөлөөлсөн маргаан байсан. Үйлчлүүлэгч шүүхийн ажиллагаа эхлүүлэхээс өмнө өөрийн эрх, нотлох баримт, эвлэрлийн боломжийг бодитоор үнэлүүлэх шаардлагатай болсон.",
+        "en": "The dispute involved multiple factors, including co-ownership rights after inheritance, actual use of the property, and relations between the parties. Before initiating court proceedings, the client needed a realistic assessment of rights, evidence, and settlement options.",
+        "zh": "该争议涉及继承后的共有权、财产实际使用情况以及当事人之间关系等多重因素。在启动诉讼前，客户需要对自身权利、证据和和解可能性进行实际评估。",
+        "ko": "상속 이후 공동소유권, 재산의 실제 사용, 당사자 간 관계 등 여러 요소가 얽힌 분쟁이었습니다. 의뢰인은 소송을 시작하기 전에 자신의 권리, 증거 및 합의 가능성을 현실적으로 평가받을 필요가 있었습니다."
+      },
+      "approach": [
+        {
+          "mn": "Өмчлөх эрх, өв залгамжлалын баримт бичиг, хөрөнгийн үнэлгээ болон талуудын байр суурийг нэгтгэн дүгнэсэн.",
+          "en": "We reviewed and consolidated ownership rights, inheritance documents, property valuation, and the positions of the parties.",
+          "zh": "我们综合审查了所有权、继承文件、财产评估以及各方立场。",
+          "ko": "소유권, 상속 문서, 재산 평가 및 당사자들의 입장을 종합적으로 검토했습니다."
+        },
+        {
+          "mn": "Шүүхийн маргаан үргэлжилсэн тохиолдолд гарах хугацаа, зардал, нотлох баримтын эрсдэлийг үйлчлүүлэгчид ойлгомжтой тайлбарласан.",
+          "en": "We clearly explained the time, cost, and evidentiary risks that could arise if litigation continued.",
+          "zh": "我们清楚说明了诉讼继续进行时可能产生的时间、费用和证据风险。",
+          "ko": "소송이 계속될 경우 발생할 수 있는 기간, 비용 및 증거상 위험을 의뢰인에게 명확히 설명했습니다."
+        },
+        {
+          "mn": "Эвлэрлийн саналын бүтэц боловсруулж, хоёр талын ашиг сонирхлыг тэнцвэржүүлэх хэлэлцээрийн байр суурь бэлдсэн.",
+          "en": "We structured a settlement proposal and prepared a negotiation position balancing the interests of both parties.",
+          "zh": "我们设计了和解方案结构，并准备了兼顾双方利益的谈判立场。",
+          "ko": "합의 제안의 구조를 마련하고 양측의 이해관계를 균형 있게 반영한 협상 입장을 준비했습니다."
+        }
+      ],
+      "result": {
+        "mn": "Талууд шүүхийн гадна эвлэрч, үл хөдлөх хөрөнгийн хуваарилалт болон нөхөн төлбөрийн нөхцөлийг бичгээр баталгаажуулсан.",
+        "en": "The parties settled out of court and confirmed the property division and compensation terms in writing.",
+        "zh": "双方达成庭外和解，并以书面形式确认了不动产分配和补偿条件。",
+        "ko": "당사자들은 법원 밖에서 합의했고 부동산 분할 및 보상 조건을 서면으로 확정했습니다."
+      },
+      "duration": {
+        "mn": "6 сар",
+        "en": "6 months",
+        "zh": "6个月",
+        "ko": "6개월"
+      },
+      "icon": "icon-home",
+      "color": "#8A7650",
+      "tags": [
+        {
+          "mn": "Өмчийн эрх зүй",
+          "en": "Property Law",
+          "zh": "财产权法",
+          "ko": "재산권법"
+        },
+        {
+          "mn": "Эвлэрэл",
+          "en": "Settlement",
+          "zh": "和解",
+          "ko": "합의"
+        },
+        {
+          "mn": "Амжилттай",
+          "en": "Successful",
+          "zh": "成功",
+          "ko": "성공"
+        }
+      ],
+      "published": true,
+      "order": 1
+    },
+    {
+      "id": "contract-compensation-arbitration",
+      "category": {
+        "mn": "Арилжааны хууль",
+        "en": "Commercial Law",
+        "zh": "商法",
+        "ko": "상법"
+      },
+      "year": "2024",
+      "date": "2024.09.04",
+      "title": {
+        "mn": "Гэрээний зөрчлийн нөхөн төлбөр",
+        "en": "Compensation for Breach of Contract",
+        "zh": "违约赔偿",
+        "ko": "계약 위반 손해배상"
+      },
+      "text": {
+        "mn": "Нийлүүлэлтийн гэрээний зөрчлөөс болж 120 сая төгрөгийн хохирол амссан компанийн хэргийг хариуцаж, арбитрын шийдвэрээр бүрэн нөхөн төлбөр гаргуулсан.",
+        "en": "We handled a company’s case involving MNT 120 million in losses caused by breach of a supply contract and obtained full compensation through an arbitral award.",
+        "zh": "我们代理了一家公司因供应合同违约遭受1.2亿图格里克损失的案件，并通过仲裁裁决获得全额赔偿。",
+        "ko": "공급계약 위반으로 1억2천만 투그릭의 손해를 입은 회사 사건을 담당하여 중재 판정으로 전액 배상을 받았습니다."
+      },
+      "context": {
+        "mn": "Нийлүүлэлтийн гэрээний хугацаа, чанарын шаардлага, төлбөрийн нөхцөл зөрчигдсөнөөс компанийн үйл ажиллагаанд бодит хохирол учирсан. Маргааныг гэрээний арбитрын заалтын дагуу шийдвэрлүүлэх шаардлагатай болсон.",
+        "en": "The supplier breached delivery deadlines, quality requirements, and payment terms, causing real losses to the company’s operations. The dispute had to be resolved under the arbitration clause in the contract.",
+        "zh": "供应合同的期限、质量要求和付款条件被违反，给公司经营造成实际损失。根据合同中的仲裁条款，该争议需要通过仲裁解决。",
+        "ko": "공급계약의 기한, 품질 요건 및 지급 조건 위반으로 회사 운영에 실제 손해가 발생했습니다. 분쟁은 계약상 중재 조항에 따라 해결되어야 했습니다."
+      },
+      "approach": [
+        {
+          "mn": "Гэрээний үүрэг, зөрчлийн баримт, санхүүгийн хохирлын тооцооллыг нотлох баримтаар бэхжүүлсэн.",
+          "en": "We supported the contractual obligations, breach facts, and financial loss calculations with evidence.",
+          "zh": "我们以证据支持合同义务、违约事实和财务损失计算。",
+          "ko": "계약상 의무, 위반 사실, 재무 손해 산정을 증거로 뒷받침했습니다."
+        },
+        {
+          "mn": "Арбитрын нэхэмжлэл, тайлбар, нотлох баримтын багцыг үе шаттай боловсруулсан.",
+          "en": "We prepared the arbitration claim, submissions, and evidence package step by step.",
+          "zh": "我们分阶段准备了仲裁请求、说明和证据材料。",
+          "ko": "중재 신청서, 의견서 및 증거 패키지를 단계적으로 준비했습니다."
+        },
+        {
+          "mn": "Хохирлын хэмжээ, шалтгаант холбоо, гэрээний хариуцлагын үндэслэлийг арбитрын бүрэлдэхүүнд тодорхой танилцуулсан.",
+          "en": "We clearly presented the amount of damages, causation, and contractual liability grounds to the arbitral tribunal.",
+          "zh": "我们向仲裁庭清晰说明了损失金额、因果关系和合同责任依据。",
+          "ko": "손해액, 인과관계 및 계약상 책임 근거를 중재판정부에 명확히 제시했습니다."
+        }
+      ],
+      "result": {
+        "mn": "Арбитрын шийдвэрээр 120 сая төгрөгийн нөхөн төлбөрийг бүрэн гаргуулах шийдвэр гарсан.",
+        "en": "The arbitral award ordered full compensation of MNT 120 million.",
+        "zh": "仲裁裁决支持全额赔偿1.2亿图格里克。",
+        "ko": "중재 판정으로 1억2천만 투그릭 전액 배상이 인정되었습니다."
+      },
+      "duration": {
+        "mn": "4 сар",
+        "en": "4 months",
+        "zh": "4个月",
+        "ko": "4개월"
+      },
+      "icon": "icon-briefcase",
+      "color": "#8A7650",
+      "tags": [
+        {
+          "mn": "Гэрээний эрх зүй",
+          "en": "Contract Law",
+          "zh": "合同法",
+          "ko": "계약법"
+        },
+        {
+          "mn": "Арбитр",
+          "en": "Arbitration",
+          "zh": "仲裁",
+          "ko": "중재"
+        },
+        {
+          "mn": "120M нөхөн авсан",
+          "en": "MNT 120M recovered",
+          "zh": "追回1.2亿图格里克",
+          "ko": "1억2천만 투그릭 회수"
+        }
+      ],
+      "published": true,
+      "order": 2
+    },
+    {
+      "id": "child-custody-support",
+      "category": {
+        "mn": "Гэр бүлийн хууль",
+        "en": "Family Law",
+        "zh": "家庭法",
+        "ko": "가족법"
+      },
+      "year": "2025",
+      "date": "2025.02.12",
+      "title": {
+        "mn": "Хүүхдийн асрамжийн шийдвэр",
+        "en": "Child Custody Decision",
+        "zh": "子女监护裁定",
+        "ko": "자녀 양육권 결정"
+      },
+      "text": {
+        "mn": "Гадаадад ажилладаг эцэгтэй гэрлэлт цуцалсан эхийн хүүхэд асрах эрхийн хэргийг амжилттай шийдвэрлэж, тэтгэлгийн хэмжээг шүүхээр тогтоолгосон.",
+        "en": "We successfully resolved a child custody matter for a mother divorced from a father working abroad and had child support determined by the court.",
+        "zh": "我们成功处理了一名与在国外工作的父亲离婚的母亲的子女监护案件，并由法院确定抚养费金额。",
+        "ko": "해외에서 일하는 부친과 이혼한 모친의 자녀 양육권 사건을 성공적으로 해결하고 법원을 통해 양육비 금액을 확정했습니다."
+      },
+      "context": {
+        "mn": "Гэрлэлт цуцалсны дараах хүүхдийн асрамж, уулзалтын журам, тэтгэлгийн хэмжээ зэрэг асуудал маргаантай байсан. Хүүхдийн эрх ашиг, тогтвортой амьдрах орчин, эцэг эхийн бодит боломжийг хамтад нь үнэлэх шаардлагатай болсон.",
+        "en": "After divorce, child custody, visitation arrangements, and child support were disputed. The child’s best interests, stable living environment, and the parents’ actual circumstances had to be assessed together.",
+        "zh": "离婚后，子女监护、探视安排和抚养费金额存在争议。需要综合评估子女最佳利益、稳定生活环境以及父母双方的实际能力。",
+        "ko": "이혼 후 자녀 양육, 면접교섭 방식, 양육비 금액 등이 쟁점이었습니다. 자녀의 이익, 안정적인 생활환경, 부모의 실제 능력을 함께 평가해야 했습니다."
+      },
+      "approach": [
+        {
+          "mn": "Хүүхдийн амьдрах орчин, боловсрол, асран хамгаалах бодит нөхцөлийг нотлох баримтаар бүрдүүлсэн.",
+          "en": "We gathered evidence on the child’s living environment, education, and actual caregiving conditions.",
+          "zh": "我们收集了有关子女生活环境、教育和实际照护条件的证据。",
+          "ko": "자녀의 생활환경, 교육 및 실제 양육 조건에 관한 증거를 확보했습니다."
+        },
+        {
+          "mn": "Гадаадад ажиллаж буй эцгийн орлого, харилцааны боломж, тэтгэлгийн бодит хэмжээг тооцсон.",
+          "en": "We assessed the income of the father working abroad, communication possibilities, and a realistic child support amount.",
+          "zh": "我们评估了在国外工作的父亲收入、联系可能性以及合理抚养费金额。",
+          "ko": "해외에서 근무하는 부친의 소득, 연락 가능성 및 현실적인 양육비 금액을 산정했습니다."
+        },
+        {
+          "mn": "Шүүхэд хүүхдийн эрх ашигт нийцсэн асрамж, уулзалтын журам, тэтгэлгийн санал гаргасан.",
+          "en": "We submitted custody, visitation, and child support proposals aligned with the child’s best interests.",
+          "zh": "我们向法院提出了符合子女最佳利益的监护、探视和抚养费方案。",
+          "ko": "자녀의 이익에 부합하는 양육권, 면접교섭 및 양육비 제안을 법원에 제출했습니다."
+        }
+      ],
+      "result": {
+        "mn": "Хүүхдийн асрамжийн эрхийг үйлчлүүлэгчид тогтоож, тэтгэлгийн хэмжээг шүүхээр баталгаажуулсан.",
+        "en": "Custody was granted to the client, and the child support amount was confirmed by the court.",
+        "zh": "法院确认由客户取得子女监护权，并确定抚养费金额。",
+        "ko": "법원은 의뢰인에게 양육권을 인정하고 양육비 금액을 확정했습니다."
+      },
+      "duration": {
+        "mn": "5 сар",
+        "en": "5 months",
+        "zh": "5个月",
+        "ko": "5개월"
+      },
+      "icon": "icon-users",
+      "color": "#8A7650",
+      "tags": [
+        {
+          "mn": "Гэр бүлийн хууль",
+          "en": "Family Law",
+          "zh": "家庭法",
+          "ko": "가족법"
+        },
+        {
+          "mn": "Шүүх",
+          "en": "Court",
+          "zh": "法院",
+          "ko": "법원"
+        },
+        {
+          "mn": "Амжилттай",
+          "en": "Successful",
+          "zh": "成功",
+          "ko": "성공"
+        }
+      ],
+      "published": true,
+      "order": 3
+    },
+    {
+      "id": "tax-administrative-dispute",
+      "category": {
+        "mn": "Захиргааны хэрэг",
+        "en": "Administrative Case",
+        "zh": "行政案件",
+        "ko": "행정 사건"
+      },
+      "year": "2024",
+      "date": "2024.06.27",
+      "title": {
+        "mn": "Татварын маргааны амжилттай шийдэл",
+        "en": "Successful Resolution of a Tax Dispute",
+        "zh": "税务争议的成功解决",
+        "ko": "세무 분쟁의 성공적 해결"
+      },
+      "text": {
+        "mn": "Татварын байгууллагаас буруу тооцоолсон 85 сая төгрөгийн нэмэлт татварын шийдвэрт гомдол гарган, захиргааны шүүхээр хүчингүй болгуулсан.",
+        "en": "We challenged an additional tax assessment of MNT 85 million incorrectly calculated by the tax authority and had it annulled by the administrative court.",
+        "zh": "我们对税务机关错误计算的8500万图格里克追加税决定提出异议，并通过行政法院撤销了该决定。",
+        "ko": "세무기관이 잘못 산정한 8천5백만 투그릭의 추가 세금 부과 결정에 대해 이의를 제기하여 행정법원에서 취소시켰습니다."
+      },
+      "context": {
+        "mn": "Татварын хяналт шалгалтын акт, нэмэлт ногдуулалтын үндэслэл нь компанийн бүртгэл, анхан шатны баримт, холбогдох хууль хэрэглээтэй зөрчилдөж байсан. Захиргааны журмаар болон шүүхийн шатанд эрхээ хамгаалах шаардлага үүссэн.",
+        "en": "The tax inspection act and grounds for additional assessment conflicted with the company’s records, primary documents, and applicable law. The company needed to defend its rights through administrative procedures and in court.",
+        "zh": "税务检查文书及追加征税依据与公司记录、原始凭证和相关法律适用相矛盾。因此，公司需要通过行政程序及法院阶段维护自身权利。",
+        "ko": "세무조사 결과 및 추가 부과 근거가 회사의 기록, 원시 문서 및 관련 법 적용과 충돌했습니다. 회사는 행정절차와 법원 단계에서 권리를 보호할 필요가 있었습니다."
+      },
+      "approach": [
+        {
+          "mn": "Татварын акт, нягтлан бодох бүртгэл, анхан шатны баримтыг тулган шалгаж зөрүүтэй тооцооллыг тодорхойлсон.",
+          "en": "We cross-checked the tax act, accounting records, and primary documents to identify incorrect calculations.",
+          "zh": "我们核对税务文书、会计记录和原始凭证，确定了错误计算。",
+          "ko": "세무 문서, 회계 기록 및 원시 문서를 대조하여 잘못된 산정을 확인했습니다."
+        },
+        {
+          "mn": "Захиргааны гомдол болон шүүхийн нэхэмжлэлийн үндэслэлийг хууль хэрэглээ, баримтаар баталгаажуулсан.",
+          "en": "We substantiated the administrative complaint and court claim with legal grounds and evidence.",
+          "zh": "我们以法律适用和证据支持行政申诉及法院诉讼请求。",
+          "ko": "행정 이의신청 및 법원 청구의 근거를 법 적용과 증거로 뒷받침했습니다."
+        },
+        {
+          "mn": "Маргааны явцад нэмэлт тайлбар, нотлох баримтыг хугацаанд нь гаргаж, компанийн байр суурийг хамгаалсан.",
+          "en": "During the dispute, we submitted additional explanations and evidence on time and protected the company’s position.",
+          "zh": "在争议过程中，我们按时提交补充说明和证据，维护了公司的立场。",
+          "ko": "분쟁 과정에서 추가 설명과 증거를 기한 내 제출하여 회사의 입장을 보호했습니다."
+        }
+      ],
+      "result": {
+        "mn": "Захиргааны шүүх нэмэлт татварын шийдвэрийг хүчингүй болгож, компанид 85 сая төгрөгийн эрсдэлээс сэргийлсэн.",
+        "en": "The administrative court annulled the additional tax decision, preventing an MNT 85 million risk to the company.",
+        "zh": "行政法院撤销了追加税决定，使公司避免了8500万图格里克的风险。",
+        "ko": "행정법원은 추가 세금 부과 결정을 취소하여 회사가 8천5백만 투그릭의 위험을 피할 수 있게 했습니다."
+      },
+      "duration": {
+        "mn": "7 сар",
+        "en": "7 months",
+        "zh": "7个月",
+        "ko": "7개월"
+      },
+      "icon": "icon-court",
+      "color": "#8E977D",
+      "tags": [
+        {
+          "mn": "Захиргааны хэрэг",
+          "en": "Administrative Case",
+          "zh": "行政案件",
+          "ko": "행정 사건"
+        },
+        {
+          "mn": "Татвар",
+          "en": "Tax",
+          "zh": "税务",
+          "ko": "세무"
+        },
+        {
+          "mn": "85M хэмнэсэн",
+          "en": "MNT 85M saved",
+          "zh": "节省8500万图格里克",
+          "ko": "8천5백만 투그릭 절감"
+        }
+      ],
+      "published": true,
+      "order": 4
+    }
+  ]
+}

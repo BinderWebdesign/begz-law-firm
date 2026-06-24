@@ -1,0 +1,232 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/uploads
+public_folder: assets/uploads
+
+site_url: /
+display_url: /
+logo_url: /begz-logo-download.svg
+
+# BEGZ Law Firm CMS
+# Админ URL: /admin/
+# Бүх харагдах текст mn/en/zh/ko хэлний талбартай.
+# Монгол талбар заавал бөглөгдөнө. Бусад хэл хоосон байвал сайт Монгол эхээр fallback хийж харуулна.
+
+localized_string: &localized_string
+  widget: object
+  collapsed: false
+  fields:
+    - { label: Монгол, name: mn, widget: string }
+    - { label: English, name: en, widget: string, required: false }
+    - { label: 中文, name: zh, widget: string, required: false }
+    - { label: 한국어, name: ko, widget: string, required: false }
+
+localized_text: &localized_text
+  widget: object
+  collapsed: false
+  fields:
+    - { label: Монгол, name: mn, widget: text }
+    - { label: English, name: en, widget: text, required: false }
+    - { label: 中文, name: zh, widget: text, required: false }
+    - { label: 한국어, name: ko, widget: text, required: false }
+
+localized_list_item: &localized_list_item
+  - { label: Монгол, name: mn, widget: string }
+  - { label: English, name: en, widget: string, required: false }
+  - { label: 中文, name: zh, widget: string, required: false }
+  - { label: 한국어, name: ko, widget: string, required: false }
+
+common_item_fields: &common_item_fields
+  - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал сайт дээр харагдахгүй." }
+  - { label: Дараалал, name: order, widget: number, value_type: int, required: false, hint: "Бага тоо түрүүлж гарна. Хоосон бол одоогийн дарааллаар гарна." }
+
+collections:
+  - name: team
+    label: "01. Манай баг"
+    description: "Өмгөөлөгч, хуульч, ажилтны танилцуулга нэмэх/засах хэсэг."
+    files:
+      - name: members
+        label: Багийн гишүүд
+        file: content/team.json
+        format: json
+        fields:
+          - label: Гишүүд
+            name: members
+            widget: list
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.order}}. {{fields.name.mn}} — {{fields.role.mn}}"
+            fields:
+              - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал багийн хэсэгт харагдахгүй." }
+              - { label: Дараалал, name: order, widget: number, value_type: int, required: false, hint: "Жишээ: 1, 2, 3" }
+              - label: Нэр
+                name: name
+                <<: *localized_string
+              - label: Албан тушаал
+                name: role
+                <<: *localized_string
+              - label: Мэргэшсэн чиглэл
+                name: focus
+                <<: *localized_string
+              - label: Танилцуулга
+                name: bio
+                <<: *localized_text
+              - { label: Зураг, name: image, widget: image, required: false, hint: "WEBP/JPG/PNG зураг оруулж болно." }
+              - label: Зургийн alt тайлбар
+                name: alt
+                required: false
+                <<: *localized_string
+
+  - name: history
+    label: "02. Түүхэн товчоо"
+    description: "Байгууллагын он цагийн замнал, үе шат, milestone нэмэх хэсэг."
+    files:
+      - name: timeline
+        label: Он цагийн жагсаалт
+        file: content/history.json
+        format: json
+        fields:
+          - label: Үе шатууд
+            name: timeline
+            widget: list
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.year}} — {{fields.title.mn}}"
+            fields:
+              - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал түүхэн товчоонд харагдахгүй." }
+              - { label: Дараалал, name: order, widget: number, value_type: int, required: false, hint: "Бага тоо түрүүлж гарна." }
+              - { label: Он / огноо, name: year, widget: string, hint: "Жишээ: 2008, 2024.11, 2026" }
+              - label: Гарчиг
+                name: title
+                <<: *localized_string
+              - label: Тайлбар
+                name: text
+                <<: *localized_text
+
+  - name: legal_guide
+    label: "03. Хууль зүйн мэдээлэл"
+    description: "Гэрээ, шүүх, компани, баримт бичиг зэрэг мэдээллийн картууд нэмэх хэсэг."
+    files:
+      - name: guide_items
+        label: Мэдээллийн картууд
+        file: content/legal-guide.json
+        format: json
+        fields:
+          - label: Картууд
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.order}}. {{fields.title.mn}}"
+            fields:
+              - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал хууль зүйн мэдээллийн хэсэгт харагдахгүй." }
+              - { label: Дараалал, name: order, widget: number, value_type: int, required: false }
+              - label: Гарчиг
+                name: title
+                <<: *localized_string
+              - label: Icon class
+                name: icon
+                widget: string
+                default: icon-file
+                hint: "Жишээ: icon-file, icon-scale, icon-handshake"
+              - label: Загвар
+                name: theme
+                widget: select
+                default: dark
+                options:
+                  - { label: Бараан, value: dark }
+                  - { label: Цайвар, value: soft }
+              - label: Заалтууд
+                name: points
+                widget: list
+                allow_add: true
+                collapsed: true
+                summary: "{{fields.mn}}"
+                fields: *localized_list_item
+
+  - name: cases
+    label: "04. Шүүхийн шийдвэрийн тойм мэдээ"
+    description: "Кейс, шүүхийн шийдвэрийн тойм, амжилттай шийдвэрлэсэн маргааны мэдээ нэмэх хэсэг."
+    files:
+      - name: case_items
+        label: Тойм мэдээ / кейсүүд
+        file: content/cases.json
+        format: json
+        fields:
+          - label: Мэдээнүүд
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.date}} — {{fields.title.mn}}"
+            fields:
+              - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал кейсийн жагсаалт болон дэлгэрэнгүй хуудсанд харагдахгүй." }
+              - { label: Дараалал, name: order, widget: number, value_type: int, required: false }
+              - { label: ID / slug, name: id, widget: string, hint: "URL-д ашиглагдах богино англи ID. Жишээ: property-inheritance-dispute" }
+              - label: Ангилал
+                name: category
+                <<: *localized_string
+              - { label: Он, name: year, widget: string, hint: "Жишээ: 2024" }
+              - { label: Огноо, name: date, widget: string, required: false, hint: "Жишээ: 2024.11.18" }
+              - label: Гарчиг
+                name: title
+                <<: *localized_string
+              - label: Картын товч тайлбар
+                name: text
+                <<: *localized_text
+              - label: Нөхцөл байдлын дэлгэрэнгүй
+                name: context
+                <<: *localized_text
+              - label: Бидний хийсэн ажил
+                name: approach
+                widget: list
+                allow_add: true
+                collapsed: true
+                summary: "{{fields.mn}}"
+                fields: *localized_list_item
+              - label: Үр дүн
+                name: result
+                <<: *localized_text
+              - label: Хугацаа
+                name: duration
+                required: false
+                <<: *localized_string
+              - label: Түлхүүр үгс / tag
+                name: tags
+                widget: list
+                required: false
+                allow_add: true
+                collapsed: true
+                summary: "{{fields.mn}}"
+                fields: *localized_list_item
+              - { label: Icon class, name: icon, widget: string, default: icon-scale, required: false }
+              - { label: Өнгө, name: color, widget: string, default: "#8A7650", required: false, hint: "HEX өнгө. Жишээ: #8A7650" }
+
+  - name: faq
+    label: "05. Түгээмэл асуулт"
+    description: "FAQ хэсгийн асуулт, хариулт нэмэх/засах."
+    files:
+      - name: faq_items
+        label: Асуулт хариулт
+        file: content/faq.json
+        format: json
+        fields:
+          - label: Асуултууд
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.question.mn}}"
+            fields:
+              - { label: Нийтлэх эсэх, name: published, widget: boolean, default: true, hint: "Унтраавал FAQ хэсэгт харагдахгүй." }
+              - { label: Дараалал, name: order, widget: number, value_type: int, required: false }
+              - label: Асуулт
+                name: question
+                <<: *localized_string
+              - label: Хариулт
+                name: answer
+                <<: *localized_text

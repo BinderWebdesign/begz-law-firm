@@ -1,0 +1,268 @@
+{
+  "items": [
+    {
+      "title": {
+        "mn": "Гэрээнд заавал байх 5 зүйл",
+        "en": "5 essentials in a contract",
+        "zh": "合同中必须包含的5项内容",
+        "ko": "계약서에 반드시 포함할 5가지"
+      },
+      "icon": "icon-file",
+      "theme": "dark",
+      "points": [
+        {
+          "mn": "Талуудын нэр, хаяг, регистр",
+          "en": "Names, addresses, and registration numbers of the parties",
+          "zh": "各方名称、地址和登记编号",
+          "ko": "당사자의 이름, 주소 및 등록번호"
+        },
+        {
+          "mn": "Гэрээний зүйл, агуулга",
+          "en": "Subject and content of the contract",
+          "zh": "合同标的和内容",
+          "ko": "계약의 목적과 내용"
+        },
+        {
+          "mn": "Үнэ, төлбөрийн нөхцөл",
+          "en": "Price and payment terms",
+          "zh": "价格和付款条件",
+          "ko": "가격 및 지급 조건"
+        },
+        {
+          "mn": "Хугацаа, дуусгавар болох үндэслэл",
+          "en": "Term and grounds for termination",
+          "zh": "期限及终止依据",
+          "ko": "기간 및 종료 사유"
+        },
+        {
+          "mn": "Маргаан шийдвэрлэх журам",
+          "en": "Dispute resolution procedure",
+          "zh": "争议解决程序",
+          "ko": "분쟁 해결 절차"
+        }
+      ],
+      "published": true,
+      "order": 1
+    },
+    {
+      "title": {
+        "mn": "Шүүхэд гомдол гаргах алхмууд",
+        "en": "Steps to file a court claim",
+        "zh": "向法院提起诉讼的步骤",
+        "ko": "법원에 소를 제기하는 단계"
+      },
+      "icon": "icon-scale",
+      "theme": "dark",
+      "points": [
+        {
+          "mn": "Нэхэмжлэлийн бичиг бэлтгэх",
+          "en": "Prepare the statement of claim",
+          "zh": "准备起诉状",
+          "ko": "소장 작성"
+        },
+        {
+          "mn": "Улсын тэмдэгтийн хураамж төлөх",
+          "en": "Pay the state stamp duty",
+          "zh": "缴纳国家印花/诉讼费用",
+          "ko": "인지대 납부"
+        },
+        {
+          "mn": "Шүүхэд нэхэмжлэл өгөх",
+          "en": "File the claim with the court",
+          "zh": "向法院提交起诉材料",
+          "ko": "법원에 청구 제출"
+        },
+        {
+          "mn": "Шүүх хуралдааны мэдэгдэл хүлээн авах",
+          "en": "Receive the court hearing notice",
+          "zh": "接收庭审通知",
+          "ko": "재판 기일 통지 수령"
+        },
+        {
+          "mn": "Хуралдаанд оролцох, нотлох баримт гаргах",
+          "en": "Attend the hearing and submit evidence",
+          "zh": "参加庭审并提交证据",
+          "ko": "재판에 출석하고 증거 제출"
+        }
+      ],
+      "published": true,
+      "order": 2
+    },
+    {
+      "title": {
+        "mn": "Компани байгуулах алхмууд",
+        "en": "Steps to establish a company",
+        "zh": "设立公司的步骤",
+        "ko": "회사 설립 단계"
+      },
+      "icon": "icon-building",
+      "theme": "dark",
+      "points": [
+        {
+          "mn": "Компанийн нэр шалгах, сонгох",
+          "en": "Check and choose the company name",
+          "zh": "核查并选择公司名称",
+          "ko": "회사명 확인 및 선택"
+        },
+        {
+          "mn": "Үүсгэн байгуулах баримт бэлтгэх",
+          "en": "Prepare incorporation documents",
+          "zh": "准备设立文件",
+          "ko": "설립 서류 준비"
+        },
+        {
+          "mn": "Улсын бүртгэлд бүртгүүлэх",
+          "en": "Register with the state registry",
+          "zh": "办理国家登记",
+          "ko": "국가등록 완료"
+        },
+        {
+          "mn": "Татварын бүртгэл хийх",
+          "en": "Complete tax registration",
+          "zh": "办理税务登记",
+          "ko": "세무 등록"
+        },
+        {
+          "mn": "Банкны данс нээх",
+          "en": "Open a bank account",
+          "zh": "开立银行账户",
+          "ko": "은행 계좌 개설"
+        }
+      ],
+      "published": true,
+      "order": 3
+    },
+    {
+      "title": {
+        "mn": "Баривчлагдвал яах вэ?",
+        "en": "What to do if arrested?",
+        "zh": "被逮捕时该怎么办？",
+        "ko": "체포되면 어떻게 해야 하나요?"
+      },
+      "icon": "icon-shield",
+      "theme": "soft",
+      "points": [
+        {
+          "mn": "Чимээгүй байх эрхтэй",
+          "en": "You have the right to remain silent",
+          "zh": "您有权保持沉默",
+          "ko": "묵비권이 있습니다"
+        },
+        {
+          "mn": "Өмгөөлөгч авах эрхтэй",
+          "en": "You have the right to an attorney",
+          "zh": "您有权聘请律师",
+          "ko": "변호인의 조력을 받을 권리가 있습니다"
+        },
+        {
+          "mn": "Гэр бүлдээ мэдэгдэх эрхтэй",
+          "en": "You have the right to notify your family",
+          "zh": "您有权通知家属",
+          "ko": "가족에게 알릴 권리가 있습니다"
+        },
+        {
+          "mn": "Эмч үзүүлэх эрхтэй",
+          "en": "You have the right to see a doctor",
+          "zh": "您有权接受医生检查",
+          "ko": "의사의 진료를 받을 권리가 있습니다"
+        },
+        {
+          "mn": "Цагдан хорих шийдвэр хуулийн хугацаанд гарах ёстой",
+          "en": "A detention decision must be issued within the legal timeframe",
+          "zh": "拘留决定应在法定期限内作出",
+          "ko": "구속 결정은 법정 기한 내에 내려져야 합니다"
+        }
+      ],
+      "published": true,
+      "order": 4
+    },
+    {
+      "title": {
+        "mn": "Өв залгамжлалын үндсэн журам",
+        "en": "Basic inheritance procedure",
+        "zh": "继承基本程序",
+        "ko": "상속 기본 절차"
+      },
+      "icon": "icon-file",
+      "theme": "soft",
+      "points": [
+        {
+          "mn": "Гэрээслэлтэй бол гэрээслэлийн дагуу",
+          "en": "If there is a will, inheritance follows the will",
+          "zh": "有遗嘱的，按遗嘱继承",
+          "ko": "유언이 있으면 유언에 따릅니다"
+        },
+        {
+          "mn": "Гэрээслэлгүй бол хуулиар",
+          "en": "If there is no will, inheritance follows the law",
+          "zh": "无遗嘱的，依法继承",
+          "ko": "유언이 없으면 법에 따릅니다"
+        },
+        {
+          "mn": "Өвийг нотариатаар баталгаажуулна",
+          "en": "Inheritance is certified by a notary",
+          "zh": "继承需经公证确认",
+          "ko": "상속은 공증으로 확인합니다"
+        },
+        {
+          "mn": "6 сарын хугацаанд хүлээн авна",
+          "en": "Acceptance must be made within 6 months",
+          "zh": "应在6个月内接受继承",
+          "ko": "6개월 이내에 수락해야 합니다"
+        },
+        {
+          "mn": "Татвар, өр төлбөрийг шалгана",
+          "en": "Taxes and debts are checked",
+          "zh": "核查税费和债务",
+          "ko": "세금 및 채무를 확인합니다"
+        }
+      ],
+      "published": true,
+      "order": 5
+    },
+    {
+      "title": {
+        "mn": "Арбитр ба шүүхийн ялгаа",
+        "en": "Difference between arbitration and court",
+        "zh": "仲裁与法院的区别",
+        "ko": "중재와 법원의 차이"
+      },
+      "icon": "icon-handshake",
+      "theme": "soft",
+      "points": [
+        {
+          "mn": "Арбитр нь хурдан, нууцлалтай",
+          "en": "Arbitration is faster and confidential",
+          "zh": "仲裁更快且保密",
+          "ko": "중재는 빠르고 비공개입니다"
+        },
+        {
+          "mn": "Шүүх нь нийтэд нээлттэй",
+          "en": "Court proceedings are public",
+          "zh": "法院审理通常公开",
+          "ko": "법원 절차는 공개됩니다"
+        },
+        {
+          "mn": "Арбитрын шийдвэр эцсийн байх нь элбэг",
+          "en": "An arbitral award is often final",
+          "zh": "仲裁裁决通常为终局",
+          "ko": "중재 판정은 최종적인 경우가 많습니다"
+        },
+        {
+          "mn": "Гэрээнд арбитрын заалт байвал мөрдөнө",
+          "en": "If the contract has an arbitration clause, it is followed",
+          "zh": "合同中有仲裁条款的，应按其执行",
+          "ko": "계약에 중재 조항이 있으면 그에 따릅니다"
+        },
+        {
+          "mn": "Олон улсын маргаанд арбитр тохиромжтой",
+          "en": "Arbitration is suitable for international disputes",
+          "zh": "仲裁适合国际争议",
+          "ko": "중재는 국제 분쟁에 적합합니다"
+        }
+      ],
+      "published": true,
+      "order": 6
+    }
+  ]
+}

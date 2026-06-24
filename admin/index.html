@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>BEGZ Admin</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    :root{--bg:#ECE7D1;--soft:#DBCEA5;--border:#CFC39D;--accent:#8E977D;--deep:#5F674F;--ink:#3F382B;--paper:#fff;--danger:#9B3D32}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Calibri,Arial,sans-serif;line-height:1.55}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .app{min-height:100vh;display:grid;grid-template-columns:270px 1fr}
+    .sidebar{position:sticky;top:0;height:100vh;background:#F8F5E8;border-right:1px solid var(--border);padding:22px 18px;display:flex;flex-direction:column;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+    .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+    .brand-title{font-size:18px;font-weight:800;line-height:1.1}
+    .brand-sub{font-size:12px;color:#6B614C;margin-top:2px}
+    .nav{display:grid;gap:7px}
+    .nav button{width:100%;border:1px solid transparent;background:transparent;color:#4A4438;border-radius:8px;padding:11px 12px;text-align:left;font-weight:800}
+    .nav button:hover{background:#fff;border-color:var(--border)}
+    .nav button.active{background:var(--deep);border-color:var(--deep);color:#fff}
+    .side-note{margin-top:auto;font-size:12px;color:#6B614C;background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px}
+    .main{min-width:0;padding:24px 28px 34px}
+    .token-box{display:none;margin-bottom:14px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px}
+    .token-box.show{display:block}
+    .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px}
+    h1{margin:0;font-size:28px;line-height:1.15;color:var(--deep)}
+    .hint{margin:7px 0 0;color:#6B614C;font-size:14px}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{border:1px solid var(--border);background:#fff;color:var(--ink);border-radius:8px;min-height:38px;padding:8px 13px;font-weight:800}
+    .btn.primary{background:var(--deep);border-color:var(--deep);color:#fff}
+    .btn.soft{background:var(--soft)}
+    .btn.danger{background:#fff;border-color:rgba(155,61,50,.35);color:var(--danger)}
+    .btn.primary.dirty{box-shadow:0 0 0 4px rgba(142,151,125,.24),0 12px 26px rgba(95,103,79,.22)}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .status{min-height:24px;margin-bottom:12px;font-size:13px;color:#6B614C}
+    .status.error{color:var(--danger);font-weight:800}
+    .status.ok{color:var(--deep);font-weight:800}
+    .grid{display:grid;grid-template-columns:minmax(280px,370px) 1fr;gap:18px;align-items:start}
+    .panel{background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 14px 38px rgba(63,56,43,.07)}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;border-bottom:1px solid var(--border);background:#F8F5E8}
+    .panel-title{font-weight:800;color:var(--deep)}
+    .list{padding:10px;max-height:calc(100vh - 190px);overflow:auto}
+    .item{width:100%;display:grid;gap:3px;border:1px solid transparent;background:transparent;border-radius:8px;padding:10px;text-align:left;color:var(--ink)}
+    .item:hover{background:#F8F5E8;border-color:var(--border)}
+    .item.active{background:#ECE7D1;border-color:var(--accent)}
+    .item strong{font-size:14px}
+    .item span{font-size:12px;color:#6B614C}
+    .editor{padding:16px}
+    .empty{padding:26px;color:#6B614C;text-align:center}
+    .fields{display:grid;gap:16px}
+    .field{display:grid;gap:6px}
+    .field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    label,.label{font-size:12px;font-weight:800;color:#5F674F;text-transform:uppercase;letter-spacing:.6px}
+    input,textarea,select{width:100%;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);padding:10px 11px;outline:none}
+    textarea{min-height:96px;resize:vertical}
+    input[type="checkbox"]{width:20px;height:20px;accent-color:var(--deep)}
+    input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(142,151,125,.18)}
+    .localized,.array-field{border:1px solid var(--border);border-radius:8px;padding:12px;background:#FDFCF6}
+    .localized-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+    .array-item{border:1px solid rgba(207,195,157,.8);border-radius:8px;background:#fff;padding:10px;margin-top:10px}
+    .array-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+    .icon-btn{width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--danger);font-weight:800}
+    .json-box{font-family:Consolas,monospace;font-size:13px;min-height:520px}
+    @media(max-width:980px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:static;height:auto}
+      .grid,.field-row,.localized-grid{grid-template-columns:1fr}
+      .list{max-height:none}
+      .topbar{display:grid}
+      .actions{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Б</div>
+        <div>
+          <div class="brand-title">BEGZ Admin</div>
+          <div class="brand-sub">Мэдээлэл шинэчлэх самбар</div>
+        </div>
+      </div>
+      <nav class="nav" id="collection-nav"></nav>
+      <div class="side-note">
+        Локал үед JSON файл шууд шинэчлэгдэнэ. Netlify дээр хадгалахад GitHub commit үүсэж, Netlify дахин deploy хийнэ.
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="token-box" id="token-box">
+        <div class="field">
+          <label for="admin-token">Admin token</label>
+          <input id="admin-token" type="password" autocomplete="off" placeholder="ADMIN_TOKEN">
+        </div>
+      </div>
+
+      <div class="topbar">
+        <div>
+          <h1 id="page-title">Мэдээлэл</h1>
+          <p class="hint" id="page-hint">MN / EN / ZH / KO хэлний талбарыг засварлаад хадгална.</p>
+        </div>
+        <div class="actions">
+          <button class="btn" type="button" id="reload-btn">Дахин ачаалах</button>
+          <button class="btn soft" type="button" id="json-btn">JSON харах</button>
+          <button class="btn" type="button" id="add-btn">Нэмэх</button>
+          <button class="btn danger" type="button" id="delete-btn">Устгах</button>
+          <button class="btn primary" type="button" id="save-btn">Хадгалах</button>
+        </div>
+      </div>
+
+      <div class="status" id="status"></div>
+
+      <section class="grid">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Жагсаалт</span>
+            <span id="item-count"></span>
+          </div>
+          <div class="list" id="item-list"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title" id="editor-title">Засварлах</span>
+          </div>
+          <div class="editor" id="editor"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js?v=netlify-admin-1"></script>
+</body>
+</html>

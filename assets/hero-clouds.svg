@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" preserveAspectRatio="none">
+  <defs>
+    <filter id="soft" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#fff" stop-opacity="0.42"/>
+      <stop offset="0.52" stop-color="#fff" stop-opacity="0.30"/>
+      <stop offset="0.82" stop-color="#fff" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#soft)" fill="url(#fade)">
+    <path d="M-40 175 C90 125 150 155 255 135 C370 112 460 156 572 126 C710 90 815 136 942 122 C1100 104 1222 146 1440 104 L1440 236 C1260 258 1106 224 945 244 C800 262 681 226 540 252 C402 278 270 226 132 248 C54 260 -20 252 -80 244 Z"/>
+    <path d="M-70 332 C58 292 170 316 290 286 C410 256 545 314 680 278 C812 244 928 292 1052 272 C1192 250 1282 292 1470 270 L1470 386 C1310 408 1190 372 1040 398 C876 426 740 372 586 402 C430 432 300 382 154 404 C48 420 -34 400 -90 392 Z" opacity=".58"/>
+    <path d="M120 78 C250 40 360 82 470 58 C622 24 720 74 852 54 C1020 28 1160 70 1320 42 L1460 32 L1460 126 C1302 146 1150 116 988 142 C828 168 706 116 548 142 C398 166 270 118 92 150 L-60 160 L-60 98 C18 100 66 92 120 78 Z" opacity=".36"/>
+  </g>
+</svg>
