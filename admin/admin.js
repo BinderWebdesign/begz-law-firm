@@ -7,6 +7,43 @@
     ['zh', 'ZH'],
     ['ko', 'KO']
   ];
+  const API_PATH = '/api/admin/content';
+  const NETLIFY_FUNCTION_PATH = '/.netlify/functions/admin-content';
+  let activeApiPath = null;
+
+  function apiPaths() {
+    const paths = [API_PATH, NETLIFY_FUNCTION_PATH];
+    if (activeApiPath) return [activeApiPath, ...paths.filter((path) => path !== activeApiPath)];
+    if (location.hostname.endsWith('netlify.app')) return [NETLIFY_FUNCTION_PATH, API_PATH];
+    return paths;
+  }
+
+  function apiUrl(path, suffix = '') {
+    return `${path}${suffix}`;
+  }
+
+  async function apiFetch(suffix = '', options = {}) {
+    const paths = apiPaths();
+    let lastResponse = null;
+    let lastError = null;
+
+    for (const path of paths) {
+      try {
+        const response = await fetch(apiUrl(path, suffix), options);
+        if (response.status !== 404 || path === paths[paths.length - 1]) {
+          activeApiPath = path;
+          return response;
+        }
+        lastResponse = response;
+      } catch (error) {
+        lastError = error;
+        if (path === paths[paths.length - 1]) throw error;
+      }
+    }
+
+    if (lastResponse) return lastResponse;
+    throw lastError || new Error('Admin API холболт амжилтгүй боллоо.');
+  }
 
   const schemas = {
     team: {
@@ -363,13 +400,16 @@
 
   async function loadCollections() {
     setStatus('Ачаалж байна...', '');
-    const response = await fetch('/api/admin/content', { headers: headers() });
+    const response = await apiFetch('', { headers: headers() });
     if (response.status === 401) {
       $('#token-box').classList.add('show');
       setStatus('ADMIN_TOKEN оруулаад "Дахин ачаалах" дарна уу.', 'error');
       return;
     }
-    if (!response.ok) throw new Error(`Admin API алдаа: ${response.status}`);
+    if (!response.ok) {
+      const payload = await response.json().catch(() => ({}));
+      throw new Error(payload.message || `Admin API алдаа: ${response.status}`);
+    }
     const data = await response.json();
     state.collections = data.collections || [];
     $('#token-box').classList.toggle('show', Boolean(data.authRequired));
@@ -386,13 +426,16 @@
     state.jsonMode = false;
     setStatus('Мэдээлэл ачаалж байна...', '');
     renderNav();
-    const response = await fetch(`/api/admin/content/${slug}`, { headers: headers() });
+    const response = await apiFetch(`/${slug}`, { headers: headers() });
     if (response.status === 401) {
       $('#token-box').classList.add('show');
       setStatus('ADMIN_TOKEN оруулаад "Дахин ачаалах" дарна уу.', 'error');
       return;
     }
-    if (!response.ok) throw new Error(`Мэдээлэл уншиж чадсангүй: ${response.status}`);
+    if (!response.ok) {
+      const payload = await response.json().catch(() => ({}));
+      throw new Error(payload.message || `Мэдээлэл уншиж чадсангүй: ${response.status}`);
+    }
     const payload = await response.json();
     state.currentMeta = payload;
     state.data = payload.data;
@@ -481,7 +524,7 @@
     }
 
     setStatus('Хадгалж байна...', '');
-    const response = await fetch(`/api/admin/content/${state.currentSlug}`, {
+    const response = await apiFetch(`/${state.currentSlug}`, {
       method: 'PUT',
       headers: headers(),
       body: JSON.stringify({ data: state.data })
