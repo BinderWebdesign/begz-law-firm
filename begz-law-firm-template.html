@@ -1,0 +1,1247 @@
+﻿<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEGZ Law Firm — Хуулийн Фирм</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#ECE7D1;color:#3F382B;font-family:"PT Sans",sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#ECE7D1}::-webkit-scrollbar-thumb{background:#CFC39D}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(138,118,80,.5);background:rgba(251,247,239,.92);backdrop-filter:blur(20px)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-circle{width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 2px 12px rgba(63,56,43,.1);border:1px solid #CFC39D;display:flex;align-items:center;justify-content:center;color:#8A7650}
+.logo-name{font-family:"PT Serif",serif;font-size:18px;font-weight:700;color:#3F382B;letter-spacing:.5px}
+.logo-sub{font-size:11px;text-transform:uppercase;letter-spacing:2.5px;color:#8A7650}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;justify-content:center;flex:1;white-space:nowrap}
+.nav-links a{font-size:13px;font-weight:500;color:#4A4438;transition:color .2s}
+.nav-links a:hover{color:#8A7650}
+.nav-item{position:relative}
+.nav-trigger{display:flex;align-items:center;gap:6px;background:none;border:0;padding:24px 0;font-family:"PT Sans",sans-serif;font-size:13px;font-weight:600;color:#4A4438;cursor:pointer;transition:color .2s}
+.nav-trigger::after{content:"⌄";font-size:12px;color:#8A7650;line-height:1}
+.nav-item:hover .nav-trigger,.nav-item:focus-within .nav-trigger{color:#3F382B}
+.dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:230px;background:#fff;border:1px solid #CFC39D;border-radius:8px;padding:8px;box-shadow:0 18px 48px rgba(63,56,43,.16);display:none;z-index:80}
+.nav-item:hover .dropdown-menu,.nav-item:focus-within .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:10px 12px;border-radius:6px;font-size:13px;line-height:1.35;color:#4A4438;white-space:normal}
+.dropdown-menu a:hover{background:#ECE7D1;color:#3F382B}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-phone{font-size:14px;font-weight:600;color:#3F382B;display:flex;align-items:center;gap:6px}
+.btn{padding:10px 22px;border-radius:999px;font-family:"PT Sans",sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;letter-spacing:.3px}
+.btn-dark{background:#3F382B;color:#ECE7D1}
+.btn-dark:hover{background:#302B22}
+.btn-outline{background:none;border:1px solid rgba(63,56,43,.2);color:#3F382B}
+.btn-outline:hover{border-color:#8A7650;color:#8A7650}
+.btn-gold{background:#DBCEA5;color:#3F382B}
+.btn-gold:hover{background:#DBCEA5}
+
+/* Mobile menu */
+.hamburger{display:none;background:none;border:1px solid #CFC39D;padding:8px;cursor:pointer;border-radius:8px}
+.hamburger svg{width:20px;height:20px}
+.mobile-menu{display:none;padding:16px 20px 20px;border-top:1px solid rgba(138,118,80,.5);background:rgba(251,247,239,.98)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 16px;font-size:14px;font-weight:500;color:#4A4438;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:#DBCEA5;color:#8A7650}
+.mobile-group{border-bottom:1px solid rgba(138,118,80,.45)}
+.mobile-group summary{list-style:none;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;font-size:14px;font-weight:700;color:#3F382B;cursor:pointer;border-radius:10px}
+.mobile-group summary::-webkit-details-marker{display:none}
+.mobile-group summary::after{content:"+";font-size:18px;color:#8A7650}
+.mobile-group[open] summary::after{content:"−"}
+.mobile-group a{padding:10px 26px}
+.mobile-menu-footer{margin-top:16px;padding-top:16px;border-top:1px solid rgba(138,118,80,.5);display:flex;flex-direction:column;gap:10px}
+
+/* HERO */
+.hero{background:#3F382B;color:#fff;position:relative;overflow:hidden}
+.hero-bg{position:absolute;z-index:0;inset:-5%;background:url("assets/hero-valley.webp") center center/cover no-repeat;opacity:1;animation:heroSlowPan 34s ease-in-out infinite alternate;will-change:transform}
+.hero-bg::before{content:"";position:absolute;inset:0;background:url("assets/hero-clouds.svg") 0 46%/1120px 420px repeat-x;opacity:.38;mix-blend-mode:screen;animation:heroCloudDrift 58s linear infinite;will-change:background-position,opacity}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(45,62,38,.50) 0%,rgba(95,103,79,.28) 48%,rgba(142,151,125,.08) 100%)}
+.hero::after{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(115deg,rgba(219,206,165,.10),rgba(142,151,125,.08),rgba(138,118,80,.12));opacity:.72;animation:heroToneShift 18s ease-in-out infinite alternate;pointer-events:none}
+.hero-fade{position:absolute;z-index:0;bottom:0;left:0;right:0;height:128px;background:linear-gradient(to top,#3F382B,transparent)}
+.hero-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:80px 20px;display:grid;grid-template-columns:1.04fr .96fr;gap:48px;align-items:center}
+@keyframes heroSlowPan{0%{transform:scale(1.02) translate3d(-1.2%,0,0)}100%{transform:scale(1.08) translate3d(1.4%,-1.2%,0)}}
+@keyframes heroCloudDrift{0%{background-position:0 46%}100%{background-position:1120px 46%}}
+@keyframes heroToneShift{0%{opacity:.48}100%{opacity:.82}}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero-bg::before,.hero::after{animation:none!important}}
+.hero-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(219,206,165,.4);border-radius:999px;padding:6px 16px;font-size:13px;color:#ECE7D1;margin-bottom:24px}
+.hero-title{font-family:"PT Serif",serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;letter-spacing:0;margin-bottom:20px}
+.hero-sub{font-size:17px;color:rgba(219,226,233,.85);line-height:1.7;max-width:520px;margin-bottom:36px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card-wrap{border-radius:28px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.1);padding:16px;box-shadow:0 24px 64px rgba(0,0,0,.3);backdrop-filter:blur(8px)}
+.hero-card{border-radius:22px;background:linear-gradient(135deg,#ECE7D1,#DBCEA5,#8E977D);padding:28px;min-height:480px;color:#3F382B;position:relative}
+.hero-card-badge{background:#3F382B;color:#ECE7D1;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:auto}
+.hero-card-content{position:absolute;bottom:118px;left:28px;right:28px}
+.hero-card-title{font-family:"PT Serif",serif;font-size:30px;font-weight:700;margin-bottom:12px;line-height:1.2}
+.hero-card-desc{font-size:14px;color:#3F382B;line-height:1.6;max-width:420px}
+.hero-stats{position:absolute;bottom:20px;left:28px;right:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.hero-stat{background:rgba(255,255,255,.65);border-radius:16px;padding:14px}
+.hero-stat-num{font-family:"PT Serif",serif;font-size:28px;font-weight:700;line-height:1}
+.hero-stat-lbl{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#3F382B;margin-top:2px}
+
+/* SECTION BASE */
+section{padding:80px 0}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 20px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;background:#ECE7D1;border:1px solid rgba(138,118,80,.4);border-radius:999px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#8A7650;margin-bottom:16px}
+.section-title{font-family:"PT Serif",serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:#3F382B;line-height:1.15;margin-bottom:16px}
+
+/* VALUES CARDS */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-40px;position:relative;z-index:10}
+.value-card{background:#fff;border:1px solid #CFC39D;border-radius:24px;padding:28px;box-shadow:0 8px 32px rgba(63,56,43,.06)}
+.value-icon{width:52px;height:52px;background:#DBCEA5;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px}
+.value-title{font-family:"PT Serif",serif;font-size:19px;font-weight:700;margin-bottom:10px}
+.value-desc{font-size:14px;color:#5E5748;line-height:1.65}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.about-text p{font-size:16px;color:#5E5748;line-height:1.8;margin-bottom:16px}
+
+/* WHY US */
+.why-bg{background:#DBCEA5}
+.why-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.why-desc{font-size:16px;color:#5E5748;line-height:1.7;margin-top:16px}
+.why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{background:#fff;border-radius:24px;padding:28px;box-shadow:0 4px 16px rgba(63,56,43,.06)}
+.why-num{font-size:13px;font-weight:700;color:#8A7650;margin-bottom:48px}
+.why-text{font-size:17px;font-weight:700;color:#3F382B;line-height:1.4}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{background:#fff;border:1px solid #CFC39D;border-radius:24px;overflow:hidden;box-shadow:0 4px 20px rgba(63,56,43,.06);transition:box-shadow .3s}
+.team-card:hover{box-shadow:0 12px 40px rgba(63,56,43,.12)}
+.team-photo{overflow:hidden;background:#DBCEA5}
+.team-photo img{width:100%;height:auto;display:block;transition:transform .4s ease}
+.team-card:hover .team-photo img{transform:scale(1.03)}
+.team-name-block{padding:16px 16px 0}
+.team-photo-name{font-family:"PT Serif",serif;font-size:17px;font-weight:700;color:#3F382B}
+.team-photo-role{font-size:12px;color:#8A7650;font-weight:600;letter-spacing:.3px;margin-top:5px}
+.team-body{padding:10px 16px 20px}
+.team-focus{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8A7650;margin-bottom:8px}
+.team-bio{font-size:12px;color:#5E5748;line-height:1.6}
+.team-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:700;color:#8A7650}
+/* PRACTICE */
+.practice-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:32px;flex-wrap:wrap}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.practice-card{display:block;background:#fff;border:1px solid #CFC39D;border-radius:24px;padding:28px;transition:all .3s;cursor:pointer}
+.practice-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(63,56,43,.1)}
+.practice-card:focus-visible{outline:3px solid rgba(142,151,125,.45);outline-offset:3px}
+.practice-icon{width:56px;height:56px;background:#3F382B;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;font-size:24px;transition:background .3s}
+.practice-card:hover .practice-icon{background:#8A7650}
+.practice-name{font-family:"PT Serif",serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.practice-desc{font-size:14px;color:#5E5748;line-height:1.65}
+.practice-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:13px;font-weight:700;color:#8A7650}
+
+/* TESTIMONIALS */
+.test-bg{background:#3F382B;color:#fff}
+.test-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.test-eyebrow{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#DBCEA5;margin-bottom:16px}
+.test-title{font-family:"PT Serif",serif;font-size:clamp(28px,4vw,40px);font-weight:700;color:#fff;margin-bottom:16px}
+.test-sub{font-size:15px;color:rgba(200,208,217,.85);line-height:1.7}
+.test-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.test-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:24px}
+.test-stars{color:#DBCEA5;font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.test-quote{font-size:14px;color:#e9edf2;line-height:1.7;font-style:italic}
+.test-name{font-size:13px;font-weight:700;color:#DBCEA5;margin-top:20px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.contact-info-item{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-size:15px;color:#5E5748}
+.contact-info-item svg{flex-shrink:0;color:#8A7650}
+.contact-form-card{background:#fff;border:1px solid #CFC39D;border-radius:28px;padding:36px;box-shadow:0 16px 48px rgba(63,56,43,.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid.full{grid-column:1/-1}
+input,textarea{width:100%;border:1px solid #CFC39D;background:#ECE7D1;padding:14px 18px;font-family:"PT Sans",sans-serif;font-size:14px;color:#3F382B;outline:none;transition:border-color .2s;border-radius:16px}
+input:focus,textarea:focus{border-color:#8A7650;background:#fff}
+textarea{min-height:130px;resize:vertical}
+.form-disclaimer{font-size:11px;color:#746A55;text-align:center;margin-top:14px;line-height:1.6}
+.btn-submit{width:100%;padding:16px;background:#3F382B;color:#ECE7D1;border:none;border-radius:999px;font-family:"PT Sans",sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:4px}
+.btn-submit:hover{background:#302B22}
+
+/* FOOTER */
+footer{border-top:1px solid #CFC39D;background:#ECE7D1;padding:28px 0}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px}
+.footer-brand{display:flex;align-items:center;gap:16px;min-width:280px}
+.footer-copy{font-size:13px;color:#5E5748}
+.footer-links{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;gap:0}
+.footer-links a{position:relative;margin-left:16px;padding-left:16px;font-size:13px;color:#5E5748;line-height:1.2;transition:color .2s}
+.footer-links a:first-child{margin-left:0;padding-left:0}
+.footer-links a:not(:first-child)::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;background:#CFC39D;transform:translateY(-50%)}
+.footer-links a:hover{color:#8A7650}
+
+/* RESPONSIVE */
+body.compact-home #experience,
+body.compact-home #history,
+body.compact-home #team,
+body.compact-home .test-bg,
+body.compact-home #news,
+body.compact-home #cases,
+body.compact-home #legal-guide,
+body.compact-home #faq{display:none}
+body.compact-home .hero-inner{min-height:calc(100vh - 72px);padding:72px 20px;gap:42px}
+body.compact-home .hero-title{font-size:clamp(38px,5vw,60px);max-width:720px}
+body.compact-home .hero-sub{max-width:560px;margin-bottom:28px}
+body.compact-home .hero-card{min-height:360px}
+body.compact-home .hero-card-content{bottom:104px}
+body.compact-home .hero-card-title{font-size:26px}
+body.compact-home .hero-card-desc{display:none}
+body.compact-home #practice{padding:58px 0}
+body.compact-home .practice-header{margin-bottom:28px}
+body.compact-home .practice-card{border-radius:8px;padding:22px;min-height:154px}
+body.compact-home .practice-icon{width:46px;height:46px;border-radius:8px;margin-bottom:16px;font-size:20px}
+body.compact-home .practice-name{font-size:19px;margin-bottom:0}
+body.compact-home .practice-desc{display:none}
+body.compact-home .practice-link{margin-top:14px}
+body.compact-home #contact{padding:64px 0}
+@media(max-width:1200px){.team-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:768px){.team-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr!important}}
+@media(max-width:1280px){
+  .nav-inner{padding:0 14px;gap:10px}
+  .nav-links{gap:14px}
+  .nav-links a{font-size:12.5px}
+  .nav-phone{display:none}
+  .nav-right{gap:8px}
+  .nav-right .btn{padding:9px 16px}
+  .lang-switcher{gap:3px;margin-left:2px}
+  .nav-right .flag-btn{font-size:15px;padding:3px 4px}
+}
+@media(max-width:1024px){
+  .nav-links,.nav-right{display:none}
+  .hamburger{display:flex;align-items:center;justify-content:center}
+  .hero-inner{grid-template-columns:1fr;padding:60px 20px 40px}
+  .hero-card-wrap{max-width:500px}
+  .values-grid,.team-grid,.practice-grid,.test-cards{grid-template-columns:1fr}
+  .about-grid,.why-grid,.contact-grid,.test-grid{grid-template-columns:1fr;gap:32px}
+  .why-cards{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  body.compact-home .hero-inner{min-height:auto;padding:56px 20px 44px}
+  body.compact-home .hero-card-wrap{display:none}
+  body.compact-home .practice-grid{gap:12px}
+  .footer-inner{align-items:flex-start}
+  .footer-brand{min-width:0;flex-direction:column;align-items:flex-start;gap:10px}
+  .footer-links{margin-left:0;justify-content:flex-start;flex-wrap:wrap}
+}
+</style>
+
+<style>
+:root{
+  --font-ui:Calibri,Arial,"Microsoft YaHei","Malgun Gothic",sans-serif;
+  --green-bg:#ECE7D1;
+  --green-soft:#DBCEA5;
+  --green-tint:#ECE7D1;
+  --green-border:#CFC39D;
+  --green-accent:#8E977D;
+  --green-primary:#8A7650;
+  --green-deep:#5F674F;
+  --green-dark:#3F382B;
+  --green-ink:#3F382B;
+  --paper:#FFFFFF;
+  --paper-warm:#FBF8EA;
+}
+*,*::before,*::after{font-family:var(--font-ui)!important}
+body{background:var(--green-bg)!important;color:var(--green-deep)!important}
+::-webkit-scrollbar-track{background:var(--green-bg)!important}
+::-webkit-scrollbar-thumb{background:var(--green-border)!important}
+header{background:rgba(236,231,209,.9)!important;border-bottom-color:rgba(142,151,125,.26)!important;box-shadow:0 6px 24px rgba(63,56,43,.06);transition:background .25s ease,border-color .25s ease,box-shadow .25s ease}
+header.is-scrolled{background:rgba(138,118,80,.96)!important;border-bottom-color:rgba(255,255,255,.22)!important;box-shadow:0 14px 34px rgba(63,56,43,.24)}
+header.is-scrolled .nav-links a,header.is-scrolled .nav-trigger,header.is-scrolled .nav-phone,header.is-scrolled .logo-name{color:#F8FFFC!important}
+header.is-scrolled .nav-trigger::after,header.is-scrolled .logo-sub,header.is-scrolled .nav-phone svg{color:#ECE7D1!important;stroke:#ECE7D1!important}
+header.is-scrolled .btn-dark{background:#F8FFFC!important;color:var(--green-deep)!important}
+header.is-scrolled .hamburger{border-color:rgba(255,255,255,.42)!important;color:#F8FFFC!important}
+header.is-scrolled .dropdown-menu{background:var(--paper)!important;border-color:var(--green-border)!important}
+header.is-scrolled .dropdown-menu a{color:#4A4438!important}
+header.is-scrolled .dropdown-menu a:hover{background:var(--green-soft)!important;color:var(--green-deep)!important}
+.nav-links>li>a,.nav-trigger{height:72px;display:flex;align-items:center;font-size:13px!important;font-weight:700!important;color:#4A4438!important;line-height:1;letter-spacing:0}
+.nav-links>li>a{padding:24px 0}
+header.is-scrolled .nav-links>li>a,header.is-scrolled .nav-trigger{color:#F8FFFC!important}
+.hero,.test-bg,#faq,[style*="background:#3F382B"]{background:var(--green-primary)!important}
+.hero-bg::after{background:linear-gradient(105deg,rgba(45,62,38,.50) 0%,rgba(95,103,79,.28) 52%,rgba(142,151,125,.08) 100%)!important}
+.hero-fade{background:linear-gradient(to top,var(--green-primary),transparent)!important}
+.hero-card{background:linear-gradient(135deg,#ECE7D1,var(--green-tint),#8E977D)!important;color:var(--green-deep)!important}
+body .hero-card-badge,body .practice-icon,body .btn-dark,body .btn-submit{background:var(--green-deep)!important;color:#F8FFFC!important}
+body .btn-dark:hover,body .btn-submit:hover{background:var(--green-dark)!important}
+body .practice-card:hover .practice-icon{background:var(--green-primary)!important}
+section[style*="background:#ECE7D1"],div[style*="background:#ECE7D1"],footer{background:var(--green-bg)!important}
+.why-bg,.team-photo,input,textarea{background:var(--green-soft)!important}
+.section-tag,.value-icon{background:var(--green-soft)!important}
+.value-card,.team-card,.practice-card,.contact-form-card,.dropdown-menu,.hamburger,input,textarea{border-color:var(--green-border)!important}
+.logo-name,.nav-phone,.section-title,.why-text,.team-photo-name,.hero-card-desc,[style*="color:#3F382B"]{color:var(--green-deep)!important}
+.logo-sub,.nav-links a:hover,.nav-trigger::after,.section-tag,.why-num,.team-photo-role,.team-focus,.team-link,.practice-link,.contact-info-item svg,.footer-links a:hover,[style*="color:#8A7650"]{color:var(--green-accent)!important}
+svg[stroke="#8A7650"]{stroke:var(--green-accent)!important}
+.fil0,.fil2{fill:var(--green-accent)!important}
+.fil1{fill:var(--green-deep)!important}
+header.is-scrolled .fil0,header.is-scrolled .fil2{fill:#ECE7D1!important}
+header.is-scrolled .fil1{fill:#F8FFFC!important}
+.btn-outline{border-color:rgba(138,118,80,.28)!important;color:var(--green-deep)!important}
+.btn-outline:hover{border-color:var(--green-accent)!important;color:var(--green-primary)!important}
+.ui-icon{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.section-tag{gap:9px!important}
+.section-icon{width:16px;height:16px;color:currentColor;flex:0 0 auto}
+.article-icon,.case-icon,.guide-icon{display:flex;align-items:center;justify-content:center;color:#F8FFFC}
+.article-icon{height:160px;background:linear-gradient(135deg,var(--green-deep),var(--green-accent))}
+.article-icon .ui-icon{width:44px;height:44px;stroke-width:1.35}
+.case-icon{width:48px;height:48px;background:var(--green-deep);border-radius:12px;flex:0 0 auto}
+.case-icon .ui-icon{width:22px;height:22px}
+.guide-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.12);margin-bottom:16px}
+.guide-icon.is-soft{background:rgba(142,151,125,.18);color:var(--green-deep)}
+.guide-icon .ui-icon{width:22px;height:22px}
+.value-icon,.practice-icon{color:#F8FFFC}
+.value-icon .ui-icon{width:23px;height:23px}
+.practice-icon .ui-icon{width:25px;height:25px}
+.lang-switcher{display:flex;align-items:center;gap:6px;margin-left:8px}
+.flag-btn{width:34px;height:26px;background:rgba(255,255,255,.56);border:1.5px solid rgba(138,118,80,.24);padding:3px;line-height:1;cursor:pointer;border-radius:8px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.flag-btn:hover{border-color:var(--green-accent);transform:translateY(-1px)}
+.flag-btn.active{border-color:var(--green-deep);background:rgba(142,151,125,.12);box-shadow:0 0 0 2px rgba(142,151,125,.18)}
+header.is-scrolled .flag-btn{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.38)}
+header.is-scrolled .flag-btn.active{background:rgba(255,255,255,.20);border-color:#F8FFFC;box-shadow:0 0 0 2px rgba(255,255,255,.18)}
+.flag-icon{position:relative;display:block;width:24px;height:16px;border-radius:2px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.flag-mn{background:linear-gradient(90deg,#c4272f 0 33.33%,#015197 33.33% 66.66%,#c4272f 66.66% 100%)}
+.flag-mn::after{content:"";position:absolute;left:4px;top:5px;width:3px;height:6px;background:#ffd100;border-radius:2px;box-shadow:0 -3px 0 #ffd100,0 3px 0 #ffd100}
+.flag-us{background:repeating-linear-gradient(to bottom,#b22234 0 1.23px,#fff 1.23px 2.46px)}
+.flag-us::before{content:"";position:absolute;left:0;top:0;width:10.5px;height:8.6px;background:#3c3b6e}
+.flag-us::after{content:"";position:absolute;left:1.5px;top:1.4px;width:1.1px;height:1.1px;background:#fff;border-radius:50%;box-shadow:3px 0 #fff,6px 0 #fff,0 2px #fff,3px 2px #fff,6px 2px #fff,0 4px #fff,3px 4px #fff,6px 4px #fff}
+.flag-cn{background:radial-gradient(circle at 27% 35%,#ffde00 0 10%,transparent 11%),radial-gradient(circle at 48% 22%,#ffde00 0 4%,transparent 5%),radial-gradient(circle at 56% 36%,#ffde00 0 4%,transparent 5%),radial-gradient(circle at 56% 54%,#ffde00 0 4%,transparent 5%),radial-gradient(circle at 48% 68%,#ffde00 0 4%,transparent 5%),#de2910}
+.flag-kr{background:linear-gradient(#111 0 0) 3px 3px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 5px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 7px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 3px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 7px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 11px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 13px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 9px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 11px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 13px/6px 1px no-repeat,#fff}
+.flag-kr::before{content:"";position:absolute;left:8px;top:4px;width:8px;height:8px;border-radius:50%;background:linear-gradient(#c60c30 0 50%,#003478 50%);transform:rotate(32deg)}
+[data-lang]{transition:opacity .2s}
+
+/* TOPBAR MATCH 2026 */
+header{min-height:72px!important;background:rgba(241,248,245,.94)!important;border-bottom:1px solid rgba(142,151,125,.24)!important}
+.nav-inner{max-width:1360px!important;height:72px!important;padding:0 56px!important;gap:0!important;justify-content:flex-start!important}
+.nav-logo{width:220px!important;margin-right:16px!important;gap:0!important;align-self:stretch!important;display:flex!important;align-items:center!important}
+.nav-logo svg{width:205px!important;height:auto!important;max-height:48px!important;display:block!important}
+.nav-links{flex:0 1 auto!important;gap:0!important;height:72px!important;align-self:stretch!important;justify-content:flex-start!important}
+.nav-links>li{height:72px;display:flex;align-items:stretch}
+.nav-links>li>a,.nav-trigger{height:72px!important;padding:0 22px!important;font-size:14px!important;font-weight:800!important;line-height:1!important;position:relative;border-radius:0!important;transition:background .2s,color .2s!important}
+.nav-trigger{justify-content:center!important}
+.nav-links>li>a:hover,.nav-item:hover>.nav-trigger,.nav-item:focus-within>.nav-trigger{background:rgba(255,255,255,.54)!important;color:var(--green-deep)!important}
+.nav-links>li>a::after,.nav-trigger::before{content:"";position:absolute;left:12px;right:12px;bottom:0;height:4px;background:rgba(255,255,255,.86);opacity:0;transition:opacity .2s}
+.nav-links>li>a:hover::after,.nav-item:hover>.nav-trigger::before,.nav-item:focus-within>.nav-trigger::before{opacity:1}
+.dropdown-menu{top:72px!important;border-radius:6px!important}
+.nav-right{height:72px!important;margin-left:auto!important;gap:8px!important;padding-left:8px!important;border-left:1px solid rgba(142,151,125,.28);align-self:stretch!important}
+.nav-phone{height:44px!important;min-width:100px;padding:0 10px 0 0;border-right:1px solid rgba(142,151,125,.34);font-size:12px!important;line-height:1.12!important;font-weight:800!important;display:flex!important;align-items:center!important;gap:7px!important;color:var(--green-deep)!important;white-space:nowrap}
+.nav-phone svg{width:22px!important;height:22px!important;flex:0 0 auto;stroke:currentColor!important;color:var(--green-accent)!important}
+.phone-lines{display:grid;gap:2px}
+#t-nav-cta{height:36px!important;min-width:126px!important;padding:0 18px!important;border-radius:18px!important;font-size:12px!important;font-weight:800!important;letter-spacing:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important}
+.lang-switcher{height:36px!important;gap:4px!important;margin-left:0!important;padding:0 5px!important;background:rgba(255,255,255,.50);border-top:1px solid rgba(142,151,125,.18);border-bottom:1px solid rgba(142,151,125,.18);align-items:center!important}
+.flag-btn{width:24px!important;height:20px!important;border-radius:3px!important;padding:2px!important;background:#fff!important;border:1px solid rgba(142,151,125,.26)!important;box-shadow:none!important;transform:none!important}
+.flag-icon{width:18px!important;height:12px!important;border-radius:1px!important}
+.hamburger,.site-search-trigger{width:38px!important;height:38px!important;border-radius:8px!important}
+header.is-scrolled .nav-links>li>a:hover,header.is-scrolled .nav-item:hover>.nav-trigger,header.is-scrolled .nav-item:focus-within>.nav-trigger{background:rgba(255,255,255,.12)!important;color:#fff!important}
+header.is-scrolled .nav-right{border-left-color:rgba(255,255,255,.22)}
+header.is-scrolled .nav-phone{border-right-color:rgba(255,255,255,.24);color:#fff!important}
+header.is-scrolled .nav-phone svg{color:#ECE7D1!important;stroke:#ECE7D1!important}
+@media(max-width:1320px){.nav-inner{padding:0 28px!important}.nav-logo{width:216px!important;margin-right:16px!important}.nav-logo svg{width:190px!important}.nav-links>li>a,.nav-trigger{padding:0 13px!important;font-size:13px!important}.nav-phone{display:none!important}.nav-right{border-left:0;padding-left:0!important}}
+@media(max-width:1120px){.nav-links,.nav-right{display:none!important}.hamburger{display:flex!important;align-items:center!important;justify-content:center!important;margin-left:auto!important}}
+
+/* FLAG SVG ASSETS 2026 */
+.flag-icon{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-color:transparent!important}
+.flag-mn{background-image:url("assets/flags/mn.svg")!important;background-size:cover!important}
+.flag-us,.flag-gb{background-image:url("assets/flags/gb.svg")!important;background-size:cover!important}
+.flag-cn{background-image:url("assets/flags/cn.svg")!important;background-size:cover!important}
+.flag-kr{background-image:url("assets/flags/kr.svg")!important;background-size:cover!important}
+.flag-mn::before,.flag-mn::after,.flag-us::before,.flag-us::after,.flag-gb::before,.flag-gb::after,.flag-cn::before,.flag-cn::after,.flag-kr::before,.flag-kr::after{content:none!important;display:none!important}
+</style>
+<script>
+const T = {
+  mn: {
+    nav_about:"Бидний тухай", nav_service:"Үйлчилгээ", nav_team:"Баг",
+    nav_why:"Давуу тал", nav_cases:"Жишээ", nav_guide:"Гарын авлага",
+    nav_faq:"FAQ", nav_news:"Мэдээ", nav_contact:"Холбоо барих",
+    nav_cta:"Зөвлөгөө авах",
+    hero_badge:"Монгол Улс · 2008 оноос хойш",
+    hero_title:"Таны эрх ашгийг тодорхой стратегиар хамгаална.",
+    hero_sub:"Бизнес, иргэний хэрэг, үл хөдлөх хөрөнгө, өв залгамжлал болон шүүхийн маргаанд ил тод процесс, шуурхай харилцаа, бодит шийдэл санал болгоно.",
+    hero_btn1:"Үнэгүй анхан шатны зөвлөгөө →",
+    hero_btn2:"Үйлчилгээ харах",
+    stat1_lbl:"жил", stat2_lbl:"хэрэг", stat3_lbl:"хариу",
+    about_tag:"Танилцуулга",
+    about_title:"Хуулийн асуудлыг төвөгтэй биш, ойлгомжтой болгоно.",
+    about_p1:'"Бэгз Ло Консалтинг" ХХК нь 2016 онд үндэс сууриа тавьж, хууль зүйн салбарт 15-аас дээш жилийн туршлагад тулгуурлан 2025 онд үйл ажиллагаагаа өргөжүүлэн шинэ бүтэцтэйгээр байгуулагдсан хуулийн фирм юм.',
+    about_p2:"Бид дотоод, гадаадын иргэн, хуулийн этгээдэд хууль зүйн зөвлөгөө, зөвлөх үйлчилгээ, өмгөөлөл, төлөөллийн цогц үйлчилгээг үзүүлдэг.",
+    service_tag:"Үйлчилгээ",
+    service_title:"Таны хэрэгцээнд нийцсэн хууль зүйн үйлчилгээ.",
+    team_tag:"Манай баг",
+    team_title:"Танд ойр ажиллах туршлагатай өмгөөлөгчид.",
+    why_tag:"Яагаад биднийг сонгох вэ?",
+    why_title:"Хэрэг бүрт хувийн анхаарал, мэргэжлийн стандарт.",
+    price_tag:"Үнэ тариф",
+    price_title:"Зөвлөх үйлчилгээний багцууд",
+    contact_tag:"Холбоо барих",
+    contact_title:"Ярилцъя. Эхний алхмыг тодорхой болгоё.",
+    footer_copy:'© 2026 "Бэгз Ло Консалтинг" ХХК. Бүх эрх хуулиар хамгаалагдсан.',
+    lang_label:"Хэл"
+  },
+  en: {
+    nav_about:"About Us", nav_service:"Services", nav_team:"Our Team",
+    nav_why:"Why Us", nav_cases:"Cases", nav_guide:"Legal Guide",
+    nav_faq:"FAQ", nav_news:"News", nav_contact:"Contact",
+    nav_cta:"Get Advice",
+    hero_badge:"Mongolia · Since 2008",
+    hero_title:"We protect your rights with clear strategy.",
+    hero_sub:"We offer transparent process, prompt communication, and practical solutions for business, civil, real estate, inheritance, and court disputes.",
+    hero_btn1:"Free Initial Consultation →",
+    hero_btn2:"View Services",
+    stat1_lbl:"years", stat2_lbl:"cases", stat3_lbl:"response",
+    about_tag:"About Us",
+    about_title:"We make legal matters clear and understandable.",
+    about_p1:'"Begz Lo Consulting" LLC was established in 2016 and restructured in 2025 with 15+ years of combined legal expertise.',
+    about_p2:"We provide comprehensive legal advisory, consulting, representation and advocacy services to domestic and foreign individuals and entities.",
+    service_tag:"Services",
+    service_title:"Legal solutions tailored to your needs.",
+    team_tag:"Our Team",
+    team_title:"Experienced attorneys working closely with you.",
+    why_tag:"Why Choose Us",
+    why_title:"Personal attention and professional standards for every case.",
+    price_tag:"Pricing",
+    price_title:"Legal Consulting Packages",
+    contact_tag:"Contact",
+    contact_title:"Let\'s talk. Let\'s clarify the first step.",
+    footer_copy:'© 2026 "Begz Lo Consulting" LLC. All rights reserved.',
+    lang_label:"Language"
+  },
+  zh: {
+    nav_about:"关于我们", nav_service:"服务", nav_team:"团队",
+    nav_why:"为何选择我们", nav_cases:"案例", nav_guide:"法律指南",
+    nav_faq:"常见问题", nav_news:"新闻", nav_contact:"联系我们",
+    nav_cta:"免费咨询",
+    hero_badge:"蒙古国 · 2008年起",
+    hero_title:"以清晰的法律策略保护您的权益。",
+    hero_sub:"在商业纠纷、民事诉讼、房地产、继承及法庭争议中，我们提供透明流程、快速沟通和务实解决方案。",
+    hero_btn1:"免费初次咨询 →",
+    hero_btn2:"了解服务",
+    stat1_lbl:"年经验", stat2_lbl:"案件", stat3_lbl:"小时响应",
+    about_tag:"关于我们",
+    about_title:"让法律问题变得简单易懂。",
+    about_p1:'"Begz Lo Consulting"有限公司成立于2016年，依托15年以上的法律经验，于2025年以全新架构扩展业务。',
+    about_p2:"我们为国内外个人和法人提供法律咨询、顾问服务、辩护及代理等综合法律服务。",
+    service_tag:"服务项目",
+    service_title:"为您量身定制的法律解决方案。",
+    team_tag:"我们的团队",
+    team_title:"与您紧密合作的经验丰富律师团队。",
+    why_tag:"为何选择我们",
+    why_title:"每个案件都享有专属关注和专业标准。",
+    price_tag:"收费标准",
+    price_title:"法律咨询服务套餐",
+    contact_tag:"联系我们",
+    contact_title:"让我们交流，明确第一步。",
+    footer_copy:'© 2026 "Begz Lo Consulting"有限公司。保留所有权利。',
+    lang_label:"语言"
+  },
+  ko: {
+    nav_about:"회사 소개", nav_service:"서비스", nav_team:"팀",
+    nav_why:"선택 이유", nav_cases:"사례", nav_guide:"법률 가이드",
+    nav_faq:"자주 묻는 질문", nav_news:"뉴스", nav_contact:"연락처",
+    nav_cta:"무료 상담",
+    hero_badge:"몽골 · 2008년부터",
+    hero_title:"명확한 전략으로 귀하의 권리를 보호합니다.",
+    hero_sub:"비즈니스, 민사, 부동산, 상속, 법원 분쟁에서 투명한 절차와 신속한 소통으로 실질적인 해결책을 제공합니다.",
+    hero_btn1:"무료 초기 상담 →",
+    hero_btn2:"서비스 보기",
+    stat1_lbl:"년 경력", stat2_lbl:"사건", stat3_lbl:"시간 내 답변",
+    about_tag:"회사 소개",
+    about_title:"법률 문제를 쉽고 명확하게 해결합니다.",
+    about_p1:'"Begz Lo Consulting" LLC는 2016년에 설립되어 15년 이상의 법률 경험을 바탕으로 2025년 새로운 구조로 확장되었습니다.',
+    about_p2:"국내외 개인 및 법인에게 법률 자문, 컨설팅, 변호 및 대리 등 종합 법률 서비스를 제공합니다.",
+    service_tag:"서비스",
+    service_title:"귀하의 필요에 맞는 법률 솔루션.",
+    team_tag:"우리 팀",
+    team_title:"귀하와 긴밀히 협력하는 경험 있는 변호사들.",
+    why_tag:"왜 우리를 선택하나요",
+    why_title:"모든 사건에 개인적 관심과 전문적 기준을 적용합니다.",
+    price_tag:"요금 안내",
+    price_title:"법률 컨설팅 패키지",
+    contact_tag:"연락처",
+    contact_title:"상담을 시작하여 첫 번째 단계를 명확히 합시다.",
+    footer_copy:'© 2026 "Begz Lo Consulting" LLC. 모든 권리 보유.',
+    lang_label:"언어"
+  }
+};
+
+let currentLang = 'mn';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = T[lang];
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+
+  const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
+  const setHTML = (id, val) => { const el = document.getElementById(id); if(el) el.innerHTML = val; };
+
+  set('t-nav-about', t.nav_about); set('t-nav-service', t.nav_service);
+  set('t-nav-team', t.nav_team); set('t-nav-why', t.nav_why);
+  set('t-nav-cases', t.nav_cases); set('t-nav-guide', t.nav_guide);
+  set('t-nav-faq', t.nav_faq); set('t-nav-news', t.nav_news);
+  set('t-nav-contact', t.nav_contact); set('t-nav-cta', t.nav_cta);
+  set('t-mob-about', t.nav_about); set('t-mob-service', t.nav_service);
+  set('t-mob-team', t.nav_team); set('t-mob-why', t.nav_why);
+  set('t-mob-contact', t.nav_contact); set('t-mob-cta', t.nav_cta);
+  set('t-hero-badge', t.hero_badge); set('t-hero-title', t.hero_title);
+  set('t-hero-sub', t.hero_sub); set('t-hero-btn1', t.hero_btn1);
+  set('t-hero-btn2', t.hero_btn2);
+  set('t-stat1-lbl', t.stat1_lbl); set('t-stat2-lbl', t.stat2_lbl); set('t-stat3-lbl', t.stat3_lbl);
+  set('t-about-tag', t.about_tag); set('t-about-title', t.about_title);
+  set('t-about-p1', t.about_p1); set('t-about-p2', t.about_p2);
+  set('t-service-tag', t.service_tag); set('t-service-title', t.service_title);
+  set('t-team-tag', t.team_tag); set('t-team-title', t.team_title);
+  set('t-why-tag', t.why_tag); set('t-why-title', t.why_title);
+  set('t-price-tag', t.price_tag); set('t-price-title', t.price_title);
+  set('t-contact-tag', t.contact_tag); set('t-contact-title', t.contact_title);
+  set('t-footer-copy', t.footer_copy);
+
+  document.body.style.fontFamily = 'Calibri, Arial, "Microsoft YaHei", "Malgun Gothic", sans-serif';
+
+  localStorage.setItem('begz-lang', lang);
+  document.querySelectorAll('.flag-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('begz-lang') || 'mn';
+  setLang(saved);
+});
+</script>
+</head>
+<body class="compact-home">
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M6 7h12"/><path d="M7 7l-4 7h8L7 7z"/><path d="M17 7l-4 7h8l-4-7z"/><path d="M8 21h8"/></symbol>
+  <symbol id="icon-message" viewBox="0 0 24 24"><path d="M5 6.5A4.5 4.5 0 019.5 2h5A4.5 4.5 0 0119 6.5v4A4.5 4.5 0 0114.5 15H10l-5 4v-4.9A4.5 4.5 0 012 10V6.5"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.8-2.7 8.2-7 10-4.3-1.8-7-5.2-7-10V6l7-3z"/><path d="M9 12l2 2 4-5"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2"/></symbol>
+  <symbol id="icon-court" viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/><path d="M3 20h18"/><path d="M12 4l8 4H4l8-4z"/></symbol>
+  <symbol id="icon-briefcase" viewBox="0 0 24 24"><path d="M8 8V6.5A2.5 2.5 0 0110.5 4h3A2.5 2.5 0 0116 6.5V8"/><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M4 12.5h16"/><path d="M10 13h4"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><path d="M8.5 11a3 3 0 100-6 3 3 0 000 6z"/><path d="M15.5 11a3 3 0 100-6 3 3 0 000 6z"/><path d="M3.5 19a5 5 0 0110 0"/><path d="M10.5 19a5 5 0 0110 0"/></symbol>
+  <symbol id="icon-file" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9.5 12h5M9.5 16h5"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24"><path d="M6 21V5a2 2 0 012-2h8a2 2 0 012 2v16"/><path d="M4 21h16"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
+  <symbol id="icon-handshake" viewBox="0 0 24 24"><path d="M7 12l3-3 3 3 2-2"/><path d="M3 10l4-4 4 4"/><path d="M21 10l-4-4-4 4"/><path d="M8 13l3 3a2 2 0 002.8 0L17 13"/></symbol>
+  <symbol id="icon-badge" viewBox="0 0 24 24"><path d="M12 3l6 3v5c0 4.5-2.3 7.5-6 9-3.7-1.5-6-4.5-6-9V6l6-3z"/><path d="M9 10h6"/><path d="M10 14h4"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" style="display:flex;align-items:center"><!-- Creator: Corel DESIGNER 2026 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="44px" width="auto" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 15694.2 3328.82"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#8A7650}
+    .fil1 {fill:#3F382B;fill-rule:nonzero}
+    .fil2 {fill:#8A7650;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M933.25 2287.93c-63.46,-55.22 -133.09,-102.95 -207.46,-142.25 -151.09,245.61 -138.85,534.73 32.69,771.75 171.54,237.02 480.06,391.13 823.57,411.39 47.59,-305.8 -8.54,-618.72 -159.49,-888.87 -56.73,69.14 -121.09,128.75 -191.19,176.07 63.76,129.93 102.04,270.86 112.83,415.2 -23.88,-7.68 -47.15,-16.22 -69.74,-25.55 -130.86,-54.23 -236.45,-135.31 -304.1,-223.85 -67.63,-88.57 -98.81,-182.52 -98.81,-274.73 0,-49.05 8.84,-98.23 27.28,-147.22 9.03,-24.07 20.53,-48.14 34.42,-71.94zm114.64 59.89l60.82 -47.87c40.26,-36.56 78.52,-82.04 112.28,-134.81 -313.21,-332.1 -769.92,-488.59 -1220.99,-418.36 25.83,438.01 267.52,808.15 603.59,924.44 -18.83,-77.62 -24.59,-157.38 -16.3,-236.28 1.56,-14.99 3.62,-29.92 6.18,-44.79 -64.03,-39.19 -125.65,-95.92 -178.65,-169.64 -48.09,-66.89 -88.32,-147.47 -117.06,-235.87 287.06,21.49 555.23,151.31 750.13,363.19zm587.34 -664.47c-252.83,4.58 -494.88,82.23 -680.72,218.36 76.05,46.44 147.55,99.93 213.58,159.74 94.94,-55.52 209.63,-96.5 331.66,-115.25 53.11,-8.15 107.48,-12.08 161.82,-11.86 -16.6,-82.01 -25.47,-166.43 -26.35,-250.99zm-677.75 1010.7c308.52,-64.94 561.24,-344.45 652.42,-721.53 -78.85,3.76 -156.66,16.71 -229.31,38.12 -16.74,4.94 -33.24,10.32 -49.43,16.08 -3.49,9.3 -7.11,18.53 -10.9,27.61 -54.21,130.89 -135.28,236.47 -223.85,304.1 -59.26,45.26 -120.95,74.21 -182.9,88.4 -2.47,15.12 -4.01,30.22 -4.61,45.29 -2.5,61.48 10.02,123.67 40.1,185.45 2.69,5.49 5.52,10.98 8.48,16.47zm83.41 -1749.9c55.22,-63.48 102.95,-133.09 142.25,-207.46 -245.64,-151.09 -534.73,-138.85 -771.75,32.69 -237.02,171.54 -391.13,480.06 -411.39,823.57 305.78,47.59 618.69,-8.54 888.84,-159.49 -69.11,-56.73 -128.72,-121.09 -176.04,-191.19 -129.93,63.76 -270.86,102.04 -415.2,112.83 7.66,-23.88 16.19,-47.15 25.55,-69.74 54.21,-130.86 135.28,-236.45 223.85,-304.1 88.54,-67.63 182.52,-98.81 274.71,-98.81 49.07,0 98.23,8.84 147.25,27.28 24.07,9.03 48.14,20.53 71.94,34.42zm-59.89 114.64l47.87 60.82c36.56,40.26 82.04,78.52 134.79,112.28 332.1,-313.21 488.59,-769.92 418.36,-1220.99 -437.98,25.83 -808.15,267.52 -924.41,603.59 77.62,-18.83 157.38,-24.59 236.26,-16.3 14.99,1.56 29.92,3.62 44.82,6.18 39.17,-64.03 95.9,-125.65 169.64,-178.65 66.89,-48.09 147.47,-88.32 235.84,-117.06 -21.46,287.06 -151.31,555.23 -363.17,750.13zm664.47 587.34c-4.58,-252.83 -82.23,-494.88 -218.39,-680.72 -46.44,76.05 -99.9,147.55 -159.74,213.58 55.52,94.94 96.53,209.63 115.25,331.66 8.18,53.11 12.08,107.48 11.88,161.82 82.01,-16.6 166.43,-25.47 250.99,-26.35zm-1010.73 -677.75c64.96,308.52 344.47,561.24 721.56,652.42 -3.76,-78.85 -16.74,-156.66 -38.15,-229.31 -4.94,-16.74 -10.29,-33.24 -16.06,-49.43 -9.33,-3.49 -18.53,-7.11 -27.64,-10.9 -130.86,-54.21 -236.45,-135.28 -304.1,-223.85 -45.26,-59.26 -74.19,-120.95 -88.4,-182.9 -15.1,-2.5 -30.19,-4.01 -45.26,-4.61 -61.51,-2.5 -123.67,10.02 -185.45,40.1 -5.49,2.69 -10.98,5.49 -16.5,8.48zm1642.12 1416.3c-55.19,63.46 -102.95,133.06 -142.25,207.44 245.64,151.12 534.73,138.85 771.75,-32.69 237.05,-171.54 391.13,-480.03 411.39,-823.54 -305.78,-47.62 -618.69,8.54 -888.84,159.49 69.14,56.7 128.72,121.06 176.04,191.19 129.96,-63.76 270.89,-102.07 415.2,-112.83 -7.66,23.85 -16.19,47.15 -25.55,69.71 -54.21,130.89 -135.28,236.47 -223.85,304.1 -88.54,67.63 -182.52,98.83 -274.71,98.83 -49.07,0 -98.23,-8.87 -147.25,-27.28 -24.07,-9.06 -48.14,-20.53 -71.94,-34.42zm59.89 -114.64l-47.87 -60.85c-36.56,-40.24 -82.04,-78.52 -134.79,-112.25 -332.1,313.19 -488.59,769.92 -418.36,1220.96 437.98,-25.8 808.15,-267.49 924.41,-603.57 -77.62,18.83 -157.38,24.56 -236.26,16.3 -14.99,-1.56 -29.92,-3.62 -44.79,-6.18 -39.19,64.03 -95.92,125.65 -169.67,178.65 -66.89,48.06 -147.47,88.32 -235.84,117.06 21.46,-287.09 151.31,-555.23 363.17,-750.13zm-664.47 -587.37c4.58,252.86 82.26,494.91 218.39,680.72 46.44,-76.03 99.9,-147.52 159.74,-213.56 -55.52,-94.96 -96.5,-209.63 -115.25,-331.66 -8.15,-53.11 -12.08,-107.48 -11.88,-161.85 -82.01,16.6 -166.43,25.5 -250.99,26.35zm1010.73 677.78c-64.96,-308.52 -344.47,-561.27 -721.53,-652.42 3.73,78.85 16.71,156.63 38.12,229.28 4.94,16.77 10.29,33.26 16.08,49.43 9.3,3.51 18.5,7.14 27.61,10.9 130.89,54.23 236.45,135.31 304.1,223.85 45.26,59.28 74.19,120.95 88.4,182.93 15.1,2.47 30.19,4.01 45.26,4.61 61.51,2.5 123.67,-10.05 185.45,-40.13 5.49,-2.66 11.01,-5.49 16.5,-8.45zm-298.5 -1319.55c63.48,55.22 133.09,102.95 207.46,142.25 151.09,-245.64 138.85,-534.73 -32.69,-771.75 -171.54,-237.02 -480.03,-391.13 -823.54,-411.39 -47.62,305.78 8.54,618.69 159.46,888.84 56.73,-69.11 121.09,-128.72 191.22,-176.04 -63.78,-129.93 -102.07,-270.86 -112.86,-415.2 23.88,7.66 47.15,16.19 69.74,25.55 130.89,54.21 236.45,135.28 304.1,223.85 67.63,88.54 98.83,182.52 98.83,274.71 0,49.07 -8.87,98.23 -27.31,147.25 -9.03,24.07 -20.53,48.14 -34.42,71.94zm-114.64 -59.89l-60.82 47.87c-40.26,36.56 -78.52,82.04 -112.28,134.79 313.21,332.1 769.92,488.59 1220.99,418.36 -25.83,-437.98 -267.52,-808.15 -603.59,-924.41 18.86,77.62 24.59,157.38 16.33,236.26 -1.59,14.99 -3.65,29.92 -6.2,44.82 64.03,39.17 125.65,95.9 178.65,169.64 48.09,66.89 88.32,147.47 117.06,235.84 -287.06,-21.46 -555.23,-151.31 -750.13,-363.17zm-587.34 664.47c252.83,-4.58 494.91,-82.23 680.72,-218.39 -76.05,-46.44 -147.55,-99.9 -213.58,-159.74 -94.94,55.52 -209.63,96.53 -331.63,115.25 -53.14,8.18 -107.51,12.08 -161.85,11.88 16.6,82.01 25.47,166.43 26.35,250.99zm677.75 -1010.73c-308.52,64.96 -561.24,344.47 -652.42,721.56 78.85,-3.76 156.66,-16.74 229.31,-38.15 16.74,-4.94 33.24,-10.29 49.43,-16.06 3.49,-9.33 7.14,-18.53 10.9,-27.64 54.21,-130.86 135.28,-236.45 223.85,-304.1 59.26,-45.26 120.95,-74.19 182.9,-88.4 2.5,-15.1 4.01,-30.19 4.61,-45.26 2.5,-61.51 -10.02,-123.67 -40.1,-185.45 -2.66,-5.49 -5.49,-10.98 -8.48,-16.5z"/>
+  <path class="fil1" d="M3779.62 2508.18l0 -101.47 55.33 0c50.94,0 89.03,-8.81 113.87,-26.87 25.28,-18.03 37.71,-54.54 37.71,-109.07l0 -1137.28c0,-70.56 -10.02,-115.47 -30.08,-135.12 -20.04,-19.65 -60.55,-29.28 -121.5,-29.28l-55.33 0 0 -99.46 1311.7 0 154 429.89 -103.06 38.92c-58.95,-136.35 -122.33,-226.98 -190.89,-271.91 -68.56,-44.49 -181.25,-66.97 -338.46,-66.97l-405.02 0 0 601.53 299.96 0c147.17,0 267.08,4.8 359.71,14.02 92.63,9.63 176.86,33.29 253.44,70.98 76.6,38.1 134.76,89.03 174.45,152.79 40.1,63.76 60.16,133.94 60.16,210.54 0,103.06 -33.29,192.48 -99.85,267.49 -66.97,74.98 -152,125.89 -255.44,151.97 -103.88,26.07 -236.2,39.3 -397.83,39.3l-822.86 0zm428.27 -794.01l0 535.36c0,54.12 2.8,87.42 8.01,100.64 6.42,11.64 17.65,20.06 34.09,24.48 19.65,4.01 58.16,6.01 115.11,6.01l159.6 0c154.8,0 266.67,-8.04 334.84,-24.48 68.59,-16.44 127.13,-53.33 175.65,-111.07 48.52,-57.75 72.57,-126.31 72.57,-205.71 0,-75.01 -23.25,-139.56 -69.77,-194.1 -46.52,-54.95 -107.48,-90.22 -182.46,-106.68 -74.98,-16.44 -185.26,-24.45 -330.83,-24.45l-316.81 0zm2701.24 14.44l-761.93 0 0 -134.73 761.93 0c0,-96.64 -14.02,-184.08 -41.69,-262.66 -27.67,-78.19 -67.38,-145.57 -119.12,-201.73 -101.06,-109.07 -234.99,-163.61 -401.81,-163.61 -119.09,0 -226.18,30.08 -321.2,89.83 -95.05,60.16 -186.47,189.27 -274.3,387.78l-109.07 -28.49 150.38 -545.38 83.41 0 37.68 109.1c123.92,-91.83 277.92,-137.97 461.97,-137.97 240.62,0 432.69,76.6 575.84,229.81 143.57,153.18 215.37,349.28 215.37,588.28 0,249.43 -69,457.96 -206.94,625.99 -137.94,168.02 -338.44,252.23 -601.92,252.23 -176.45,0 -329.63,-41.72 -460.35,-125.13 -130.34,-83.79 -231.78,-182.05 -303.96,-294.74l94.22 -64.96c68.18,94.25 156.8,174.45 266.67,241.03 109.48,66.14 229.39,99.44 359.32,99.44 152,0 283.11,-49.32 394.21,-147.58 110.66,-98.64 177.63,-270.67 201.29,-516.51zm463.62 -858.98l1149.3 0 151.58 429.5 -102.26 38.48c-58.54,-135.94 -121.92,-226.57 -190.48,-271.08 -68.56,-44.49 -181.25,-66.97 -338.46,-66.97l-248.61 0 0 1253.57c0,63.78 10.81,105.06 32.88,124.71 22.04,19.65 64.55,29.28 127.93,29.28l43.69 0 0 101.06 -625.58 0 0 -101.06 40.1 0c65.76,0 108.69,-10.02 129.13,-30.08 20.45,-19.65 30.47,-65.35 30.47,-136.74l0 -1112.83c0,-70.18 -10.81,-114.29 -32.88,-131.93 -22.04,-17.65 -58.95,-26.46 -111.49,-26.46l-55.33 0 0 -99.46zm1549.9 0l83.82 0 38.51 107.89c137.53,-91.04 285.11,-136.76 443.5,-136.76 175.24,0 314.39,40.13 418.28,120.71 103.86,80.22 155.98,182.87 155.98,307.59 0,91.83 -31.67,171.65 -95.05,239.8 -63.76,67.79 -148.37,113.9 -255.03,138.36 147.96,23.27 253.85,72.18 317.61,147.17 63.35,74.6 95.05,159.63 95.05,255.06 0,139.15 -63.78,255.06 -190.89,348.07 -127.13,93.04 -283.93,139.56 -470.4,139.56 -166.02,0 -312.39,-40.89 -439.11,-122.71 -127.13,-81.4 -224.97,-177.66 -293.95,-288.73l93.84 -64.55c58.95,87.42 144.78,165.2 257.86,232.58 113.08,67.76 232.58,101.47 359.3,101.47 127.54,0 232.19,-32.88 313.6,-98.26 81.4,-65.76 121.92,-151.58 121.92,-257.06 0,-92.63 -36.89,-170.41 -110.28,-232.58 -73.39,-62.17 -208.92,-93.04 -406.64,-93.04l-120.68 0 0 -113.08 153.59 0c122.3,0 222.94,-26.07 302.35,-77.81 79.4,-51.71 119.12,-133.94 119.12,-247.01 0,-108.27 -35.71,-187.26 -106.68,-237.41 -71.39,-50.12 -157.18,-75.39 -257.44,-75.39 -111.9,0 -214.55,32.08 -307.59,95.84 -93.04,64.17 -178.84,188.5 -257.03,373.76l-109.1 -29.67 145.57 -533.77z"/>
+  <path class="fil2" d="M11615.42 1518.2l-103.53 288.1c-3.24,9.44 -4.91,15.64 -4.91,18.69 0,5.21 1.56,9.44 4.61,12.68 3.24,2.94 6.29,4.61 8.95,5.21l27.14 1.18 0 24.18 -120.35 0 0 -24.18c15.64,0 26.05,-2.55 31.45,-7.49 5.41,-5 11.99,-17.48 19.87,-37.44l125.26 -332.65 47.29 0 124.82 335.77c5.68,15.73 11.58,26.65 17.59,32.85 6.48,5.9 15.15,8.95 25.96,8.95l6.59 0 0 24.18 -143.41 0 0 -24.18 18.2 -0.6c14.55,0 21.93,-5.6 21.93,-16.71 0,-4.8 -2.66,-14.66 -8.07,-29.7l-99.41 -278.85zm453.3 -58.79c37.38,0 70.51,8.84 99.63,26.54 32.03,18.99 56.73,43.67 73.94,74.05 17.21,30.38 25.88,65.49 25.88,105.5 0,61.84 -19.29,112.28 -57.75,151.31 -38.45,39.06 -87.53,58.51 -147.19,58.51 -65.98,0 -118.68,-23.41 -158.12,-70.32 -31.76,-38.04 -47.59,-83.77 -47.59,-137.26 0,-38.92 8.95,-74.24 26.84,-105.69 17.89,-31.56 43.28,-56.54 76.22,-75.01 32.83,-18.39 68.92,-27.64 108.14,-27.64zm0.22 31.26c-30,0 -55.55,6.78 -76.9,20.45 -21.33,13.67 -38.53,33.92 -51.63,60.99 -13.17,26.92 -19.76,59.78 -19.76,98.61 0,37.05 6.29,68.72 18.99,94.88 12.68,26.24 29.78,46.22 51.21,60.08 21.55,13.86 45.83,20.75 72.87,20.75 26.43,0 49.95,-6.7 70.48,-20.06 20.56,-13.28 37.57,-34.8 51.13,-64.31 13.48,-29.59 20.26,-61.84 20.26,-96.86 0,-36.09 -6.67,-69.11 -20.15,-99 -11.5,-25.77 -26.95,-44.85 -46.22,-57.14 -19.27,-12.3 -42.68,-18.39 -70.29,-18.39zm-613.88 637.54l155.76 0 0 24.78 -11.01 0c-12.9,0 -21.74,1.45 -26.65,4.42 -4.91,2.94 -8.45,7.38 -10.81,13.06 -1.87,6.2 -2.85,14.46 -2.85,24.98l0 151.42 150.93 -159.38c7.38,-7.85 11.88,-13.17 13.56,-15.84 1.21,-2.44 2.11,-5.3 2.69,-8.34 0,-3.46 -1.76,-6.01 -5.13,-7.77 -3.35,-1.67 -10.62,-2.55 -21.82,-2.55l-9.25 0 0 -24.78 144.56 0 0 24.78c-11.42,0 -21.63,1.26 -30.96,3.73 -4.45,1.18 -8.48,2.55 -12.1,4.12 -3.65,1.67 -6.97,3.65 -9.83,5.9 -11.61,8.67 -19.98,15.53 -25.17,20.75l-108 110.03 123.31 162.54c5.21,7.08 10.13,13.26 14.77,18.58 4.61,5.21 8.45,9.14 11.61,11.61 6.09,5 12.95,8.95 20.45,11.8l13.06 2.25 19.27 0.88 0 24.78 -171.1 0 0 -24.78 10.13 0 4.03 0 3.24 0c6.89,0 11.2,-0.3 12.98,-0.88 2.85,-0.6 5.41,-1.98 7.47,-4.34 1.56,-2.06 2.66,-4.5 3.24,-7.47 0,-4.34 -6.67,-15.73 -19.95,-34.12l-90.76 -123.01 -51.21 52.92 0 76.68c0,13.17 1.26,22.12 3.73,26.84 2.55,4.72 6.7,8.26 12.68,10.81 4.42,1.67 16.03,2.55 34.91,2.55l0 24.78 -155.76 0 0 -24.78 12.1 0c12.1,0 20.26,-1.07 24.48,-3.35 4.23,-2.14 7.66,-6.18 10.24,-12.19 2.63,-5.9 3.92,-15.73 3.92,-29.59l0 -264.61c0,-13.56 -1.1,-22.89 -3.35,-27.91 -2.17,-5.1 -5.6,-8.87 -10.24,-11.12 -4.61,-2.25 -13.94,-3.43 -28.21,-3.43l-8.95 0 0 -24.78zm637.27 -7.08c37.38,0 70.51,8.84 99.63,26.54 32.03,18.99 56.73,43.67 73.97,74.05 17.21,30.38 25.85,65.49 25.85,105.5 0,61.84 -19.27,112.28 -57.75,151.31 -38.45,39.06 -87.53,58.51 -147.19,58.51 -65.98,0 -118.68,-23.41 -158.12,-70.32 -31.76,-38.04 -47.59,-83.77 -47.59,-137.26 0,-38.92 8.95,-74.24 26.84,-105.69 17.89,-31.56 43.28,-56.54 76.22,-75.01 32.83,-18.39 68.92,-27.64 108.14,-27.64zm0.22 31.26c-30,0 -55.55,6.78 -76.9,20.45 -21.33,13.67 -38.53,33.92 -51.63,60.99 -13.17,26.92 -19.76,59.78 -19.76,98.61 0,37.05 6.29,68.72 18.99,94.88 12.68,26.24 29.78,46.22 51.21,60.08 21.55,13.86 45.83,20.75 72.87,20.75 26.43,0 49.95,-6.7 70.48,-20.06 20.56,-13.28 37.57,-34.8 51.13,-64.31 13.48,-29.59 20.26,-61.84 20.26,-96.86 0,-36.09 -6.67,-69.11 -20.15,-99 -11.5,-25.77 -26.95,-44.85 -46.22,-57.14 -19.27,-12.3 -42.68,-18.39 -70.29,-18.39zm257.53 -24.18l155.73 0 0 24.78 -10.7 0c-11.69,0 -20.26,1.07 -25.66,3.35 -5.32,2.14 -9.14,5.79 -11.5,10.7 -1.87,5.41 -2.85,14.74 -2.85,28.13l0 111.79 208.26 0 0 -108.85 0 -5.21 0 -4.03 0 -3.13c0,-7.68 -0.49,-12.49 -1.48,-14.35 -1.48,-6.09 -4.83,-10.73 -10.05,-13.78 -2.63,-1.56 -5.87,-2.74 -9.52,-3.43 -3.65,-0.8 -8.15,-1.18 -13.56,-1.18l-15.84 0 0 -24.78 154.27 0 0 24.78 -13.86 0c-10.35,0 -17.89,1.18 -22.62,3.62 -4.64,2.36 -7.99,5.6 -9.74,9.74 -1.87,4.12 -2.74,12.98 -2.74,26.54l0 272.95c0,14.77 0.88,24.21 2.55,28.43 1.76,4.23 5.71,7.27 11.88,9.14 3.46,1.18 14.96,1.76 34.53,1.76l0 24.78 -154.27 0 0 -24.78 11.31 0c13.94,0 23.3,-0.88 27.91,-2.55 4.64,-1.76 7.77,-4.91 9.44,-9.52 1.18,-3.27 1.78,-13.48 1.78,-30.68l0 -124.19 -208.26 0 0 127.62c0,14.96 0.99,24.59 2.85,29.01 2.17,4.03 6.09,6.89 11.8,8.56 4.03,1.18 16.11,1.76 36.06,1.76l0 24.78 -155.73 0 0 -24.78 9.83 0c15.53,0 24.98,-0.77 28.32,-2.44 3.43,-1.59 6.18,-4.72 8.54,-9.36 2.28,-4.61 3.46,-12.68 3.46,-24.37l0 -276.11c0,-12.98 -1.1,-21.63 -3.16,-25.85 -1.76,-4.42 -4.8,-7.88 -9.25,-10.32 -4.42,-2.47 -11.58,-3.73 -21.63,-3.73l-16.11 0 0 -24.78zm792.81 0l20.75 0 36.67 133.91 -26.84 7.58c-14.35,-30.96 -25.36,-51.71 -32.83,-62.25 -12.1,-17.1 -27.53,-30.66 -46.22,-40.7 -18.69,-9.94 -38.84,-14.93 -60.38,-14.93 -26.05,0 -49.95,6.97 -71.47,20.83 -21.63,13.97 -39.25,34.61 -52.92,61.86 -13.67,27.34 -20.45,57.31 -20.45,90.16 0,35.19 6.89,66.17 20.56,93.01 13.75,26.73 32.44,47.48 56.24,62.03 23.71,14.66 48.77,21.93 75.31,21.93 25.28,0 51.32,-7.16 77.89,-21.63 26.54,-14.35 49.84,-34.91 69.8,-61.64l23.11 15.84c-12.3,18.28 -25.17,33.24 -38.64,44.93 -21.13,18.88 -43.94,33.24 -68.34,43.06 -24.37,9.94 -50.34,14.85 -77.86,14.85 -62.25,0 -112.97,-23.22 -152.11,-69.52 -32.36,-38.34 -48.47,-84.07 -48.47,-137.15 0,-38.45 8.95,-73.56 26.84,-105.5 17.79,-31.86 42.57,-57.14 74.24,-75.83 31.56,-18.58 65.38,-27.91 101.28,-27.91 19.76,0 37.93,2.66 54.37,7.96 16.41,5.32 33.13,13.86 50.23,25.58l9.25 -26.46zm265.7 0l47.59 0 124.88 335.77c6.09,16.91 12.27,28.13 18.36,33.73 3.35,2.66 7,4.72 11.03,5.98 2.25,0.6 4.5,1.1 6.59,1.48 2.17,0.41 4.72,0.6 7.85,0.6l6.31 0 0 24.18 -143.38 0 0 -24.18 13.59 -0.6c9.44,0 15.42,-0.88 18.17,-2.85 5.52,-3.43 8.37,-8.04 8.37,-13.75 0,-4.23 -2.74,-14.08 -8.07,-29.61l-26.54 -77.67 -145.82 0 -31.21 86.84c-3.24,9.44 -4.91,15.62 -4.91,18.66 0,3.46 0.91,6.78 2.77,9.85 1.87,3.05 4.61,5.3 8.54,6.86 2.09,0.6 4.45,1.1 7,1.48 2.63,0.3 5.9,0.49 9.72,0.49l12.71 0.3 0 24.18 -120.38 0 0 -24.18 6.39 0c2.28,0 4.91,-0.19 8.07,-0.6 2.85,0 6.01,-0.88 9.55,-2.55 5,-2.36 9.33,-5.9 12.98,-10.7 1.65,-2.28 3.73,-6.01 5.98,-11.23l8.37 -19.84 125.48 -332.65zm-50.34 224.78l124.08 0 -62.14 -173.07 -61.95 173.07zm463.48 -173.07l-103.53 288.1c-3.24,9.44 -4.91,15.64 -4.91,18.69 0,5.21 1.56,9.44 4.61,12.68 3.24,2.94 6.29,4.61 8.95,5.21l27.14 1.18 0 24.18 -120.35 0 0 -24.18c15.64,0 26.05,-2.55 31.45,-7.49 5.41,-5 11.99,-17.48 19.87,-37.44l125.26 -332.65 47.29 0 124.82 335.77c5.68,15.73 11.58,26.65 17.59,32.85 6.48,5.9 15.15,8.95 25.96,8.95l6.59 0 0 24.18 -143.38 0 0 -24.18 18.2 -0.6c14.55,0 21.93,-5.6 21.93,-16.71 0,-4.8 -2.66,-14.66 -8.07,-29.7l-99.44 -278.85zm248 -65.27l20.17 0 2.83 13.56 246.6 0 2.28 -13.56 21.02 0 42.4 118.07 -25.88 9.14c-12.08,-30.88 -26.84,-52.81 -44.24,-65.76 -17.48,-13.09 -39.33,-19.57 -65.57,-19.57 -11.5,0 -18.11,0.38 -19.68,1.18 -1.67,0.77 -3.24,2.25 -4.72,4.61l-0.88 6.29 -0.3 13.86 0 278.66c0,13.86 0.6,22.81 1.87,27.03 1.29,4.23 3.27,7.58 5.9,9.94 2.66,2.47 6.59,4.42 11.5,5.9 6.2,1.18 16.71,1.78 31.78,1.78l0 24.18 -155.45 0 0 -24.18c16.5,0 27.03,-0.6 31.45,-1.78 6.29,-1.67 11.01,-5.3 14.05,-10.7 3.05,-5.52 4.64,-15.45 4.64,-29.81l0 -284.83c0,-8.76 -0.49,-14.16 -1.48,-16.14 -0.49,-1.67 -2.06,-3.13 -4.42,-4.23 -2.36,-1.18 -7.49,-1.76 -15.15,-1.76 -20.83,0 -37.77,2.63 -50.53,8.04 -12.71,5.32 -24.48,14.35 -35.41,27.14 -10.81,12.79 -20.26,29.5 -28.32,50.14l-25.96 -9.14 41.5 -118.07zm357.05 13.56l155.73 0 0 24.78 -10.7 0c-16.71,0 -27.64,2.63 -32.85,8.04 -4.8,5.32 -7.16,16.71 -7.16,34.23l0 227.42 208.26 -224.56c0,-15.15 -0.6,-24.87 -1.87,-29.2 -1.29,-4.34 -4.53,-8.07 -9.85,-11.2 -5.21,-3.16 -12.87,-4.72 -22.89,-4.72l-15.53 0 0 -24.78 153.97 0 0 24.78 -13.86 0c-14.35,0 -23.8,2.63 -28.32,8.04 -4.53,5.32 -6.78,16.03 -6.78,31.86l0 273.14c0,17.7 2.06,28.82 6.09,33.35 4.23,3.84 15.53,5.79 33.92,5.79l8.95 0 0 24.78 -153.97 0 0 -24.78 11.01 0c13.56,0 22.81,-0.88 27.42,-2.55 4.72,-1.76 7.96,-4.61 9.63,-8.65 0.6,-2.17 1.1,-5.71 1.48,-10.81 0.38,-5.02 0.6,-11.91 0.6,-20.56l0 -219.95 -208.26 223.38c0,17.7 2.06,28.63 6.09,32.85 4.03,4.23 15.34,6.29 33.92,6.29l10.7 0 0 24.78 -155.73 0 0 -24.78 9.83 0c16.71,0 27.64,-1.76 32.63,-5.21 5.13,-3.43 7.68,-13.67 7.68,-30.77l0 -276.3c0,-16.22 -2.28,-26.92 -6.89,-32.14 -4.61,-5.21 -13.67,-7.77 -27.14,-7.77l-16.11 0 0 -24.78zm471.85 0l155.76 0 0 24.78 -10.7 0c-11.69,0 -20.26,1.07 -25.66,3.35 -5.32,2.14 -9.14,5.79 -11.5,10.7 -1.87,5.41 -2.85,14.74 -2.85,28.13l0 111.79 208.26 0 0 -108.85 0 -5.21 0 -4.03 0 -3.13c0,-7.68 -0.49,-12.49 -1.48,-14.35 -1.48,-6.09 -4.83,-10.73 -10.05,-13.78 -2.63,-1.56 -5.87,-2.74 -9.52,-3.43 -3.65,-0.8 -8.15,-1.18 -13.56,-1.18l-15.84 0 0 -24.78 154.27 0 0 24.78 -13.86 0c-10.35,0 -17.89,1.18 -22.62,3.62 -4.64,2.36 -7.99,5.6 -9.74,9.74 -1.87,4.12 -2.74,12.98 -2.74,26.54l0 272.95c0,14.77 0.88,24.21 2.55,28.43 1.76,4.23 5.71,7.27 11.88,9.14 3.46,1.18 14.96,1.76 34.53,1.76l0 24.78 -154.27 0 0 -24.78 11.31 0c13.94,0 23.3,-0.88 27.91,-2.55 4.64,-1.76 7.77,-4.91 9.44,-9.52 1.18,-3.27 1.78,-13.48 1.78,-30.68l0 -124.19 -208.26 0 0 127.62c0,14.96 0.99,24.59 2.85,29.01 2.17,4.03 6.09,6.89 11.8,8.56 4.03,1.18 16.11,1.76 36.06,1.76l0 24.78 -155.76 0 0 -24.78 9.83 0c15.53,0 24.98,-0.77 28.32,-2.44 3.43,-1.59 6.18,-4.72 8.54,-9.36 2.28,-4.61 3.46,-12.68 3.46,-24.37l0 -276.11c0,-12.98 -1.1,-21.63 -3.16,-25.85 -1.76,-4.42 -4.8,-7.88 -9.25,-10.32 -4.42,-2.47 -11.58,-3.73 -21.63,-3.73l-16.11 0 0 -24.78zm476.6 0l281.82 0 37.16 105.31 -25.06 9.44c-14.35,-33.35 -29.89,-55.55 -46.71,-66.47 -16.8,-10.92 -44.44,-16.41 -82.97,-16.41l-61.01 0 0 307.37c0,15.62 2.66,25.74 8.07,30.57 5.41,4.8 15.86,7.16 31.4,7.16l10.7 0 0 24.78 -153.4 0 0 -24.78 9.83 0c16.14,0 26.65,-2.44 31.67,-7.36 5,-4.83 7.47,-16.03 7.47,-33.54l0 -272.87c0,-17.18 -2.66,-28.02 -8.07,-32.33 -5.41,-4.34 -14.46,-6.5 -27.34,-6.5l-13.56 0 0 -24.37z"/>
+  <polygon class="fil0" points="11057.64,2537.05 11057.64,840.62 11108.93,840.62 11108.93,2537.05 "/>
+ </g>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="index.html" onclick="showCompactHome(); return false;">Нүүр</a></li>
+      <li class="nav-item">
+        <button type="button" class="nav-trigger" id="t-nav-about">Бидний тухай</button>
+        <div class="dropdown-menu">
+          <a href="#about">Танилцуулга</a>
+          <a href="#team" onclick="showFullContent()">Манай баг</a>
+          <a href="#experience" onclick="showFullContent()">Бид хэрхэн ажилладаг вэ</a>
+          <a href="#contact">Уулзалт товлох</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-trigger" id="t-nav-service">Үйлчилгээ</button>
+        <div class="dropdown-menu">
+          <a href="legal-advisory.html">Хууль зүйн зөвлөх үйлчилгээ</a>
+          <a href="court-representation.html">Шүүхэд төлөөлөх үйлчилгээ</a>
+          <a href="advocacy.html">Өмгөөллийн үйлчилгээ</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-trigger">Мэдээлэл</button>
+        <div class="dropdown-menu">
+          <a href="history.html">Түүхэн товчоо</a>
+          <a href="#legal-guide" onclick="showFullContent()">Хууль зүйн мэдээлэл</a>
+          <a href="#faq" onclick="showFullContent()">Түгээмэл асуулт хариулт</a>
+          <a href="cases.html">Шүүхийн шийдвэрийн тойм мэдээ</a>
+          <a href="begz-logo-download.svg" download>Лого татах</a>
+        </div>
+      </li>
+      <li><a href="#contact" id="t-nav-contact">Холбоо барих</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+97688119315" class="nav-phone"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-lines"><span>8811-9315</span><span>9903-5509</span></span></a>
+      <button class="btn btn-dark" id="t-nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Зөвлөгөө авах</button>
+    <div class="lang-switcher">
+      <button class="flag-btn active" data-lang="mn" onclick="setLang('mn')" title="Монгол" aria-label="Монгол хэл"><span class="flag-icon flag-mn"></span></button>
+      <button class="flag-btn" data-lang="en" onclick="setLang('en')" title="English" aria-label="English"><span class="flag-icon flag-us"></span></button>
+      <button class="flag-btn" data-lang="zh" onclick="setLang('zh')" title="中文" aria-label="中文"><span class="flag-icon flag-cn"></span></button>
+      <button class="flag-btn" data-lang="ko" onclick="setLang('ko')" title="한국어" aria-label="한국어"><span class="flag-icon flag-kr"></span></button>
+    </div>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Цэс">
+      <svg id="hico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" onclick="showCompactHome();closeMobile(); return false;">Нүүр</a>
+    <details class="mobile-group">
+      <summary id="t-mob-about">Бидний тухай</summary>
+      <a href="#about" onclick="closeMobile()">Танилцуулга</a>
+      <a href="#team" onclick="showFullContent();closeMobile()">Манай баг</a>
+      <a href="#experience" onclick="showFullContent();closeMobile()">Бид хэрхэн ажилладаг вэ</a>
+      <a href="#contact" onclick="closeMobile()">Уулзалт товлох</a>
+    </details>
+    <details class="mobile-group">
+      <summary id="t-mob-service">Үйлчилгээ</summary>
+      <a href="legal-advisory.html" onclick="closeMobile()">Хууль зүйн зөвлөх үйлчилгээ</a>
+      <a href="court-representation.html" onclick="closeMobile()">Шүүхэд төлөөлөх үйлчилгээ</a>
+      <a href="advocacy.html" onclick="closeMobile()">Өмгөөллийн үйлчилгээ</a>
+    </details>
+    <details class="mobile-group">
+      <summary>Мэдээлэл</summary>
+      <a href="history.html" onclick="closeMobile()">Түүхэн товчоо</a>
+      <a href="#legal-guide" onclick="showFullContent();closeMobile()">Хууль зүйн мэдээлэл</a>
+      <a href="#faq" onclick="showFullContent();closeMobile()">Түгээмэл асуулт хариулт</a>
+      <a href="cases.html" onclick="closeMobile()">Шүүхийн шийдвэрийн тойм мэдээ</a>
+      <a href="begz-logo-download.svg" download onclick="closeMobile()">Лого татах</a>
+    </details>
+    <a href="#contact" onclick="closeMobile()" id="t-mob-contact">Холбоо барих</a>
+    <div class="mobile-menu-footer">
+      <div style="margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8A7650;font-weight:600;margin-bottom:8px">Хэл сонгох</div>
+        <div style="display:flex;gap:8px">
+          <button class="flag-btn active" data-lang="mn" onclick="setLang('mn');closeMobile()" title="Монгол" aria-label="Монгол хэл"><span class="flag-icon flag-mn"></span></button>
+          <button class="flag-btn" data-lang="en" onclick="setLang('en');closeMobile()" title="English" aria-label="English"><span class="flag-icon flag-us"></span></button>
+          <button class="flag-btn" data-lang="zh" onclick="setLang('zh');closeMobile()" title="中文" aria-label="中文"><span class="flag-icon flag-cn"></span></button>
+          <button class="flag-btn" data-lang="ko" onclick="setLang('ko');closeMobile()" title="한국어" aria-label="한국어"><span class="flag-icon flag-kr"></span></button>
+        </div>
+      </div>
+      <a href="tel:+97699035509" style="display:flex;align-items:center;gap:8px;font-weight:600;color:#3F382B">
+        <svg width="16" height="16" fill="none" stroke="#8A7650" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        9903-5509, 8811-9315
+      </a>
+      <button class="btn btn-dark" style="border-radius:999px;padding:12px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMobile()" id="t-mob-cta">Зөвлөгөө авах</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge" id="t-hero-badge">Монгол Улс · 2008 оноос хойш</div>
+      <h1 class="hero-title" id="t-hero-title">Таны эрх ашгийг тодорхой стратегиар хамгаална.</h1>
+      <p class="hero-sub" id="t-hero-sub">Бизнес, иргэний хэрэг, үл хөдлөх хөрөнгө, өв залгамжлал болон шүүхийн маргаанд ил тод процесс, шуурхай харилцаа, бодит шийдэл санал болгоно.</p>
+      <div class="hero-btns">
+        <button class="btn btn-gold" style="font-size:15px;padding:14px 28px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" id="t-hero-btn1">Үнэгүй анхан шатны зөвлөгөө →</button>
+        <button class="btn" style="border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.05);color:#fff;font-size:15px;padding:14px 28px" onclick="document.getElementById('practice').scrollIntoView({behavior:'smooth'})" id="t-hero-btn2">Үйлчилгээ харах</button>
+      </div>
+    </div>
+    <div class="hero-card-wrap">
+      <div class="hero-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div class="hero-card-badge">Үйлчлүүлэгч төвтэй хуулийн үйлчилгээ</div>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3F382B" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="hero-card-content">
+          <div class="hero-card-title">Итгэлтэй зөвлөх, ойлгомжтой процесс.</div>
+          <div class="hero-card-desc">Хэрэг бүрт нэг загварын хариу биш, зорилго, эрсдэл, хугацаанд тань нийцсэн шийдэл боловсруулна.</div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">16+</div><div class="hero-stat-lbl" id="t-stat1-lbl">жил</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">800+</div><div class="hero-stat-lbl" id="t-stat2-lbl">хэрэг</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">48ц</div><div class="hero-stat-lbl" id="t-stat3-lbl">хариу</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<div style="background:#ECE7D1;padding:0 0 20px">
+  <div class="section-inner">
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon"><svg class="ui-icon"><use href="#icon-message"/></svg></div><h3 class="value-title">Нээлттэй харилцаа</h3><p class="value-desc">Алхам бүрийг ойлгомжтой тайлбарлаж, таны асуултад шуурхай хариулна.</p></div>
+      <div class="value-card"><div class="value-icon"><svg class="ui-icon"><use href="#icon-shield"/></svg></div><h3 class="value-title">Ил тод төлбөр</h3><p class="value-desc">Ажил эхлэхээс өмнө үйлчилгээний хүрээ, процесс, төлбөрийн нөхцөлийг тодорхой болгоно.</p></div>
+      <div class="value-card"><div class="value-icon"><svg class="ui-icon"><use href="#icon-clock"/></svg></div><h3 class="value-title">Тогтмол мэдээлэл</h3><p class="value-desc">Хэрэг, хэлцэл, баримт бичгийн явцыг танд идэвхтэй мэдээлж ажиллана.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Танилцуулга</div>
+        <h2 class="section-title" id="t-about-title">Хуулийн асуудлыг төвөгтэй биш, ойлгомжтой болгоно.</h2>
+      </div>
+      <div class="about-text">
+        <p>BEGZ LAW FIRM нь хувь хүн, гэр бүл, бизнесийн байгууллагад зориулсан стратегийн хууль зүйн үйлчилгээ үзүүлдэг. Бид хэрэг, гэрээ, маргаан бүрийг зөвхөн хууль талаас нь бус, таны зорилго, хугацаа, санхүүгийн эрсдэлтэй нь хамт харж шийдэл боловсруулдаг.</p>
+        <p>Манай ажлын зарчим энгийн: сонсоно, тайлбарлана, төлөвлөнө, тогтмол мэдээлнэ. Тиймээс та дараагийн алхам бүрийг мэдэж, шийдвэрээ итгэлтэй гаргана.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="why-bg">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-file"/></svg> Түүхэн товчоо</div>
+        <h2 class="section-title">Туршлага дээр суурилсан хуулийн үйлчилгээ.</h2>
+      </div>
+      <div class="about-text">
+        <p>BEGZ LAW FIRM нь 2008 оноос хойш иргэн, гэр бүл, бизнесийн байгууллагад хууль зүйн зөвлөх, өмгөөлөл, шүүхэд төлөөлөх үйлчилгээ үзүүлж ирсэн.</p>
+        <p>Бидний ажлын арга барил олон жилийн туршлага, нууцлал, мэргэжлийн ёс зүй, үйлчлүүлэгчид ойлгомжтой тайлбар өгөх зарчим дээр тулгуурладаг.</p>
+        <a class="btn btn-dark" href="history.html" style="margin-top:18px">Дэлгэрэнгүй унших</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="experience" class="why-bg">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Яагаад биднийг сонгох вэ?</div>
+        <h2 class="section-title">Хэрэг бүрт хувийн анхаарал, мэргэжлийн стандарт.</h2>
+        <p class="why-desc">Томоохон маргаан, нарийн гэрээ, гэр бүлийн эмзэг асуудал аль нь ч байсан бид таны нөхцөлд тохирсон бодит стратеги гаргана.</p>
+      </div>
+      <div class="why-cards">
+        <div class="why-card"><div class="why-num">01</div><div class="why-text">Таны нөхцөлд тохирсон төлөвлөгөө</div></div>
+        <div class="why-card"><div class="why-num">02</div><div class="why-text">Энгийн хэлээр тайлбарласан хууль</div></div>
+        <div class="why-card"><div class="why-num">03</div><div class="why-text">Хугацаа, зардлын ил тод байдал</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:24px">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Манай баг</div>
+        <h2 class="section-title">Танд ойр ажиллах туршлагатай өмгөөлөгчид.</h2>
+      </div>
+      <p style="max-width:420px;font-size:15px;color:#5E5748;line-height:1.7">Хэрэг бүрийг тухайн чиглэлээр туршлагатай хуульч хариуцаж, танд ойлгомжтой төлөвлөгөө өгч ажиллана.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/team-gurbadam.webp" alt="Т. Гүрбадам">
+        </div>
+        <div class="team-name-block">
+          <div class="team-photo-name">Т. Гүрбадам</div>
+          <div class="team-photo-role">Үүсгэн байгуулагч, өмгөөлөгч</div>
+        </div>
+        <div class="team-body">
+          <div class="team-focus">Иргэний эрх зүй · Гэрээ · Компанийн эрх зүй · Арбитр</div>
+          <p class="team-bio">Хуулийн фирмийн Үүсгэн байгуулагч. Хууль зүйн ухааны магистр, докторант. Ажлын туршлага: 15 жил. Тендер, өмчийн эрх зүй, газрын эрх зүй, барилгын болон байгаль орчны эрх зүйн чиглэлээр мэргэшсэн.</p>
+          <a href="#contact" class="team-link">Уулзалт товлох →</a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/team-ariuntuul.webp" alt="А. Ариунтуул">
+        </div>
+        <div class="team-name-block">
+          <div class="team-photo-name">А. Ариунтуул</div>
+          <div class="team-photo-role">Үүсгэн байгуулагч, өмгөөлөгч</div>
+        </div>
+        <div class="team-body">
+          <div class="team-focus">Эрүүгийн эрх зүй · Иргэний эрх зүй · Өр авлага барагдуулах</div>
+          <p class="team-bio">Хуулийн фирмийн Гүйцэтгэх захирал. Хууль зүйн ухааны магистр, докторант. Ажлын туршлага: 20 жил. Гэрээний эрх зүй, компанийн эрх зүй, өмчийн болон газрын эрх зүйн чиглэлээр мэргэшсэн.</p>
+          <a href="#contact" class="team-link">Уулзалт товлох →</a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/team-tamiraa.webp" alt="Б. Тамираа">
+        </div>
+        <div class="team-name-block">
+          <div class="team-photo-name">Б. Тамираа</div>
+          <div class="team-photo-role">Өмгөөлөгч</div>
+        </div>
+        <div class="team-body">
+          <div class="team-focus">Иргэний эрх зүй · Гэрээний эрх зүй · Компанийн эрх зүй · Арбитр</div>
+          <p class="team-bio">Хуулийн фирмийн хуульч, өмгөөлөгч. Ажлын туршлага: 5 жил. Иргэний болон гэрээний эрх зүй, компанийн эрх зүй, арбитрын чиглэлээр мэргэшсэн.</p>
+          <a href="#contact" class="team-link">Уулзалт товлох →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section id="practice" style="background:#ECE7D1">
+  <div class="section-inner">
+    <div class="practice-header">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Үйлчилгээ</div>
+        <h2 class="section-title">Таны хэрэгцээнд нийцсэн хууль зүйн үйлчилгээ.</h2>
+      </div>
+      <a href="#contact" class="btn btn-outline" style="white-space:nowrap">Зөвлөгөө авах →</a>
+    </div>
+    <div class="practice-grid">
+      <a class="practice-card" href="legal-advisory.html"><div class="practice-icon"><svg class="ui-icon"><use href="#icon-message"/></svg></div><h3 class="practice-name">Хууль зүйн зөвлөх үйлчилгээ</h3><p class="practice-desc">Байгууллага болон иргэдэд гэрээ, эрх зүйн эрсдэл, өдөр тутмын шийдвэр гаргалтад чиглэсэн зөвлөгөө өгнө.</p><span class="practice-link">Дэлгэрэнгүй →</span></a>
+      <a class="practice-card" href="court-representation.html"><div class="practice-icon"><svg class="ui-icon"><use href="#icon-court"/></svg></div><h3 class="practice-name">Шүүхэд төлөөлөх үйлчилгээ</h3><p class="practice-desc">Иргэн, захиргаа, бизнесийн маргаанд нэхэмжлэл, хариу тайлбар, нотлох баримт, шүүх хуралдааны төлөөллийг хариуцна.</p><span class="practice-link">Дэлгэрэнгүй →</span></a>
+      <a class="practice-card" href="advocacy.html"><div class="practice-icon"><svg class="ui-icon"><use href="#icon-scale"/></svg></div><h3 class="practice-name">Өмгөөллийн үйлчилгээ</h3><p class="practice-desc">Хэрэг маргааны стратеги боловсруулах, эрх ашгийг хамгаалах, хуульд заасан шат бүрт өмгөөлөл үзүүлэх үйлчилгээ.</p><span class="practice-link">Дэлгэрэнгүй →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-bg">
+  <div class="section-inner">
+    <div class="test-grid">
+      <div>
+        <div class="test-eyebrow">Үйлчлүүлэгчдийн туршлага</div>
+        <h2 class="test-title">Үйлчлүүлэгчид бидэнд итгэдэг.</h2>
+        <p class="test-sub">Итгэл нь зөвхөн үр дүнгээс биш, харилцаа, ойлгомжтой тайлбар, тогтмол мэдээллээс бий болдог.</p>
+      </div>
+      <div class="test-cards">
+        <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">"Манай компанийн гэрээ, маргааны асуудлыг маш ойлгомжтой тайлбарлаж, богино хугацаанд шийдвэрлэсэн."</p><div class="test-name">Бизнес харилцагч</div></div>
+        <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">"Процесс бүр тодорхой байсан. Ямар бичиг баримт хэрэгтэй, дараагийн алхам юу болохыг үргэлж хэлж өгдөг."</p><div class="test-name">Иргэний хэрэг хариуцагч</div></div>
+        <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">"Хуулийн хэллэгийг энгийнээр тайлбарлаж, шийдвэр гаргахад маш их тус болсон."</p><div class="test-name">Хувь хүн</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ МЭДЭЭ & НИЙТЛЭЛ ══ -->
+<section id="news" style="background:#ECE7D1">
+  <div class="section-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:24px">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-file"/></svg> Мэдээ & Нийтлэл</div>
+        <h2 class="section-title">Хуулийн салбарын сүүлийн мэдээ</h2>
+      </div>
+      <a href="#legal-guide" onclick="showFullContent()" style="font-size:13px;font-weight:600;color:#3F382B;border-bottom:2px solid #8A7650;padding-bottom:2px">Бүх нийтлэл →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+
+      <div style="background:#fff;border:1px solid #CFC39D;border-radius:20px;overflow:hidden;transition:box-shadow .3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(63,56,43,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div class="article-icon"><svg class="ui-icon"><use href="#icon-file"/></svg></div>
+        <div style="padding:24px">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#8A7650;margin-bottom:8px">Иргэний хууль · 2025.05.01</div>
+          <h3 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;color:#3F382B;margin-bottom:10px;line-height:1.3">Гэрлэлт цуцлахад эд хөрөнгийн хуваарилалтын шинэ журам</h3>
+          <p style="font-size:13px;color:#5E5748;line-height:1.6">Монгол Улсын Гэр бүлийн хуульд орсон өөрчлөлт нь эд хөрөнгийн хуваарилалтад шинэ зохицуулалт авчирлаа.</p>
+          <a href="#legal-guide" onclick="showFullContent()" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:700;color:#8A7650">Унших →</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #CFC39D;border-radius:20px;overflow:hidden;transition:box-shadow .3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(63,56,43,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div class="article-icon"><svg class="ui-icon"><use href="#icon-building"/></svg></div>
+        <div style="padding:24px">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#8A7650;margin-bottom:8px">Арилжааны хууль · 2025.04.15</div>
+          <h3 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;color:#3F382B;margin-bottom:10px;line-height:1.3">Компанийн бүртгэлийн шинэчлэлт: Юуг анхаарах вэ?</h3>
+          <p style="font-size:13px;color:#5E5748;line-height:1.6">2025 оноос эхлэн компанийн улсын бүртгэлд шаардагдах баримт бичгийн жагсаалт өргөжлөө.</p>
+          <a href="#legal-guide" onclick="showFullContent()" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:700;color:#8A7650">Унших →</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #CFC39D;border-radius:20px;overflow:hidden;transition:box-shadow .3s" onmouseover="this.style.boxShadow='0 8px 32px rgba(63,56,43,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div class="article-icon"><svg class="ui-icon"><use href="#icon-scale"/></svg></div>
+        <div style="padding:24px">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#8A7650;margin-bottom:8px">Эрүүгийн хууль · 2025.03.28</div>
+          <h3 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;color:#3F382B;margin-bottom:10px;line-height:1.3">Эрүүгийн хэрэгт сэжигтнийг барьцаалах хугацааны өөрчлөлт</h3>
+          <p style="font-size:13px;color:#5E5748;line-height:1.6">Шүүхийн практикт гарсан чухал өөрчлөлт — сэжигтнийг хорих хугацааны дээд хязгаар шинэчлэгдлээ.</p>
+          <a href="#legal-guide" onclick="showFullContent()" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:700;color:#8A7650">Унших →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ КЕЙСИЙН ЖИШЭЭ ══ -->
+<section id="cases" style="background:#DBCEA5">
+  <div class="section-inner">
+    <div style="margin-bottom:48px">
+      <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Амжилтын жишээ</div>
+      <h2 class="section-title">Бидний шийдсэн хэрэгүүдээс</h2>
+      <p style="font-size:15px;color:#5E5748;margin-top:12px;max-width:560px">Үйлчлүүлэгчийн нэр, хувийн мэдээллийг нууцалсан боловч хуулийн ажлын явцыг дэлгэрэнгүй харуулав.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+
+      <div style="background:#fff;border-radius:20px;padding:32px;border-left:4px solid #8A7650">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div class="case-icon"><svg class="ui-icon"><use href="#icon-home"/></svg></div>
+          <div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#8A7650">Иргэний маргаан</div>
+            <div style="font-size:13px;color:#5E5748">Шийдвэрлэсэн: 2024</div>
+          </div>
+        </div>
+        <h4 style="font-family:'PT Serif',serif;font-size:20px;font-weight:700;color:#3F382B;margin-bottom:12px">Өмчийн маргааны амжилттай шийдэл</h4>
+        <p style="font-size:13.5px;color:#5E5748;line-height:1.7;margin-bottom:16px">Үйлчлүүлэгч нь ах дүүтэйгээ хамтарч өвлөн авсан орон сууцны хуваарилалтын маргаанд орсон. Бид 6 сарын хугацаанд шүүхийн гадна эвлэрэл хийж, хоёр талд тааламжтай шийдэлд хүрлээ.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Өмчийн эрх зүй</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Эвлэрэл</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#5F674F;padding:4px 12px;border-radius:999px;font-weight:600">✓ Амжилттай</span>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:32px;border-left:4px solid #8A7650">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div class="case-icon"><svg class="ui-icon"><use href="#icon-briefcase"/></svg></div>
+          <div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#8A7650">Арилжааны хууль</div>
+            <div style="font-size:13px;color:#5E5748">Шийдвэрлэсэн: 2024</div>
+          </div>
+        </div>
+        <h4 style="font-family:'PT Serif',serif;font-size:20px;font-weight:700;color:#3F382B;margin-bottom:12px">Гэрээний зөрчлийн нөхөн төлбөр</h4>
+        <p style="font-size:13.5px;color:#5E5748;line-height:1.7;margin-bottom:16px">Нийлүүлэлтийн гэрээний зөрчлөөс болж ₮120 сая төгрөгийн хохирол амссан компанийн хэргийг хариуцаж, арбитрын шийдвэрээр бүрэн нөхөн төлбөр гаргуулсан.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Гэрээний эрх зүй</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Арбитр</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#5F674F;padding:4px 12px;border-radius:999px;font-weight:600">✓ ₮120M нөхөн авсан</span>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:32px;border-left:4px solid #8A7650">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div class="case-icon"><svg class="ui-icon"><use href="#icon-users"/></svg></div>
+          <div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#8A7650">Гэр бүлийн хууль</div>
+            <div style="font-size:13px;color:#5E5748">Шийдвэрлэсэн: 2025</div>
+          </div>
+        </div>
+        <h4 style="font-family:'PT Serif',serif;font-size:20px;font-weight:700;color:#3F382B;margin-bottom:12px">Хүүхдийн асрамжийн шийдвэр</h4>
+        <p style="font-size:13.5px;color:#5E5748;line-height:1.7;margin-bottom:16px">Гадаадад ажилладаг эцэгтэй гэрлэлт цуцалсан эхийн хүүхэд асрах эрхийн хэргийг амжилттай шийдвэрлэж, тэтгэлгийн хэмжээг шүүхээр тогтоолгосон.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Гэр бүлийн хууль</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#3F382B;padding:4px 12px;border-radius:999px;font-weight:600">Шүүх</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#5F674F;padding:4px 12px;border-radius:999px;font-weight:600">✓ Амжилттай</span>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:32px;border-left:4px solid #8E977D">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div class="case-icon"><svg class="ui-icon"><use href="#icon-court"/></svg></div>
+          <div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#8E977D">Захиргааны хэрэг</div>
+            <div style="font-size:13px;color:#5E5748">Шийдвэрлэсэн: 2024</div>
+          </div>
+        </div>
+        <h4 style="font-family:'PT Serif',serif;font-size:20px;font-weight:700;color:#3F382B;margin-bottom:12px">Татварын маргааны амжилттай шийдэл</h4>
+        <p style="font-size:13.5px;color:#5E5748;line-height:1.7;margin-bottom:16px">Татварын байгууллагаас буруу тооцоолсон ₮85 сая төгрөгийн нэмэлт татварын шийдвэрт гомдол гарган, захиргааны шүүхээр хүчингүй болгуулсан.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#e6f1fb;color:#185fa5;padding:4px 12px;border-radius:999px;font-weight:600">Захиргааны хэрэг</span>
+          <span style="font-size:11px;background:#e6f1fb;color:#185fa5;padding:4px 12px;border-radius:999px;font-weight:600">Татвар</span>
+          <span style="font-size:11px;background:#DBCEA5;color:#5F674F;padding:4px 12px;border-radius:999px;font-weight:600">✓ ₮85M хэмнэсэн</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ХУУЛИЙГ ЭНГИЙНЭЭР ══ -->
+<section id="legal-guide" style="background:#ECE7D1">
+  <div class="section-inner">
+    <div style="margin-bottom:48px">
+      <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-file"/></svg> Хуулийн гарын авлага</div>
+      <h2 class="section-title">Хуулийг энгийнээр ойлгоцгооё</h2>
+      <p style="font-size:15px;color:#5E5748;margin-top:12px;max-width:560px">Нарийн хуулийн нэр томьёог энгийн хэлээр тайлбарлав. Мэдлэгтэй байх нь таны хамгийн сайн хамгаалалт.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+      <div style="background:#3F382B;border-radius:20px;padding:28px;color:#fff">
+        <div class="guide-icon"><svg class="ui-icon"><use href="#icon-file"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#DBCEA5;margin-bottom:10px">Гэрээнд заавал байх 5 зүйл</h4>
+        <ul style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;padding-left:16px">
+          <li>Талуудын нэр, хаяг, регистр</li>
+          <li>Гэрээний зүйл, агуулга</li>
+          <li>Үнэ, төлбөрийн нөхцөл</li>
+          <li>Хугацаа, дуусгавар болох үндэслэл</li>
+          <li>Маргаан шийдвэрлэх журам</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#DBCEA5">Зөвлөгөө авах →</a>
+      </div>
+
+      <div style="background:#3F382B;border-radius:20px;padding:28px;color:#fff">
+        <div class="guide-icon"><svg class="ui-icon"><use href="#icon-scale"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#DBCEA5;margin-bottom:10px">Шүүхэд гомдол гаргах алхмууд</h4>
+        <ul style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;padding-left:16px">
+          <li>Нэхэмжлэлийн бичиг бэлтгэх</li>
+          <li>Улсын тэмдэгтийн хураамж төлөх</li>
+          <li>Шүүхэд нэхэмжлэл өгөх</li>
+          <li>Шүүх хуралдааны мэдэгдэл хүлээн авах</li>
+          <li>Хуралдаанд оролцох, нотлох баримт гаргах</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#DBCEA5">Зөвлөгөө авах →</a>
+      </div>
+
+      <div style="background:#3F382B;border-radius:20px;padding:28px;color:#fff">
+        <div class="guide-icon"><svg class="ui-icon"><use href="#icon-building"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#DBCEA5;margin-bottom:10px">Компани байгуулах алхмууд</h4>
+        <ul style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;padding-left:16px">
+          <li>Компанийн нэр шалгах, сонгох</li>
+          <li>Үүсгэн байгуулах баримт бэлтгэх</li>
+          <li>Улсын бүртгэлд бүртгүүлэх</li>
+          <li>Татварын бүртгэл хийх</li>
+          <li>Банкны данс нээх</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#DBCEA5">Зөвлөгөө авах →</a>
+      </div>
+
+      <div style="background:#DBCEA5;border-radius:20px;padding:28px">
+        <div class="guide-icon is-soft"><svg class="ui-icon"><use href="#icon-shield"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#3F382B;margin-bottom:10px">Баривчлагдвал яах вэ?</h4>
+        <ul style="font-size:13px;color:#5E5748;line-height:1.8;padding-left:16px">
+          <li>Чимээгүй байх эрхтэй — ашиглаарай</li>
+          <li>Өмгөөлөгч авах эрхтэй — шаардаарай</li>
+          <li>Гэр бүлдээ мэдэгдэх эрхтэй</li>
+          <li>Эмч үзүүлэх эрхтэй</li>
+          <li>48 цагт цагдан хорих шийдвэр гарах ёстой</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#8A7650">Яаралтай холбоо →</a>
+      </div>
+
+      <div style="background:#DBCEA5;border-radius:20px;padding:28px">
+        <div class="guide-icon is-soft"><svg class="ui-icon"><use href="#icon-file"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#3F382B;margin-bottom:10px">Өв залгамжлалын үндсэн журам</h4>
+        <ul style="font-size:13px;color:#5E5748;line-height:1.8;padding-left:16px">
+          <li>Гэрээслэлтэй бол гэрээслэлийн дагуу</li>
+          <li>Гэрээслэлгүй бол хуулиар — хамгийн ойрын садан</li>
+          <li>Өвийг нотариатаар баталгаажуулна</li>
+          <li>6 сарын хугацаанд хүлээн авна</li>
+          <li>Татвар, өр төлбөрийг шалгана</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#8A7650">Зөвлөгөө авах →</a>
+      </div>
+
+      <div style="background:#DBCEA5;border-radius:20px;padding:28px">
+        <div class="guide-icon is-soft"><svg class="ui-icon"><use href="#icon-handshake"/></svg></div>
+        <h4 style="font-family:'PT Serif',serif;font-size:19px;font-weight:700;color:#3F382B;margin-bottom:10px">Арбитр vs Шүүх: Ялгаа юу вэ?</h4>
+        <ul style="font-size:13px;color:#5E5748;line-height:1.8;padding-left:16px">
+          <li>Арбитр: хурдан, нууцлалтай, хямд</li>
+          <li>Шүүх: нийтэд нээлттэй, давж заалдах боломж</li>
+          <li>Арбитрын шийдвэр эцсийн — давж заалдахгүй</li>
+          <li>Гэрээнд арбитрын заалт байвал заавал мөрдөнө</li>
+          <li>Олон улсын маргаанд арбитр тохиромжтой</li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:700;color:#8A7650">Зөвлөгөө авах →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" style="background:#3F382B">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#DBCEA5;margin-bottom:16px;display:flex;align-items:center;gap:9px"><svg class="ui-icon section-icon"><use href="#icon-scale"/></svg> Нийтлэг асуулт</div>
+        <h2 style="font-family:'PT Serif',serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px">Танд байгаа асуултуудад хариулав</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:28px">Хариултыг олохгүй байвал бидэнтэй холбогдоорой. Анхны зөвлөгөө үнэгүй.</p>
+        <a href="#contact" style="display:inline-block;background:#DBCEA5;color:#3F382B;padding:14px 28px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none">Асуулт илгээх →</a>
+      </div>
+      <div id="faq-list">
+
+        <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Анхны зөвлөгөө үнэтэй юу?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Үгүй. Анхны зөвлөгөө бүрэн үнэ төлбөргүй. Бид таны нөхцөл байдлыг сонсож, хэрхэн тусалж болохыг тайлбарлана. Үүний дараа үйлчилгээний нөхцөл, зардлыг тохиролцоно.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Хэрэгт оролцоход ямар бичиг баримт бэлдэх вэ?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Хэргийн төрлөөс хамааран өөр байх боловч ерөнхийдөө: иргэний үнэмлэх, холбогдох гэрээ, хэлцлийн баримт, захидал харилцаа, санхүүгийн баримт бичгүүдийг бэлдэх хэрэгтэй. Дэлгэрэнгүйг анхны уулзалтаар тодорхойлно.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Хэргийг шийдвэрлэхэд хэр удах вэ?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Хэргийн нарийн төвөгтэй байдлаас хамааран хэдэн долоо хоногоос хэдэн жил хүртэл. Иргэний энгийн маргааныг 3-6 сарт, нарийн төвөгтэй хэргийг 1-3 жилд шийдвэрлэдэг. Арбитраар 1-6 сард хурдан шийдэх боломжтой.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Хуулийн зөвлөгөөг онлайнаар авч болох уу?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Тийм. Цахим шуудан, утас, видео дуудлагаар зөвлөгөө авах боломжтой. Баримт бичгийг цахимаар дамжуулан хянана. Гэхдээ шүүхийн төлөөлөл, нотариатын ажил биечлэн хийгдэнэ.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Манай мэдээлэл нууцлагдах уу?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Тийм, заавал. Өмгөөлөгч-үйлчлүүлэгчийн харилцааны нууцыг Монгол Улсын хуулиар хатуу хамгаалдаг. Таны мэдээллийг зөвшөөрөлгүйгээр гуравдагч этгээдэд дамжуулахыг хориглоно.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="padding:20px 0">
+          <button onclick="toggleFAQ(this)" style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px">
+            <span style="font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:#fff;text-align:left">Яаралтай тохиолдолд хэрхэн холбогдох вэ?</span>
+            <span style="color:#DBCEA5;font-size:22px;flex-shrink:0;transition:transform .3s">+</span>
+          </button>
+          <div class="faq-ans" style="display:none;padding-top:12px">
+            <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">Яаралтай тохиолдолд 9903-5509 дугаарт залгана уу. Баривчлагдсан, цагдаанд дуудагдсан, шүүх эхлэх гэж байгаа нөхцөлд ажлын цаг харгалзахгүй хариулна.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag"><svg class="ui-icon section-icon"><use href="#icon-message"/></svg> Холбоо барих</div>
+        <h2 class="section-title">Ярилцъя. Эхний алхмыг тодорхой болгоё.</h2>
+        <div style="margin-top:28px">
+          <a href="tel:+97699035509" class="contact-info-item" style="display:flex;transition:color .2s">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:#8A7650;flex-shrink:0;margin-right:12px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            9903-5509, 8811-9315
+          </a>
+          <div class="contact-info-item" style="display:flex;margin-top:16px">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:#8A7650;flex-shrink:0;margin-right:12px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Улаанбаатар хот, Сүхбаатар дүүрэг
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <div class="form-grid">
+          <input type="text" placeholder="Таны нэр">
+          <input type="tel" placeholder="Утас / и-мэйл">
+        </div>
+        <div style="margin-top:14px">
+          <input type="text" placeholder="Үйлчилгээний төрөл">
+        </div>
+        <div style="margin-top:14px">
+          <textarea placeholder="Товч мэдээлэл"></textarea>
+        </div>
+        <button class="btn-submit">Зөвлөгөөний хүсэлт илгээх</button>
+        <p class="form-disclaimer">Энэ формоор илгээсэн мэдээлэл нь өмгөөлөгч-үйлчлүүлэгчийн харилцаа үүсгэхгүй. Бид тантай холбогдож дараагийн алхмыг баталгаажуулна.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div style="display:flex;align-items:center;opacity:.75"><!-- Creator: Corel DESIGNER 2026 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="32px" width="auto" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 15694.2 3328.82"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#8A7650}
+    .fil1 {fill:#3F382B;fill-rule:nonzero}
+    .fil2 {fill:#8A7650;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M933.25 2287.93c-63.46,-55.22 -133.09,-102.95 -207.46,-142.25 -151.09,245.61 -138.85,534.73 32.69,771.75 171.54,237.02 480.06,391.13 823.57,411.39 47.59,-305.8 -8.54,-618.72 -159.49,-888.87 -56.73,69.14 -121.09,128.75 -191.19,176.07 63.76,129.93 102.04,270.86 112.83,415.2 -23.88,-7.68 -47.15,-16.22 -69.74,-25.55 -130.86,-54.23 -236.45,-135.31 -304.1,-223.85 -67.63,-88.57 -98.81,-182.52 -98.81,-274.73 0,-49.05 8.84,-98.23 27.28,-147.22 9.03,-24.07 20.53,-48.14 34.42,-71.94zm114.64 59.89l60.82 -47.87c40.26,-36.56 78.52,-82.04 112.28,-134.81 -313.21,-332.1 -769.92,-488.59 -1220.99,-418.36 25.83,438.01 267.52,808.15 603.59,924.44 -18.83,-77.62 -24.59,-157.38 -16.3,-236.28 1.56,-14.99 3.62,-29.92 6.18,-44.79 -64.03,-39.19 -125.65,-95.92 -178.65,-169.64 -48.09,-66.89 -88.32,-147.47 -117.06,-235.87 287.06,21.49 555.23,151.31 750.13,363.19zm587.34 -664.47c-252.83,4.58 -494.88,82.23 -680.72,218.36 76.05,46.44 147.55,99.93 213.58,159.74 94.94,-55.52 209.63,-96.5 331.66,-115.25 53.11,-8.15 107.48,-12.08 161.82,-11.86 -16.6,-82.01 -25.47,-166.43 -26.35,-250.99zm-677.75 1010.7c308.52,-64.94 561.24,-344.45 652.42,-721.53 -78.85,3.76 -156.66,16.71 -229.31,38.12 -16.74,4.94 -33.24,10.32 -49.43,16.08 -3.49,9.3 -7.11,18.53 -10.9,27.61 -54.21,130.89 -135.28,236.47 -223.85,304.1 -59.26,45.26 -120.95,74.21 -182.9,88.4 -2.47,15.12 -4.01,30.22 -4.61,45.29 -2.5,61.48 10.02,123.67 40.1,185.45 2.69,5.49 5.52,10.98 8.48,16.47zm83.41 -1749.9c55.22,-63.48 102.95,-133.09 142.25,-207.46 -245.64,-151.09 -534.73,-138.85 -771.75,32.69 -237.02,171.54 -391.13,480.06 -411.39,823.57 305.78,47.59 618.69,-8.54 888.84,-159.49 -69.11,-56.73 -128.72,-121.09 -176.04,-191.19 -129.93,63.76 -270.86,102.04 -415.2,112.83 7.66,-23.88 16.19,-47.15 25.55,-69.74 54.21,-130.86 135.28,-236.45 223.85,-304.1 88.54,-67.63 182.52,-98.81 274.71,-98.81 49.07,0 98.23,8.84 147.25,27.28 24.07,9.03 48.14,20.53 71.94,34.42zm-59.89 114.64l47.87 60.82c36.56,40.26 82.04,78.52 134.79,112.28 332.1,-313.21 488.59,-769.92 418.36,-1220.99 -437.98,25.83 -808.15,267.52 -924.41,603.59 77.62,-18.83 157.38,-24.59 236.26,-16.3 14.99,1.56 29.92,3.62 44.82,6.18 39.17,-64.03 95.9,-125.65 169.64,-178.65 66.89,-48.09 147.47,-88.32 235.84,-117.06 -21.46,287.06 -151.31,555.23 -363.17,750.13zm664.47 587.34c-4.58,-252.83 -82.23,-494.88 -218.39,-680.72 -46.44,76.05 -99.9,147.55 -159.74,213.58 55.52,94.94 96.53,209.63 115.25,331.66 8.18,53.11 12.08,107.48 11.88,161.82 82.01,-16.6 166.43,-25.47 250.99,-26.35zm-1010.73 -677.75c64.96,308.52 344.47,561.24 721.56,652.42 -3.76,-78.85 -16.74,-156.66 -38.15,-229.31 -4.94,-16.74 -10.29,-33.24 -16.06,-49.43 -9.33,-3.49 -18.53,-7.11 -27.64,-10.9 -130.86,-54.21 -236.45,-135.28 -304.1,-223.85 -45.26,-59.26 -74.19,-120.95 -88.4,-182.9 -15.1,-2.5 -30.19,-4.01 -45.26,-4.61 -61.51,-2.5 -123.67,10.02 -185.45,40.1 -5.49,2.69 -10.98,5.49 -16.5,8.48zm1642.12 1416.3c-55.19,63.46 -102.95,133.06 -142.25,207.44 245.64,151.12 534.73,138.85 771.75,-32.69 237.05,-171.54 391.13,-480.03 411.39,-823.54 -305.78,-47.62 -618.69,8.54 -888.84,159.49 69.14,56.7 128.72,121.06 176.04,191.19 129.96,-63.76 270.89,-102.07 415.2,-112.83 -7.66,23.85 -16.19,47.15 -25.55,69.71 -54.21,130.89 -135.28,236.47 -223.85,304.1 -88.54,67.63 -182.52,98.83 -274.71,98.83 -49.07,0 -98.23,-8.87 -147.25,-27.28 -24.07,-9.06 -48.14,-20.53 -71.94,-34.42zm59.89 -114.64l-47.87 -60.85c-36.56,-40.24 -82.04,-78.52 -134.79,-112.25 -332.1,313.19 -488.59,769.92 -418.36,1220.96 437.98,-25.8 808.15,-267.49 924.41,-603.57 -77.62,18.83 -157.38,24.56 -236.26,16.3 -14.99,-1.56 -29.92,-3.62 -44.79,-6.18 -39.19,64.03 -95.92,125.65 -169.67,178.65 -66.89,48.06 -147.47,88.32 -235.84,117.06 21.46,-287.09 151.31,-555.23 363.17,-750.13zm-664.47 -587.37c4.58,252.86 82.26,494.91 218.39,680.72 46.44,-76.03 99.9,-147.52 159.74,-213.56 -55.52,-94.96 -96.5,-209.63 -115.25,-331.66 -8.15,-53.11 -12.08,-107.48 -11.88,-161.85 -82.01,16.6 -166.43,25.5 -250.99,26.35zm1010.73 677.78c-64.96,-308.52 -344.47,-561.27 -721.53,-652.42 3.73,78.85 16.71,156.63 38.12,229.28 4.94,16.77 10.29,33.26 16.08,49.43 9.3,3.51 18.5,7.14 27.61,10.9 130.89,54.23 236.45,135.31 304.1,223.85 45.26,59.28 74.19,120.95 88.4,182.93 15.1,2.47 30.19,4.01 45.26,4.61 61.51,2.5 123.67,-10.05 185.45,-40.13 5.49,-2.66 11.01,-5.49 16.5,-8.45zm-298.5 -1319.55c63.48,55.22 133.09,102.95 207.46,142.25 151.09,-245.64 138.85,-534.73 -32.69,-771.75 -171.54,-237.02 -480.03,-391.13 -823.54,-411.39 -47.62,305.78 8.54,618.69 159.46,888.84 56.73,-69.11 121.09,-128.72 191.22,-176.04 -63.78,-129.93 -102.07,-270.86 -112.86,-415.2 23.88,7.66 47.15,16.19 69.74,25.55 130.89,54.21 236.45,135.28 304.1,223.85 67.63,88.54 98.83,182.52 98.83,274.71 0,49.07 -8.87,98.23 -27.31,147.25 -9.03,24.07 -20.53,48.14 -34.42,71.94zm-114.64 -59.89l-60.82 47.87c-40.26,36.56 -78.52,82.04 -112.28,134.79 313.21,332.1 769.92,488.59 1220.99,418.36 -25.83,-437.98 -267.52,-808.15 -603.59,-924.41 18.86,77.62 24.59,157.38 16.33,236.26 -1.59,14.99 -3.65,29.92 -6.2,44.82 64.03,39.17 125.65,95.9 178.65,169.64 48.09,66.89 88.32,147.47 117.06,235.84 -287.06,-21.46 -555.23,-151.31 -750.13,-363.17zm-587.34 664.47c252.83,-4.58 494.91,-82.23 680.72,-218.39 -76.05,-46.44 -147.55,-99.9 -213.58,-159.74 -94.94,55.52 -209.63,96.53 -331.63,115.25 -53.14,8.18 -107.51,12.08 -161.85,11.88 16.6,82.01 25.47,166.43 26.35,250.99zm677.75 -1010.73c-308.52,64.96 -561.24,344.47 -652.42,721.56 78.85,-3.76 156.66,-16.74 229.31,-38.15 16.74,-4.94 33.24,-10.29 49.43,-16.06 3.49,-9.33 7.14,-18.53 10.9,-27.64 54.21,-130.86 135.28,-236.45 223.85,-304.1 59.26,-45.26 120.95,-74.19 182.9,-88.4 2.5,-15.1 4.01,-30.19 4.61,-45.26 2.5,-61.51 -10.02,-123.67 -40.1,-185.45 -2.66,-5.49 -5.49,-10.98 -8.48,-16.5z"/>
+  <path class="fil1" d="M3779.62 2508.18l0 -101.47 55.33 0c50.94,0 89.03,-8.81 113.87,-26.87 25.28,-18.03 37.71,-54.54 37.71,-109.07l0 -1137.28c0,-70.56 -10.02,-115.47 -30.08,-135.12 -20.04,-19.65 -60.55,-29.28 -121.5,-29.28l-55.33 0 0 -99.46 1311.7 0 154 429.89 -103.06 38.92c-58.95,-136.35 -122.33,-226.98 -190.89,-271.91 -68.56,-44.49 -181.25,-66.97 -338.46,-66.97l-405.02 0 0 601.53 299.96 0c147.17,0 267.08,4.8 359.71,14.02 92.63,9.63 176.86,33.29 253.44,70.98 76.6,38.1 134.76,89.03 174.45,152.79 40.1,63.76 60.16,133.94 60.16,210.54 0,103.06 -33.29,192.48 -99.85,267.49 -66.97,74.98 -152,125.89 -255.44,151.97 -103.88,26.07 -236.2,39.3 -397.83,39.3l-822.86 0zm428.27 -794.01l0 535.36c0,54.12 2.8,87.42 8.01,100.64 6.42,11.64 17.65,20.06 34.09,24.48 19.65,4.01 58.16,6.01 115.11,6.01l159.6 0c154.8,0 266.67,-8.04 334.84,-24.48 68.59,-16.44 127.13,-53.33 175.65,-111.07 48.52,-57.75 72.57,-126.31 72.57,-205.71 0,-75.01 -23.25,-139.56 -69.77,-194.1 -46.52,-54.95 -107.48,-90.22 -182.46,-106.68 -74.98,-16.44 -185.26,-24.45 -330.83,-24.45l-316.81 0zm2701.24 14.44l-761.93 0 0 -134.73 761.93 0c0,-96.64 -14.02,-184.08 -41.69,-262.66 -27.67,-78.19 -67.38,-145.57 -119.12,-201.73 -101.06,-109.07 -234.99,-163.61 -401.81,-163.61 -119.09,0 -226.18,30.08 -321.2,89.83 -95.05,60.16 -186.47,189.27 -274.3,387.78l-109.07 -28.49 150.38 -545.38 83.41 0 37.68 109.1c123.92,-91.83 277.92,-137.97 461.97,-137.97 240.62,0 432.69,76.6 575.84,229.81 143.57,153.18 215.37,349.28 215.37,588.28 0,249.43 -69,457.96 -206.94,625.99 -137.94,168.02 -338.44,252.23 -601.92,252.23 -176.45,0 -329.63,-41.72 -460.35,-125.13 -130.34,-83.79 -231.78,-182.05 -303.96,-294.74l94.22 -64.96c68.18,94.25 156.8,174.45 266.67,241.03 109.48,66.14 229.39,99.44 359.32,99.44 152,0 283.11,-49.32 394.21,-147.58 110.66,-98.64 177.63,-270.67 201.29,-516.51zm463.62 -858.98l1149.3 0 151.58 429.5 -102.26 38.48c-58.54,-135.94 -121.92,-226.57 -190.48,-271.08 -68.56,-44.49 -181.25,-66.97 -338.46,-66.97l-248.61 0 0 1253.57c0,63.78 10.81,105.06 32.88,124.71 22.04,19.65 64.55,29.28 127.93,29.28l43.69 0 0 101.06 -625.58 0 0 -101.06 40.1 0c65.76,0 108.69,-10.02 129.13,-30.08 20.45,-19.65 30.47,-65.35 30.47,-136.74l0 -1112.83c0,-70.18 -10.81,-114.29 -32.88,-131.93 -22.04,-17.65 -58.95,-26.46 -111.49,-26.46l-55.33 0 0 -99.46zm1549.9 0l83.82 0 38.51 107.89c137.53,-91.04 285.11,-136.76 443.5,-136.76 175.24,0 314.39,40.13 418.28,120.71 103.86,80.22 155.98,182.87 155.98,307.59 0,91.83 -31.67,171.65 -95.05,239.8 -63.76,67.79 -148.37,113.9 -255.03,138.36 147.96,23.27 253.85,72.18 317.61,147.17 63.35,74.6 95.05,159.63 95.05,255.06 0,139.15 -63.78,255.06 -190.89,348.07 -127.13,93.04 -283.93,139.56 -470.4,139.56 -166.02,0 -312.39,-40.89 -439.11,-122.71 -127.13,-81.4 -224.97,-177.66 -293.95,-288.73l93.84 -64.55c58.95,87.42 144.78,165.2 257.86,232.58 113.08,67.76 232.58,101.47 359.3,101.47 127.54,0 232.19,-32.88 313.6,-98.26 81.4,-65.76 121.92,-151.58 121.92,-257.06 0,-92.63 -36.89,-170.41 -110.28,-232.58 -73.39,-62.17 -208.92,-93.04 -406.64,-93.04l-120.68 0 0 -113.08 153.59 0c122.3,0 222.94,-26.07 302.35,-77.81 79.4,-51.71 119.12,-133.94 119.12,-247.01 0,-108.27 -35.71,-187.26 -106.68,-237.41 -71.39,-50.12 -157.18,-75.39 -257.44,-75.39 -111.9,0 -214.55,32.08 -307.59,95.84 -93.04,64.17 -178.84,188.5 -257.03,373.76l-109.1 -29.67 145.57 -533.77z"/>
+  <path class="fil2" d="M11615.42 1518.2l-103.53 288.1c-3.24,9.44 -4.91,15.64 -4.91,18.69 0,5.21 1.56,9.44 4.61,12.68 3.24,2.94 6.29,4.61 8.95,5.21l27.14 1.18 0 24.18 -120.35 0 0 -24.18c15.64,0 26.05,-2.55 31.45,-7.49 5.41,-5 11.99,-17.48 19.87,-37.44l125.26 -332.65 47.29 0 124.82 335.77c5.68,15.73 11.58,26.65 17.59,32.85 6.48,5.9 15.15,8.95 25.96,8.95l6.59 0 0 24.18 -143.41 0 0 -24.18 18.2 -0.6c14.55,0 21.93,-5.6 21.93,-16.71 0,-4.8 -2.66,-14.66 -8.07,-29.7l-99.41 -278.85zm453.3 -58.79c37.38,0 70.51,8.84 99.63,26.54 32.03,18.99 56.73,43.67 73.94,74.05 17.21,30.38 25.88,65.49 25.88,105.5 0,61.84 -19.29,112.28 -57.75,151.31 -38.45,39.06 -87.53,58.51 -147.19,58.51 -65.98,0 -118.68,-23.41 -158.12,-70.32 -31.76,-38.04 -47.59,-83.77 -47.59,-137.26 0,-38.92 8.95,-74.24 26.84,-105.69 17.89,-31.56 43.28,-56.54 76.22,-75.01 32.83,-18.39 68.92,-27.64 108.14,-27.64zm0.22 31.26c-30,0 -55.55,6.78 -76.9,20.45 -21.33,13.67 -38.53,33.92 -51.63,60.99 -13.17,26.92 -19.76,59.78 -19.76,98.61 0,37.05 6.29,68.72 18.99,94.88 12.68,26.24 29.78,46.22 51.21,60.08 21.55,13.86 45.83,20.75 72.87,20.75 26.43,0 49.95,-6.7 70.48,-20.06 20.56,-13.28 37.57,-34.8 51.13,-64.31 13.48,-29.59 20.26,-61.84 20.26,-96.86 0,-36.09 -6.67,-69.11 -20.15,-99 -11.5,-25.77 -26.95,-44.85 -46.22,-57.14 -19.27,-12.3 -42.68,-18.39 -70.29,-18.39zm-613.88 637.54l155.76 0 0 24.78 -11.01 0c-12.9,0 -21.74,1.45 -26.65,4.42 -4.91,2.94 -8.45,7.38 -10.81,13.06 -1.87,6.2 -2.85,14.46 -2.85,24.98l0 151.42 150.93 -159.38c7.38,-7.85 11.88,-13.17 13.56,-15.84 1.21,-2.44 2.11,-5.3 2.69,-8.34 0,-3.46 -1.76,-6.01 -5.13,-7.77 -3.35,-1.67 -10.62,-2.55 -21.82,-2.55l-9.25 0 0 -24.78 144.56 0 0 24.78c-11.42,0 -21.63,1.26 -30.96,3.73 -4.45,1.18 -8.48,2.55 -12.1,4.12 -3.65,1.67 -6.97,3.65 -9.83,5.9 -11.61,8.67 -19.98,15.53 -25.17,20.75l-108 110.03 123.31 162.54c5.21,7.08 10.13,13.26 14.77,18.58 4.61,5.21 8.45,9.14 11.61,11.61 6.09,5 12.95,8.95 20.45,11.8l13.06 2.25 19.27 0.88 0 24.78 -171.1 0 0 -24.78 10.13 0 4.03 0 3.24 0c6.89,0 11.2,-0.3 12.98,-0.88 2.85,-0.6 5.41,-1.98 7.47,-4.34 1.56,-2.06 2.66,-4.5 3.24,-7.47 0,-4.34 -6.67,-15.73 -19.95,-34.12l-90.76 -123.01 -51.21 52.92 0 76.68c0,13.17 1.26,22.12 3.73,26.84 2.55,4.72 6.7,8.26 12.68,10.81 4.42,1.67 16.03,2.55 34.91,2.55l0 24.78 -155.76 0 0 -24.78 12.1 0c12.1,0 20.26,-1.07 24.48,-3.35 4.23,-2.14 7.66,-6.18 10.24,-12.19 2.63,-5.9 3.92,-15.73 3.92,-29.59l0 -264.61c0,-13.56 -1.1,-22.89 -3.35,-27.91 -2.17,-5.1 -5.6,-8.87 -10.24,-11.12 -4.61,-2.25 -13.94,-3.43 -28.21,-3.43l-8.95 0 0 -24.78zm637.27 -7.08c37.38,0 70.51,8.84 99.63,26.54 32.03,18.99 56.73,43.67 73.97,74.05 17.21,30.38 25.85,65.49 25.85,105.5 0,61.84 -19.27,112.28 -57.75,151.31 -38.45,39.06 -87.53,58.51 -147.19,58.51 -65.98,0 -118.68,-23.41 -158.12,-70.32 -31.76,-38.04 -47.59,-83.77 -47.59,-137.26 0,-38.92 8.95,-74.24 26.84,-105.69 17.89,-31.56 43.28,-56.54 76.22,-75.01 32.83,-18.39 68.92,-27.64 108.14,-27.64zm0.22 31.26c-30,0 -55.55,6.78 -76.9,20.45 -21.33,13.67 -38.53,33.92 -51.63,60.99 -13.17,26.92 -19.76,59.78 -19.76,98.61 0,37.05 6.29,68.72 18.99,94.88 12.68,26.24 29.78,46.22 51.21,60.08 21.55,13.86 45.83,20.75 72.87,20.75 26.43,0 49.95,-6.7 70.48,-20.06 20.56,-13.28 37.57,-34.8 51.13,-64.31 13.48,-29.59 20.26,-61.84 20.26,-96.86 0,-36.09 -6.67,-69.11 -20.15,-99 -11.5,-25.77 -26.95,-44.85 -46.22,-57.14 -19.27,-12.3 -42.68,-18.39 -70.29,-18.39zm257.53 -24.18l155.73 0 0 24.78 -10.7 0c-11.69,0 -20.26,1.07 -25.66,3.35 -5.32,2.14 -9.14,5.79 -11.5,10.7 -1.87,5.41 -2.85,14.74 -2.85,28.13l0 111.79 208.26 0 0 -108.85 0 -5.21 0 -4.03 0 -3.13c0,-7.68 -0.49,-12.49 -1.48,-14.35 -1.48,-6.09 -4.83,-10.73 -10.05,-13.78 -2.63,-1.56 -5.87,-2.74 -9.52,-3.43 -3.65,-0.8 -8.15,-1.18 -13.56,-1.18l-15.84 0 0 -24.78 154.27 0 0 24.78 -13.86 0c-10.35,0 -17.89,1.18 -22.62,3.62 -4.64,2.36 -7.99,5.6 -9.74,9.74 -1.87,4.12 -2.74,12.98 -2.74,26.54l0 272.95c0,14.77 0.88,24.21 2.55,28.43 1.76,4.23 5.71,7.27 11.88,9.14 3.46,1.18 14.96,1.76 34.53,1.76l0 24.78 -154.27 0 0 -24.78 11.31 0c13.94,0 23.3,-0.88 27.91,-2.55 4.64,-1.76 7.77,-4.91 9.44,-9.52 1.18,-3.27 1.78,-13.48 1.78,-30.68l0 -124.19 -208.26 0 0 127.62c0,14.96 0.99,24.59 2.85,29.01 2.17,4.03 6.09,6.89 11.8,8.56 4.03,1.18 16.11,1.76 36.06,1.76l0 24.78 -155.73 0 0 -24.78 9.83 0c15.53,0 24.98,-0.77 28.32,-2.44 3.43,-1.59 6.18,-4.72 8.54,-9.36 2.28,-4.61 3.46,-12.68 3.46,-24.37l0 -276.11c0,-12.98 -1.1,-21.63 -3.16,-25.85 -1.76,-4.42 -4.8,-7.88 -9.25,-10.32 -4.42,-2.47 -11.58,-3.73 -21.63,-3.73l-16.11 0 0 -24.78zm792.81 0l20.75 0 36.67 133.91 -26.84 7.58c-14.35,-30.96 -25.36,-51.71 -32.83,-62.25 -12.1,-17.1 -27.53,-30.66 -46.22,-40.7 -18.69,-9.94 -38.84,-14.93 -60.38,-14.93 -26.05,0 -49.95,6.97 -71.47,20.83 -21.63,13.97 -39.25,34.61 -52.92,61.86 -13.67,27.34 -20.45,57.31 -20.45,90.16 0,35.19 6.89,66.17 20.56,93.01 13.75,26.73 32.44,47.48 56.24,62.03 23.71,14.66 48.77,21.93 75.31,21.93 25.28,0 51.32,-7.16 77.89,-21.63 26.54,-14.35 49.84,-34.91 69.8,-61.64l23.11 15.84c-12.3,18.28 -25.17,33.24 -38.64,44.93 -21.13,18.88 -43.94,33.24 -68.34,43.06 -24.37,9.94 -50.34,14.85 -77.86,14.85 -62.25,0 -112.97,-23.22 -152.11,-69.52 -32.36,-38.34 -48.47,-84.07 -48.47,-137.15 0,-38.45 8.95,-73.56 26.84,-105.5 17.79,-31.86 42.57,-57.14 74.24,-75.83 31.56,-18.58 65.38,-27.91 101.28,-27.91 19.76,0 37.93,2.66 54.37,7.96 16.41,5.32 33.13,13.86 50.23,25.58l9.25 -26.46zm265.7 0l47.59 0 124.88 335.77c6.09,16.91 12.27,28.13 18.36,33.73 3.35,2.66 7,4.72 11.03,5.98 2.25,0.6 4.5,1.1 6.59,1.48 2.17,0.41 4.72,0.6 7.85,0.6l6.31 0 0 24.18 -143.38 0 0 -24.18 13.59 -0.6c9.44,0 15.42,-0.88 18.17,-2.85 5.52,-3.43 8.37,-8.04 8.37,-13.75 0,-4.23 -2.74,-14.08 -8.07,-29.61l-26.54 -77.67 -145.82 0 -31.21 86.84c-3.24,9.44 -4.91,15.62 -4.91,18.66 0,3.46 0.91,6.78 2.77,9.85 1.87,3.05 4.61,5.3 8.54,6.86 2.09,0.6 4.45,1.1 7,1.48 2.63,0.3 5.9,0.49 9.72,0.49l12.71 0.3 0 24.18 -120.38 0 0 -24.18 6.39 0c2.28,0 4.91,-0.19 8.07,-0.6 2.85,0 6.01,-0.88 9.55,-2.55 5,-2.36 9.33,-5.9 12.98,-10.7 1.65,-2.28 3.73,-6.01 5.98,-11.23l8.37 -19.84 125.48 -332.65zm-50.34 224.78l124.08 0 -62.14 -173.07 -61.95 173.07zm463.48 -173.07l-103.53 288.1c-3.24,9.44 -4.91,15.64 -4.91,18.69 0,5.21 1.56,9.44 4.61,12.68 3.24,2.94 6.29,4.61 8.95,5.21l27.14 1.18 0 24.18 -120.35 0 0 -24.18c15.64,0 26.05,-2.55 31.45,-7.49 5.41,-5 11.99,-17.48 19.87,-37.44l125.26 -332.65 47.29 0 124.82 335.77c5.68,15.73 11.58,26.65 17.59,32.85 6.48,5.9 15.15,8.95 25.96,8.95l6.59 0 0 24.18 -143.38 0 0 -24.18 18.2 -0.6c14.55,0 21.93,-5.6 21.93,-16.71 0,-4.8 -2.66,-14.66 -8.07,-29.7l-99.44 -278.85zm248 -65.27l20.17 0 2.83 13.56 246.6 0 2.28 -13.56 21.02 0 42.4 118.07 -25.88 9.14c-12.08,-30.88 -26.84,-52.81 -44.24,-65.76 -17.48,-13.09 -39.33,-19.57 -65.57,-19.57 -11.5,0 -18.11,0.38 -19.68,1.18 -1.67,0.77 -3.24,2.25 -4.72,4.61l-0.88 6.29 -0.3 13.86 0 278.66c0,13.86 0.6,22.81 1.87,27.03 1.29,4.23 3.27,7.58 5.9,9.94 2.66,2.47 6.59,4.42 11.5,5.9 6.2,1.18 16.71,1.78 31.78,1.78l0 24.18 -155.45 0 0 -24.18c16.5,0 27.03,-0.6 31.45,-1.78 6.29,-1.67 11.01,-5.3 14.05,-10.7 3.05,-5.52 4.64,-15.45 4.64,-29.81l0 -284.83c0,-8.76 -0.49,-14.16 -1.48,-16.14 -0.49,-1.67 -2.06,-3.13 -4.42,-4.23 -2.36,-1.18 -7.49,-1.76 -15.15,-1.76 -20.83,0 -37.77,2.63 -50.53,8.04 -12.71,5.32 -24.48,14.35 -35.41,27.14 -10.81,12.79 -20.26,29.5 -28.32,50.14l-25.96 -9.14 41.5 -118.07zm357.05 13.56l155.73 0 0 24.78 -10.7 0c-16.71,0 -27.64,2.63 -32.85,8.04 -4.8,5.32 -7.16,16.71 -7.16,34.23l0 227.42 208.26 -224.56c0,-15.15 -0.6,-24.87 -1.87,-29.2 -1.29,-4.34 -4.53,-8.07 -9.85,-11.2 -5.21,-3.16 -12.87,-4.72 -22.89,-4.72l-15.53 0 0 -24.78 153.97 0 0 24.78 -13.86 0c-14.35,0 -23.8,2.63 -28.32,8.04 -4.53,5.32 -6.78,16.03 -6.78,31.86l0 273.14c0,17.7 2.06,28.82 6.09,33.35 4.23,3.84 15.53,5.79 33.92,5.79l8.95 0 0 24.78 -153.97 0 0 -24.78 11.01 0c13.56,0 22.81,-0.88 27.42,-2.55 4.72,-1.76 7.96,-4.61 9.63,-8.65 0.6,-2.17 1.1,-5.71 1.48,-10.81 0.38,-5.02 0.6,-11.91 0.6,-20.56l0 -219.95 -208.26 223.38c0,17.7 2.06,28.63 6.09,32.85 4.03,4.23 15.34,6.29 33.92,6.29l10.7 0 0 24.78 -155.73 0 0 -24.78 9.83 0c16.71,0 27.64,-1.76 32.63,-5.21 5.13,-3.43 7.68,-13.67 7.68,-30.77l0 -276.3c0,-16.22 -2.28,-26.92 -6.89,-32.14 -4.61,-5.21 -13.67,-7.77 -27.14,-7.77l-16.11 0 0 -24.78zm471.85 0l155.76 0 0 24.78 -10.7 0c-11.69,0 -20.26,1.07 -25.66,3.35 -5.32,2.14 -9.14,5.79 -11.5,10.7 -1.87,5.41 -2.85,14.74 -2.85,28.13l0 111.79 208.26 0 0 -108.85 0 -5.21 0 -4.03 0 -3.13c0,-7.68 -0.49,-12.49 -1.48,-14.35 -1.48,-6.09 -4.83,-10.73 -10.05,-13.78 -2.63,-1.56 -5.87,-2.74 -9.52,-3.43 -3.65,-0.8 -8.15,-1.18 -13.56,-1.18l-15.84 0 0 -24.78 154.27 0 0 24.78 -13.86 0c-10.35,0 -17.89,1.18 -22.62,3.62 -4.64,2.36 -7.99,5.6 -9.74,9.74 -1.87,4.12 -2.74,12.98 -2.74,26.54l0 272.95c0,14.77 0.88,24.21 2.55,28.43 1.76,4.23 5.71,7.27 11.88,9.14 3.46,1.18 14.96,1.76 34.53,1.76l0 24.78 -154.27 0 0 -24.78 11.31 0c13.94,0 23.3,-0.88 27.91,-2.55 4.64,-1.76 7.77,-4.91 9.44,-9.52 1.18,-3.27 1.78,-13.48 1.78,-30.68l0 -124.19 -208.26 0 0 127.62c0,14.96 0.99,24.59 2.85,29.01 2.17,4.03 6.09,6.89 11.8,8.56 4.03,1.18 16.11,1.76 36.06,1.76l0 24.78 -155.76 0 0 -24.78 9.83 0c15.53,0 24.98,-0.77 28.32,-2.44 3.43,-1.59 6.18,-4.72 8.54,-9.36 2.28,-4.61 3.46,-12.68 3.46,-24.37l0 -276.11c0,-12.98 -1.1,-21.63 -3.16,-25.85 -1.76,-4.42 -4.8,-7.88 -9.25,-10.32 -4.42,-2.47 -11.58,-3.73 -21.63,-3.73l-16.11 0 0 -24.78zm476.6 0l281.82 0 37.16 105.31 -25.06 9.44c-14.35,-33.35 -29.89,-55.55 -46.71,-66.47 -16.8,-10.92 -44.44,-16.41 -82.97,-16.41l-61.01 0 0 307.37c0,15.62 2.66,25.74 8.07,30.57 5.41,4.8 15.86,7.16 31.4,7.16l10.7 0 0 24.78 -153.4 0 0 -24.78 9.83 0c16.14,0 26.65,-2.44 31.67,-7.36 5,-4.83 7.47,-16.03 7.47,-33.54l0 -272.87c0,-17.18 -2.66,-28.02 -8.07,-32.33 -5.41,-4.34 -14.46,-6.5 -27.34,-6.5l-13.56 0 0 -24.37z"/>
+  <polygon class="fil0" points="11057.64,2537.05 11057.64,840.62 11108.93,840.62 11108.93,2537.05 "/>
+ </g>
+</svg></div><span class="footer-copy" id="t-footer-copy">© 2026 "Бэгз Ло Консалтинг" ХХК. Бүх эрх хуулиар хамгаалагдсан.</span></div>
+    <div class="footer-links">
+      <a href="privacy.html">Нууцлал</a>
+      <a href="notice.html">Мэдэгдэл</a>
+      <a href="#contact">Холбоо барих</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobile(){
+  const m=document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+}
+function closeMobile(){
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function syncTopbar(){
+  const topbar = document.querySelector('header');
+  if(!topbar) return;
+  topbar.classList.toggle('is-scrolled', window.scrollY > 12);
+}
+const fullContentTargets = new Set(['#team','#experience','#legal-guide','#faq','#cases']);
+function revealContentForHash(hash = window.location.hash){
+  if(!fullContentTargets.has(hash)) return;
+  document.body.classList.remove('compact-home');
+  setTimeout(() => document.querySelector(hash)?.scrollIntoView({behavior:'smooth'}), 0);
+}
+function showFullContent(){
+  document.body.classList.remove('compact-home');
+  setTimeout(() => revealContentForHash(), 0);
+}
+function showCompactHome(){
+  document.body.classList.add('compact-home');
+  closeMobile();
+  setTimeout(() => window.scrollTo({top:0,behavior:'smooth'}), 0);
+}
+window.addEventListener('hashchange', () => revealContentForHash());
+document.addEventListener('DOMContentLoaded', () => revealContentForHash());
+window.addEventListener('scroll', syncTopbar, {passive:true});
+window.addEventListener('load', syncTopbar);
+document.addEventListener('DOMContentLoaded', syncTopbar);
+</script>
+<script>
+function toggleFAQ(btn) {
+  const ans = btn.nextElementSibling;
+  const icon = btn.querySelector('span:last-child');
+  const isOpen = ans.style.display !== 'none';
+  ans.style.display = isOpen ? 'none' : 'block';
+  icon.textContent = isOpen ? '+' : '×';
+  icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+}
+</script>
+<script src="content-loader.js?v=admin-cms-1"></script>
+<script src="site-search.js?v=admin-cms-1"></script>
+<script src="chatbot.js?v=chatbot-ai-1"></script>
+<script src="full-i18n.js?v=multilang-cms-1"></script>
+</body>
+</html>
+
+

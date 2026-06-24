@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мэдэгдэл - BEGZ Law Firm</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--font-ui:Calibri,Arial,"Microsoft YaHei","Malgun Gothic",sans-serif;--bg:#ECE7D1;--soft:#DBCEA5;--border:#CFC39D;--accent:#8E977D;--primary:#8A7650;--deep:#5F674F;--ink:#3F382B;--paper:#fff}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(236,231,209,.92);border-bottom:1px solid rgba(142,151,125,.26);backdrop-filter:blur(18px);transition:.25s}
+header.is-scrolled{background:rgba(138,118,80,.96);box-shadow:0 14px 34px rgba(63,56,43,.24)}
+header.is-scrolled a,header.is-scrolled .nav-trigger,header.is-scrolled .brand{color:#F8FFFC}
+.nav{max-width:1180px;margin:auto;height:72px;padding:0 20px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;margin-right:auto;flex:0 0 auto}
+.brand img{display:block;width:190px;max-width:46vw;height:auto}
+.nav>a:not(.brand),.nav-trigger{height:72px;display:flex;align-items:center;font-family:var(--font-ui);font-size:13px;font-weight:700;color:#4A4438;line-height:1;letter-spacing:0;padding:0}
+.nav-item{position:relative}
+.nav-trigger{border:0;background:transparent;cursor:pointer}
+.nav-trigger::after{content:"⌄";margin-left:6px;font-size:12px;color:var(--accent)}
+.dropdown{display:none;position:absolute;top:100%;left:0;min-width:250px;background:var(--paper);border:1px solid var(--border);border-radius:8px;padding:8px;box-shadow:0 18px 44px rgba(63,56,43,.14)}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block}
+.dropdown a{display:block;padding:10px 12px;border-radius:6px;color:#4A4438;font-size:13px;font-weight:700}
+.dropdown a:hover,.dropdown a.active{background:var(--soft);color:var(--deep)}
+.flags{display:flex;gap:6px}
+.flag-btn{width:34px;height:26px;border:1.5px solid rgba(138,118,80,.24);background:rgba(255,255,255,.56);border-radius:8px;padding:3px}
+.flag-icon{display:block;width:24px;height:16px;border-radius:2px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.flag-mn{background:linear-gradient(90deg,#c4272f 0 33.33%,#015197 33.33% 66.66%,#c4272f 66.66%)}
+.flag-cn{background:radial-gradient(circle at 27% 35%,#ffde00 0 10%,transparent 11%),#de2910}
+.flag-us{position:relative;background:repeating-linear-gradient(to bottom,#b22234 0 1.23px,#fff 1.23px 2.46px)}
+.flag-us::before{content:"";position:absolute;left:0;top:0;width:10.5px;height:8.6px;background:#3c3b6e}
+.flag-us::after{content:"";position:absolute;left:1.5px;top:1.4px;width:1.1px;height:1.1px;background:#fff;border-radius:50%;box-shadow:3px 0 #fff,6px 0 #fff,0 2px #fff,3px 2px #fff,6px 2px #fff,0 4px #fff,3px 4px #fff,6px 4px #fff}
+.flag-kr{position:relative;background:linear-gradient(#111 0 0) 3px 3px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 5px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 7px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 3px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 7px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 11px/6px 1px no-repeat,linear-gradient(#111 0 0) 3px 13px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 9px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 11px/6px 1px no-repeat,linear-gradient(#111 0 0) 15px 13px/6px 1px no-repeat,#fff}
+.flag-kr::before{content:"";position:absolute;left:8px;top:4px;width:8px;height:8px;border-radius:50%;background:linear-gradient(#c60c30 0 50%,#003478 50%);transform:rotate(32deg)}
+.wrap{max-width:980px;margin:auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,var(--primary),var(--deep));color:#fff}
+.hero .wrap{padding-top:76px;padding-bottom:64px}
+.eyebrow{display:inline-flex;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.05;margin-bottom:18px}
+.lead{max-width:720px;font-size:17px;color:rgba(255,255,255,.82)}
+.updated{margin-top:24px;color:rgba(255,255,255,.72);font-size:13px}
+main section.content{padding:64px 0}
+.notice-grid{display:grid;gap:18px}
+.notice-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:34px;box-shadow:0 18px 44px rgba(63,56,43,.08)}
+h2{font-size:24px;line-height:1.2;color:var(--deep);margin-bottom:12px}
+p,.notice-card li{color:#5E5748;font-size:15px}
+ul{padding-left:20px;margin-top:10px}
+li+li{margin-top:8px}
+.callout{border-left:4px solid var(--accent);background:var(--soft);border-radius:8px;padding:20px;margin-top:22px}
+footer{border-top:1px solid var(--border);background:var(--soft);padding:28px 0;color:#5E5748;font-size:13px}
+.footer-inner{max-width:1180px;margin:auto;padding:0 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer-links{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;gap:0}
+.footer-links a{position:relative;margin-left:16px;padding-left:16px;color:#5E5748;line-height:1.2;transition:color .2s}
+.footer-links a:first-child{margin-left:0;padding-left:0}
+.footer-links a:not(:first-child)::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;background:var(--border);transform:translateY(-50%)}
+.footer-links a:hover,.footer-links a.active{color:var(--deep)}
+@media(max-width:900px){.nav a:not(.brand),.nav-item,.flags{display:none}.notice-card{padding:24px}.footer-inner{align-items:flex-start}.footer-links{margin-left:0;justify-content:flex-start;flex-wrap:wrap}}
+
+/* TOPBAR MATCH 2026 */
+header{min-height:72px;background:rgba(241,248,245,.94)!important;border-bottom:1px solid rgba(142,151,125,.24)!important}
+.nav{max-width:1360px;height:72px;padding:0 56px;gap:0;justify-content:flex-start}
+.brand{width:220px;margin-right:16px;align-self:stretch;display:flex;align-items:center}
+.brand img{width:205px;max-width:205px;height:auto;display:block}
+.nav>a:not(.brand),.nav-trigger{height:72px;padding:0 22px;font-size:14px;font-weight:800;line-height:1;position:relative;transition:background .2s,color .2s}
+.nav-trigger{justify-content:center}
+.nav>a:not(.brand):hover,.nav-item:hover>.nav-trigger,.nav-item:focus-within>.nav-trigger{background:rgba(255,255,255,.54);color:var(--deep)}
+.nav>a:not(.brand)::after,.nav-trigger::before{content:"";position:absolute;left:12px;right:12px;bottom:0;height:4px;background:rgba(255,255,255,.86);opacity:0;transition:opacity .2s}
+.nav>a:not(.brand):hover::after,.nav-item:hover>.nav-trigger::before,.nav-item:focus-within>.nav-trigger::before{opacity:1}
+.dropdown{top:72px;border-radius:6px}
+.nav-actions{height:72px;margin-left:auto;padding-left:8px;border-left:1px solid rgba(142,151,125,.28);display:flex;align-items:center;gap:8px;align-self:stretch;flex:0 0 auto}
+.nav-phone{height:44px;min-width:100px;padding:0 10px 0 0;border-right:1px solid rgba(142,151,125,.34);font-size:12px;font-weight:800;line-height:1.12;color:var(--deep);display:flex;align-items:center;gap:7px;white-space:nowrap}
+.nav-phone svg{width:22px;height:22px;flex:0 0 auto;color:var(--accent);stroke:currentColor}
+.phone-lines{display:grid;gap:2px}
+.nav-cta{height:36px;min-width:126px;padding:0 18px;border-radius:18px;background:var(--deep);color:#fff!important;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.flags{height:36px;gap:4px;padding:0 5px;background:rgba(255,255,255,.50);border-top:1px solid rgba(142,151,125,.18);border-bottom:1px solid rgba(142,151,125,.18);align-items:center}
+.flag-btn{width:24px;height:20px;border-radius:3px;padding:2px;background:#fff;border:1px solid rgba(142,151,125,.26);box-shadow:none}
+.flag-icon{width:18px;height:12px;border-radius:1px}
+.site-search-trigger{width:38px!important;height:38px!important;border-radius:8px!important;background:rgba(255,255,255,.72)!important}
+header.is-scrolled .nav-actions{border-left-color:rgba(255,255,255,.22)}
+header.is-scrolled .nav-phone{border-right-color:rgba(255,255,255,.24);color:#fff!important}
+header.is-scrolled .nav-phone svg{color:#ECE7D1!important;stroke:#ECE7D1!important}
+header.is-scrolled .nav-cta{background:#F8FFFC;color:var(--deep)!important}
+header.is-scrolled .flags,header.is-scrolled .site-search-trigger{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.34)!important}
+header.is-scrolled .nav>a:not(.brand):hover,header.is-scrolled .nav-item:hover>.nav-trigger,header.is-scrolled .nav-item:focus-within>.nav-trigger{background:rgba(255,255,255,.12);color:#fff}
+@media(max-width:1320px){.nav{padding:0 28px}.brand{width:216px;margin-right:16px}.brand img{width:190px}.nav>a:not(.brand),.nav-trigger{padding:0 13px;font-size:13px}.nav-phone{display:none}.nav-actions{border-left:0;padding-left:0}}
+@media(max-width:1120px){.nav>a:not(.brand),.nav-item,.nav-actions{display:none}.nav{padding:0 20px}.brand{width:auto;margin-right:auto}.brand img{width:190px;max-width:46vw}}
+
+/* FLAG SVG ASSETS 2026 */
+.flag-icon{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-color:transparent!important}
+.flag-mn{background-image:url("assets/flags/mn.svg")!important;background-size:cover!important}
+.flag-us,.flag-gb{background-image:url("assets/flags/gb.svg")!important;background-size:cover!important}
+.flag-cn{background-image:url("assets/flags/cn.svg")!important;background-size:cover!important}
+.flag-kr{background-image:url("assets/flags/kr.svg")!important;background-size:cover!important}
+.flag-mn::before,.flag-mn::after,.flag-us::before,.flag-us::after,.flag-gb::before,.flag-gb::after,.flag-cn::before,.flag-cn::after,.flag-kr::before,.flag-kr::after{content:none!important;display:none!important}
+/* TOPBAR QA CONTRAST FIX 2026 */
+header.is-scrolled{background:rgba(138,118,80,.96)!important;border-bottom-color:rgba(255,255,255,.22)!important;box-shadow:0 14px 34px rgba(63,56,43,.24)!important}
+header.is-scrolled .nav>a:not(.brand),header.is-scrolled .nav-trigger,header.is-scrolled .brand{color:#F8FFFC!important}
+header.is-scrolled .nav-trigger::after{color:#ECE7D1!important}
+header.is-scrolled .brand img{filter:brightness(0) invert(1) sepia(8%) saturate(120%) hue-rotate(24deg);opacity:.88}
+header.is-scrolled .dropdown a{color:#4A4438!important;background:transparent!important}
+header.is-scrolled .dropdown a:hover,header.is-scrolled .dropdown a.active{background:var(--soft)!important;color:var(--deep)!important}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="Бэгз Ло Консалтинг"><img src="begz-logo-download.svg" alt="Бэгз Ло Консалтинг"></a>
+    <a href="index.html">Нүүр</a>
+    <div class="nav-item">
+      <button class="nav-trigger" type="button">Бидний тухай</button>
+      <div class="dropdown">
+        <a href="index.html#about">Танилцуулга</a>
+        <a href="index.html#team">Манай баг</a>
+        <a href="index.html#experience">Бид хэрхэн ажилладаг вэ</a>
+        <a href="index.html#contact">Уулзалт товлох</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" type="button">Үйлчилгээ</button>
+      <div class="dropdown">
+        <a href="legal-advisory.html">Хууль зүйн зөвлөх үйлчилгээ</a>
+        <a href="court-representation.html">Шүүхэд төлөөлөх үйлчилгээ</a>
+        <a href="advocacy.html">Өмгөөллийн үйлчилгээ</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-trigger" type="button">Мэдээлэл</button>
+      <div class="dropdown">
+        <a href="history.html">Түүхэн товчоо</a>
+        <a href="index.html#legal-guide">Хууль зүйн мэдээлэл</a>
+        <a href="index.html#faq">Түгээмэл асуулт хариулт</a>
+        <a href="cases.html">Шүүхийн шийдвэрийн тойм мэдээ</a>
+        <a href="begz-logo-download.svg" download>Лого татах</a>
+      </div>
+    </div>
+    <a href="index.html#contact">Холбоо барих</a>
+    <div class="nav-actions"><a href="tel:+97688119315" class="nav-phone"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-lines"><span>8811-9315</span><span>9903-5509</span></span></a><a class="nav-cta" href="index.html#contact">Зөвлөгөө авах</a><div class="flags">
+      <button class="flag-btn" type="button"><span class="flag-icon flag-mn"></span></button>
+      <button class="flag-btn" type="button"><span class="flag-icon flag-us"></span></button>
+      <button class="flag-btn" type="button"><span class="flag-icon flag-cn"></span></button>
+      <button class="flag-btn" type="button"><span class="flag-icon flag-kr"></span></button>
+    </div></div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Мэдэгдэл</div>
+      <h1>Вебсайт ашиглалтын мэдэгдэл</h1>
+      <p class="lead">Энэхүү вебсайт дахь мэдээлэл нь BEGZ LAW FIRM-ийн үйлчилгээ, нийтлэг эрх зүйн мэдээллийг танилцуулах зорилготой бөгөөд тодорхой хэрэг маргаанд зориулсан хууль зүйн зөвлөгөө гэж ойлгогдохгүй.</p>
+      <p class="updated">Сүүлд шинэчилсэн: 2026.06.20</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="wrap">
+      <div class="notice-grid">
+        <article class="notice-card">
+          <h2>1. Ерөнхий мэдээллийн шинж</h2>
+          <p>Сайт дээр байршуулсан нийтлэл, тайлбар, үйлчилгээний мэдээлэл нь ерөнхий танилцуулгын зорилготой. Таны нөхцөл байдалд тохирсон хууль зүйн дүгнэлт, зөвлөгөө авахын тулд бидэнтэй шууд холбогдож, баримт мэдээллээ тодорхой танилцуулах шаардлагатай.</p>
+        </article>
+
+        <article class="notice-card">
+          <h2>2. Өмгөөлөгч-үйлчлүүлэгчийн харилцаа</h2>
+          <p>Вебсайтаар зочлох, холбоо барих маягт илгээх, цахим шуудан илгээх нь дангаараа өмгөөлөгч-үйлчлүүлэгчийн харилцаа үүсгэсэнд тооцогдохгүй. Ийм харилцаа нь талуудын тохиролцоо, үйлчилгээний нөхцөл, холбогдох баримт бичгээр баталгаажсаны дараа үүснэ.</p>
+        </article>
+
+        <article class="notice-card">
+          <h2>3. Үр дүнгийн баталгаа өгөхгүй</h2>
+          <p>Өмнөх ажил, туршлага, нийтлэл, тойм мэдээ нь ирээдүйн хэрэг маргаанд ижил үр дүн гарна гэсэн баталгаа биш. Хэрэг бүрийн нөхцөл байдал, нотлох баримт, хууль хэрэглээ өөр байдаг.</p>
+        </article>
+
+        <article class="notice-card">
+          <h2>4. Гадаад холбоос ба мэдээллийн үнэн зөв байдал</h2>
+          <p>Сайт дээр гуравдагч этгээдийн эх сурвалж, гадаад холбоос орсон бол тэдгээрийн агуулга, шинэчлэлт, хүртээмжид BEGZ LAW FIRM хариуцлага хүлээхгүй. Бид мэдээллийг боломжит хэмжээнд үнэн зөв байлгахыг зорьдог боловч хууль тогтоомж, практик цаг хугацааны явцад өөрчлөгдөж болно.</p>
+        </article>
+
+        <article class="notice-card">
+          <h2>5. Зохиогчийн эрх</h2>
+          <p>Энэхүү вебсайтын текст, дизайн, бүтэц, брэндийн элементүүд нь "Бэгз Ло Консалтинг" ХХК-ийн эрхээр хамгаалагдана. Урьдчилсан зөвшөөрөлгүйгээр хуулбарлах, түгээх, арилжааны зориулалтаар ашиглахыг хориглоно.</p>
+          <div class="callout">
+            <p>Тодорхой асуудлаар зөвлөгөө авах шаардлагатай бол холбоо барих хэсгээр дамжуулан уулзалт товлоно уу.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 "Бэгз Ло Консалтинг" ХХК. Бүх эрх хуулиар хамгаалагдсан.</span>
+    <div class="footer-links">
+      <a href="privacy.html">Нууцлал</a>
+      <a class="active" href="notice.html">Мэдэгдэл</a>
+      <a href="index.html#contact">Холбоо барих</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function syncTopbar(){document.querySelector('header')?.classList.toggle('is-scrolled',scrollY>12)}
+addEventListener('scroll',syncTopbar,{passive:true});
+addEventListener('load',syncTopbar);
+</script>
+<script src="site-search.js?v=admin-cms-1"></script>
+<script src="chatbot.js?v=chatbot-ai-1"></script>
+<script src="full-i18n.js?v=multilang-cms-1"></script>
+</body>
+</html>
+
